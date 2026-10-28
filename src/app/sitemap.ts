@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { centreServices, centreBranches, siteConfig } from "@/config/site";
+import { articles } from "@/config/articles";
 
 /**
  * Public sitemap.
@@ -21,21 +22,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/leadership", changeFrequency: "monthly", priority: 0.8 },
     { path: "/services", changeFrequency: "weekly", priority: 0.9 },
     { path: "/branches", changeFrequency: "monthly", priority: 0.6 },
-    { path: "/visit", changeFrequency: "monthly", priority: 0.8 },
     { path: "/events", changeFrequency: "weekly", priority: 0.7 },
     { path: "/news", changeFrequency: "weekly", priority: 0.7 },
-    { path: "/research", changeFrequency: "monthly", priority: 0.7 },
-    { path: "/outreach", changeFrequency: "monthly", priority: 0.6 },
-    { path: "/gallery", changeFrequency: "monthly", priority: 0.5 },
+    { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
     { path: "/partner", changeFrequency: "monthly", priority: 0.8 },
     { path: "/share", changeFrequency: "monthly", priority: 0.5 },
     { path: "/donate", changeFrequency: "monthly", priority: 0.7 },
-    { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
     { path: "/faq", changeFrequency: "monthly", priority: 0.6 },
     { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
-    { path: "/book-appointment", changeFrequency: "monthly", priority: 0.9 },
+    { path: "/book-appointment", changeFrequency: "monthly", priority: 0.6 },
     { path: "/login", changeFrequency: "monthly", priority: 0.3 },
-    { path: "/forgot-password", changeFrequency: "monthly", priority: 0.2 },
     { path: "/privacy", changeFrequency: "monthly", priority: 0.3 },
     { path: "/terms", changeFrequency: "monthly", priority: 0.3 },
   ];
@@ -55,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...centreBranches.map((branch) => ({
       url: `${base}/branches/${branch.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...articles.map((article) => ({
+      url: `${base}/blog/${article.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.6,
