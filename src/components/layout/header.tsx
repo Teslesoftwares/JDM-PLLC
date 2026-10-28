@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Menu, X, Phone, MapPin, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/logo";
@@ -23,6 +23,11 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const isHomePage = pathname === "/";
 
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+    setOpenSubmenu(null);
+  }, []);
+
   useEffect(() => {
     if (!isHomePage) {
       setIsScrolled(false);
@@ -35,17 +40,32 @@ export function Header() {
     return () => window.removeEventListener("scroll", updateScrollState);
   }, [isHomePage]);
 
-  const homeAtTop = isHomePage && !isScrolled;
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-    setOpenSubmenu(null);
-  };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeMobileMenu();
+    };
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [closeMobileMenu, mobileMenuOpen]);
+
+  useEffect(() => {
+    closeMobileMenu();
+  }, [closeMobileMenu, pathname]);
+
+  const homeAtTop = isHomePage && !isScrolled;
 
   return (
     <header
       className={cn(
-        "motion-slide-down top-0 z-50 w-full border-b transition-colors duration-300",
+        "top-0 z-50 w-full border-b transition-colors duration-300",
         isHomePage ? "fixed" : "sticky",
         homeAtTop
           ? "border-white/20 bg-transparent"
@@ -223,7 +243,7 @@ export function Header() {
       <div
         id="mobile-navigation"
         className={cn(
-          "fixed inset-y-0 left-0 z-50 w-72 overflow-y-auto bg-white shadow-xl transition-transform duration-300 on-light lg:hidden",
+          "fixed inset-y-0 left-0 z-50 flex w-72 max-w-[85vw] flex-col overflow-y-auto overscroll-contain bg-white shadow-xl transition-transform duration-300 on-light lg:hidden",
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -238,7 +258,7 @@ export function Header() {
             <X className="h-5 w-5" />
           </Button>
         </div>
-        <nav className="space-y-1 px-3 py-4" aria-label="Mobile">
+        <nav className="min-h-0 flex-1 space-y-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
           {siteConfig.navigation.map((item) =>
             (item as any).children ? (
               <div key={item.href}>

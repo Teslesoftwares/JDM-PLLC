@@ -115,7 +115,7 @@ export function HeroSlider() {
               aria-hidden={!isActive}
               inert={!isActive}
               className={cn(
-                "absolute inset-0 z-0 flex items-center px-5 pt-10 pb-24 transition-all duration-700 ease-out sm:px-4 sm:py-24 lg:py-28",
+                "absolute inset-0 z-0 flex items-center px-4 pt-20 pb-24 transition-all duration-700 ease-out sm:px-4 sm:py-24 lg:py-28",
                 isActive
                   ? "translate-y-0 opacity-100"
                   : "pointer-events-none translate-y-3 opacity-0",
@@ -207,7 +207,7 @@ export function HeroSlider() {
                     <Button
                       asChild
                       size="lg"
-                      className="w-fit min-w-[14rem] max-w-full justify-center px-4 text-center text-sm bg-white text-[var(--brand-primary)] hover:bg-white/90 sm:w-auto sm:min-w-0 sm:px-8"
+                      className="w-full max-w-sm justify-center px-4 text-center text-sm bg-white text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
                     >
                       <a href={slide.primary.href}>{slide.primary.label}</a>
                     </Button>
@@ -215,7 +215,7 @@ export function HeroSlider() {
                     <Button
                       asChild
                       size="lg"
-                      className="w-fit min-w-[14rem] max-w-full justify-center px-4 text-center text-sm bg-white text-[var(--brand-primary)] hover:bg-white/90 sm:w-auto sm:min-w-0 sm:px-8"
+                      className="w-full max-w-sm justify-center px-4 text-center text-sm bg-white text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
                     >
                       <Link href={slide.primary.href}>
                         {slide.primary.label}
@@ -227,7 +227,7 @@ export function HeroSlider() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="w-fit min-w-[14rem] max-w-full justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:min-w-0 sm:px-8"
+                    className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
                   >
                     <Link href={slide.secondary.href}>{slide.secondary.label}</Link>
                   </Button>
@@ -236,7 +236,7 @@ export function HeroSlider() {
                       asChild
                       variant="outline"
                       size="lg"
-                      className="w-fit min-w-[14rem] max-w-full justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:min-w-0 sm:px-8"
+                      className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
                     >
                       <Link href={(slide as any).tertiary.href} target={(slide as any).tertiary.external ? "_blank" : undefined} rel={(slide as any).tertiary.external ? "noopener noreferrer" : undefined}>
                         {(slide as any).tertiary.label}
@@ -249,7 +249,7 @@ export function HeroSlider() {
           );
         })}
 
-        <div className="absolute inset-x-0 bottom-5 z-10 -translate-y-5 px-4 sm:bottom-7 lg:bottom-9">
+        <div className="absolute inset-x-0 bottom-4 z-10 px-4 pb-[env(safe-area-inset-bottom)] sm:bottom-7 lg:bottom-9">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
             <div className="flex items-center gap-2" role="tablist" aria-label="Choose slide">
               {slides.map((slide, index) => (
