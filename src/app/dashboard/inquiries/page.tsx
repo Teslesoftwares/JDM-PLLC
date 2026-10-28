@@ -40,8 +40,8 @@ export default function InquiriesPage() {
 
   return (
     <div>
-      <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-2xl font-semibold">Contact Inquiries</h2>
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-xl font-semibold sm:text-2xl">Contact Inquiries</h2>
         <span className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700">
           {inquiries.filter((i) => i.status === "NEW").length} New
         </span>
@@ -58,14 +58,14 @@ export default function InquiriesPage() {
           {inquiries.map((inquiry) => (
             <div
               key={inquiry.id}
-              className={`rounded-lg border bg-white p-6 shadow-sm ${
+              className={`rounded-lg border bg-white p-4 shadow-sm sm:p-6 ${
                 inquiry.status === "NEW" ? "border-l-4 border-l-blue-500" : ""
               }`}
             >
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <div className="flex items-center gap-3">
-                    <h3 className="text-lg font-medium">{inquiry.name}</h3>
+              <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-base font-medium sm:text-lg">{inquiry.name}</h3>
                     <span className="rounded bg-gray-100 px-2 py-1 text-xs">{inquiry.reference}</span>
                     <span className={`rounded px-2 py-1 text-xs ${
                       inquiry.status === "NEW" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-700"
@@ -76,7 +76,7 @@ export default function InquiriesPage() {
                       {inquiry.category}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 break-words text-sm text-gray-600">
                     {inquiry.email} {inquiry.phone && `• ${inquiry.phone}`}
                   </p>
                   <p className="text-sm text-gray-500">
@@ -86,7 +86,7 @@ export default function InquiriesPage() {
                 {inquiry.status === "NEW" && (
                   <button
                     onClick={() => markAsRead(inquiry.id)}
-                    className="rounded border px-3 py-1 text-sm hover:bg-gray-50"
+                    className="shrink-0 self-start rounded border px-3 py-1.5 text-sm hover:bg-gray-50"
                   >
                     Mark as Read
                   </button>

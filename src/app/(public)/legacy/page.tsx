@@ -188,7 +188,7 @@ export default function LegacyPage() {
               <p className="font-semibold text-white">President John Dramani Mahama and First Lady Lordina Mahama</p>
               <p className="text-white/80">President & First Lady Lordina Mahama</p>
             </div>
-            <div className="relative h-[450px] overflow-hidden rounded-lg shadow-lg">
+            <div className="relative h-72 overflow-hidden rounded-lg shadow-lg sm:h-96 lg:h-[450px]">
               <img
                 src="/images/airo-assets/images/pages/legacy/president-john-dramani-mahama-and-first-.png"
                 alt="President John Dramani Mahama and First Lady Lordina Mahama"

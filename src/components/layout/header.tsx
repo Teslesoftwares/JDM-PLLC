@@ -45,7 +45,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "top-0 z-50 w-full border-b transition-colors duration-300",
+        "motion-slide-down top-0 z-50 w-full border-b transition-colors duration-300",
         isHomePage ? "fixed" : "sticky",
         homeAtTop
           ? "border-white/20 bg-transparent"

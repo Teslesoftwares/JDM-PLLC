@@ -1,5 +1,6 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 
 export default async function DashboardLayout({
   children,
@@ -19,23 +20,29 @@ export default async function DashboardLayout({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="border-b bg-white">
-        <div className="container mx-auto flex items-center justify-between px-4 py-4">
-          <h1 className="text-xl font-bold">JDM PLLC Admin Dashboard</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">{session.user.email} ({role})</span>
-            <a href="/" className="text-sm text-blue-600 hover:underline">Back to Site</a>
+      <ScrollProgress />
+      <header className="sticky top-0 z-40 border-b bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <h1 className="text-base font-bold sm:text-xl">JDM PLLC Admin Dashboard</h1>
+          <div className="flex items-center justify-between gap-3 sm:justify-end">
+            <span className="min-w-0 truncate text-xs text-gray-600 sm:text-sm">
+              {session.user.email} ({role})
+            </span>
+            <a
+              href="/"
+              className="shrink-0 rounded border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 sm:text-sm"
+            >
+              Back to Site
+            </a>
           </div>
         </div>
-      </header>
-      <div className="container mx-auto px-4 py-6">
-        <nav className="mb-6 flex flex-wrap gap-4 border-b">
-          <a href="/dashboard" className="px-4 py-2 hover:text-blue-600">Overview</a>
-          <a href="/dashboard/inquiries" className="px-4 py-2 hover:text-blue-600">Inquiries</a>
-          <a href="/dashboard/news" className="px-4 py-2 hover:text-blue-600">News Management</a>
+        <nav className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-2 sm:px-4">
+          <a href="/dashboard" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Overview</a>
+          <a href="/dashboard/inquiries" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Inquiries</a>
+          <a href="/dashboard/news" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">News Management</a>
         </nav>
-        {children}
-      </div>
+      </header>
+      <div className="motion-page-enter mx-auto max-w-7xl px-4 py-6 sm:py-8">{children}</div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingActions } from "@/components/layout/floating-actions";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { HeroSlider } from "@/components/home/hero-slider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,9 +125,10 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollProgress />
       <Header />
 
-      <main className="flex-1">
+      <main className="motion-page-enter flex-1">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
