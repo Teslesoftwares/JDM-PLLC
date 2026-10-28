@@ -66,7 +66,10 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    remotePatterns: [{ protocol: "https", hostname: "johnmahama.org" }],
+    remotePatterns: [
+      { protocol: "https", hostname: "johnmahama.org" },
+      { protocol: "https", hostname: "cdn.modernghana.com" },
+    ],
   },
   async headers() {
     return [
