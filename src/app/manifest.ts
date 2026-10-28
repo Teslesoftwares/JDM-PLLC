@@ -18,7 +18,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#7a4b28",
     lang: siteConfig.locale.language,
     dir: "ltr",
-    categories: ["health", "medical"],
+    categories: ["education", "government", "books"],
     icons: [
       {
         src: "/brand/jdm-pllc-icon-192.png",
