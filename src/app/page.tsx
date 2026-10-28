@@ -190,7 +190,7 @@ export default function HomePage() {
               <Card className="border-0 shadow-sm overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="/Images/airo-assets/images/review/ietsa-9.jpg"
+                    src="/images/airo-assets/images/review/ietsa-9.jpg"
                     alt="Building the Foundations of Progress - Infrastructure"
                     fill
                     className="object-cover"
@@ -223,7 +223,7 @@ export default function HomePage() {
               <Card className="border-0 shadow-sm overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="/Images/airo-assets/images/review/ietsa-6.jpg"
+                    src="/images/airo-assets/images/review/ietsa-6.jpg"
                     alt="Investing in Ghana's Future - Education"
                     fill
                     className="object-cover"
@@ -257,7 +257,7 @@ export default function HomePage() {
               <Card className="border-0 shadow-sm overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="/Images/airo-assets/images/review/ietsa-2.jpg"
+                    src="/images/airo-assets/images/review/ietsa-2.jpg"
                     alt="Strengthening Democratic Institutions - Democracy"
                     fill
                     className="object-cover"
@@ -322,7 +322,7 @@ export default function HomePage() {
               <div className="relative">
                 <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg lg:h-[500px]">
                   <Image
-                    src="/Images/airo-assets/images/pages/home/president-mahama-family.jpg"
+                    src="/images/airo-assets/images/pages/home/president-mahama-family.jpg"
                     alt="President John Dramani Mahama and First Lady Lordina Mahama"
                     fill
                     className="object-cover"
@@ -544,7 +544,7 @@ export default function HomePage() {
                   <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
                     <div className="relative h-48 w-48 flex-shrink-0 overflow-hidden rounded-full">
                       <Image
-                        src="/Images/airo-assets/images/people/president-mahama-portrait.jpg"
+                        src="/images/airo-assets/images/people/president-mahama-portrait.jpg"
                         alt="H.E. John Dramani Mahama"
                         fill
                         className="object-cover"
@@ -658,7 +658,7 @@ export default function HomePage() {
               <Card className="border-0 shadow-md">
                 <div className="relative h-48">
                   <Image
-                    src="/Images/airo-assets/images/review/ietsa-7.jpg"
+                    src="/images/airo-assets/images/review/ietsa-7.jpg"
                     alt="The Mind"
                     fill
                     className="object-cover"
@@ -697,7 +697,7 @@ export default function HomePage() {
               <Card className="border-0 shadow-md">
                 <div className="relative h-48">
                   <Image
-                    src="/Images/airo-assets/images/review/ietsa-6.jpg"
+                    src="/images/airo-assets/images/review/ietsa-6.jpg"
                     alt="The Soul"
                     fill
                     className="object-cover"
@@ -736,7 +736,7 @@ export default function HomePage() {
               <Card className="border-0 shadow-md">
                 <div className="relative h-48">
                   <Image
-                    src="/Images/airo-assets/images/review/ietsa-8.jpg"
+                    src="/images/airo-assets/images/review/ietsa-8.jpg"
                     alt="The Heart"
                     fill
                     className="object-cover"

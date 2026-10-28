@@ -24,7 +24,7 @@ const posts = [
     readTime: "3 min read",
     author: "AfYEF Communications",
     tags: ["#architecture", "#concept", "#design"],
-    image: "/Images/airo-assets/images/pages/home/architecture-campus.jpg",
+    image: "/images/airo-assets/images/pages/home/architecture-campus.jpg",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const posts = [
     readTime: "3 min read",
     author: "AfYEF Communications",
     tags: ["#Northern Ghana", "#investment", "#development"],
-    image: "/Images/airo-assets/images/pages/home/architecture-entrance.jpg",
+    image: "/images/airo-assets/images/pages/home/architecture-entrance.jpg",
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const posts = [
     readTime: "2 min read",
     author: "AfYEF Communications",
     tags: ["#Telecel", "#Ghana", "#digital"],
-    image: "/Images/airo-assets/images/pages/home/architecture-interior.jpg",
+    image: "/images/airo-assets/images/pages/home/architecture-interior.jpg",
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ const posts = [
     readTime: "3 min read",
     author: "AfYEF Communications",
     tags: ["#AfYEF", "#launch", "#legacy"],
-    image: "/Images/airo-assets/images/pages/home/architecture-rotunda.jpg",
+    image: "/images/airo-assets/images/pages/home/architecture-rotunda.jpg",
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const posts = [
     readTime: "2 min read",
     author: "Osman Najaht, UDS Media",
     tags: ["#UDS", "#AfYEF", "#MoU"],
-    image: "/Images/airo-assets/images/pages/home/architecture-campus.jpg",
+    image: "/images/airo-assets/images/pages/home/architecture-campus.jpg",
   },
 ];
 

@@ -155,7 +155,7 @@ export default function LoginPageClient() {
         className="relative isolate hidden overflow-hidden bg-[var(--brand-primary)] bg-cover bg-center lg:flex lg:flex-1 lg:items-center lg:justify-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(107, 52, 16, 0.65), rgba(107, 52, 16, 0.65)), url('/Images/airo-assets/images/pages/home/architecture-rotunda.jpg')",
+            "linear-gradient(rgba(107, 52, 16, 0.65), rgba(107, 52, 16, 0.65)), url('/images/airo-assets/images/pages/home/architecture-rotunda.jpg')",
         }}
       >
         <div className="relative z-10 max-w-md px-8 text-center text-white">
