@@ -37,7 +37,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
+      "img-src 'self' data: blob: https://johnmahama.org https://cdn.modernghana.com",
       "font-src 'self' data:",
       "connect-src 'self'",
       "media-src 'self' blob: data:",
@@ -64,6 +64,9 @@ const nextConfig: NextConfig = {
       { source: "/fertility", destination: "/legacy", permanent: true },
       { source: "/doctors", destination: "/leadership", permanent: true },
     ];
+  },
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "johnmahama.org" }],
   },
   async headers() {
     return [

@@ -104,7 +104,6 @@ export default async function ArticlePage({
         <div className="mx-auto max-w-3xl px-4">
           <script
             type="application/ld+json"
-            // Static, developer-authored JSON-LD derived from the article above.
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
 

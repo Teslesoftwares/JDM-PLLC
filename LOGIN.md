@@ -2,7 +2,7 @@
 
 ## Sign-In Page
 
-Use `/login` for staff and patient accounts. Sign in with the email address and password assigned to the account. Public self-registration is disabled; patients are registered by clinic administration or reception.
+Use `/login` for staff accounts. Sign in with the email address and password assigned to the account. Public self-registration is disabled; accounts are registered by administration or reception.
 
 ## Development Demo Accounts
 
@@ -16,7 +16,7 @@ The following accounts are created by `npm run db:seed` for local development an
 
 For the existing local workspace database, use the administrator account `admin@jaggreys.com` with password `Admin@123`. This database-specific account is separate from the administrator account created by a fresh seed above.
 
-Other seeded staff accounts use `Staff@123`; all eight seeded demo patients use `Patient@123`. These credentials and the associated data are for development only. Change or remove them before deploying to a real environment.
+Other seeded staff accounts use `Staff@123`. These credentials and the associated data are for development only. Change or remove them before deploying to a real environment.
 
 ## Password Recovery
 
@@ -34,6 +34,6 @@ The demo accounts require a configured database and seeded data. Follow the [Qui
 
 ## Account Help
 
-- Patients without an account should contact clinic reception; staff create patient accounts at registration.
+- Users without an account should contact reception; staff create accounts at registration.
 - Staff who cannot sign in should contact an administrator to check that their account is active or reset their password.
 - Sign-in accepts credentials for active accounts only.

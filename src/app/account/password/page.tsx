@@ -69,7 +69,7 @@ export default function ChangePasswordPage() {
             <LockKeyhole className="h-5 w-5" aria-hidden="true" />
           </div>
           <CardTitle className="text-2xl">Change password</CardTitle>
-          <CardDescription>Update the password for your Menstrocare account.</CardDescription>
+          <CardDescription>Update the password for your account.</CardDescription>
         </CardHeader>
         <CardContent>
           {success ? (

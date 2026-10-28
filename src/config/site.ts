@@ -14,10 +14,10 @@
  * qualification or a price that has not been confirmed by the Centre.
  */
 
-/** How a configurable item is presented until the clinic confirms it. */
+/** How a configurable item is presented until confirmation. */
 export type PublicationStatus = "CONFIRMED" | "PENDING_CONFIRMATION";
 
-export interface ClinicService {
+export interface CentreService {
   name: string;
   slug: string;
   /** One-line summary shown on cards. Never includes a price or a claim. */
@@ -29,7 +29,7 @@ export interface ClinicService {
   statusNote: string;
 }
 
-export interface ClinicBranch {
+export interface CentreBranch {
   name: string;
   slug: string;
   address: string;
@@ -41,7 +41,7 @@ export interface ClinicBranch {
   departments: string[];
 }
 
-export interface ClinicTeamMember {
+export interface CentreTeamMember {
   name: string;
   slug: string;
   specialty: string;
@@ -69,7 +69,7 @@ export interface NavItem {
 
 /**
  * Hero photograph shared by every slide. Swap to per-slide paths once the
- * clinic supplies a photo for each one.
+ * Centre supplies a photo for each one.
  */
 
 export interface HeroSlide {
@@ -181,7 +181,7 @@ const SERVICES = [
     statusNote:
       "Archive access terms and launch dates are confirmed with the Centre at the time of enquiry.",
   },
-] satisfies ClinicService[];
+] satisfies CentreService[];
 
 export const siteConfig = {
   /** Full legal-facing name used in metadata, footers and documents. */
@@ -199,20 +199,21 @@ export const siteConfig = {
     "A continental institution for leadership, heritage, research and human dignity — rooted in Northern Ghana and serving Africa and the world.",
   /**
    * Homepage hero carousel. Slides without an `image` fall back to the brand
-   * green treatment, so the clinic can add photography one slide at a time.
+   * green treatment, so the Centre can add photography one slide at a time.
    */
   heroSlides: [
     {
       id: "welcome",
-      eyebrow: "The Northern Star Centre",
-      title: "Preserving legacy. Building futures.",
-      body: "A continental institution for leadership, heritage, research and human dignity — rooted in Northern Ghana and serving Africa and the world.",
-      mobileBody: "Rooted in Northern Ghana, serving Africa and the world.",
+      eyebrow: "JDM PLLC",
+      title: "PRESIDENTIAL LIBRARY &\nLEGACY CENTRE",
+      body: "JDM PLLC  ·  Launching 30 November 2026\n\nAfrica's foremost institution for ethical leadership, living heritage, and transformative learning — now seeking visionary partners to build it.",
+      mobileBody: "JDM PLLC  ·  Launching 30 November 2026\n\nAfrica's foremost institution for ethical leadership, living heritage, and transformative learning — now seeking visionary partners to build it.",
       image: "/images/hero/northern-star-sunset.png",
       duration: 9000,
       videoLoop: false,
-      primary: { label: "Discover the Centre", href: "/about" },
-      secondary: { label: "Explore our programmes", href: "/services" },
+      primary: { label: "Partner With Us", href: "/partner" },
+      secondary: { label: "Discover the Centre", href: "/about" },
+      tertiary: { label: "Download Legacy Project Proposal", href: "https://www.jdmpresidentiallibrary.org/data/PDF%20-Preserving-Legacy-Building-Futures.pdf", external: true },
     },
     {
       id: "consultations",
@@ -246,6 +247,7 @@ export const siteConfig = {
       title: "Three branches. One constellation.",
       body: "The academic and leadership wing in Tamale, character and ethical formation in Busunu, and the global headquarters and living heritage hub in Bole form one integrated institution.",
       mobileBody: "Tamale, Busunu and Bole: three integrated branches with one shared purpose.",
+      image: "/hero/ghana-route-map-golden-horizon.png",
       duration: 12000,
       videoLoop: false,
       primary: { label: "Explore the branches", href: "/branches" },
@@ -257,6 +259,7 @@ export const siteConfig = {
       title: "The work begins while the institution is being built.",
       body: "The Centre is launching its intellectual and programmatic foundations: a digital archive, the Northern Star Annual Lecture, Pan-African fellowships and an Indigenous Knowledge oral history initiative.",
       mobileBody: "Programmes, partnerships, fellowships and archives establish the Centre's intellectual footprint.",
+      image: "/hero/president-mahama-family.jpg",
       duration: 12000,
       videoLoop: false,
       primary: { label: "See the 2026 initiatives", href: "/news" },
@@ -268,6 +271,7 @@ export const siteConfig = {
       title: "An invitation to shape an enduring African institution",
       body: "We welcome universities, foundations, development partners, corporations, philanthropists, traditional authorities, governments and diaspora communities.",
       mobileBody: "Help shape a lasting institution for Africa and the world.",
+      image: "/hero/ietsa-6.jpg",
       duration: 12000,
       videoLoop: false,
       primary: { label: "Partner with us", href: "/partner" },
@@ -456,7 +460,7 @@ export const siteConfig = {
         "Skills Transformation Hub",
       ],
     },
-  ] satisfies ClinicBranch[],
+  ] satisfies CentreBranch[],
   /**
    * Programme catalogue — the Centre's public offerings, as described in the
    * institutional prospectus.
@@ -469,7 +473,7 @@ export const siteConfig = {
    * until the Centre verifies them. Add verified profiles here and the
    * directory renders.
    */
-  team: [] as ClinicTeamMember[],
+  team: [] as CentreTeamMember[],
   /**
    * Published testimonials.
    *
@@ -509,15 +513,19 @@ export const siteConfig = {
 export type SiteConfig = typeof siteConfig;
 
 /** Convenience accessor for the current institutional name (honours APP_NAME). */
-export function clinicName(): string {
+export function centreName(): string {
   return process.env.APP_NAME || siteConfig.name;
 }
 
+export const clinicName = centreName;
+
 /** Every location, used by the branch pages. */
-export const clinicBranches = siteConfig.branches;
+export const centreBranches = siteConfig.branches;
+export const clinicBranches = centreBranches;
 
 /** Programmes grouped for the programmes hub. */
-export const clinicServices = siteConfig.services;
+export const centreServices = siteConfig.services;
+export const clinicServices = centreServices;
 
 /** True while an item still needs the Centre's sign-off before publication. */
 export function isPending(status: PublicationStatus): boolean {

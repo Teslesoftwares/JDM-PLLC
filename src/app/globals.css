@@ -9,7 +9,7 @@
   --color-card-foreground: oklch(0.222 0 89.9);
   --color-popover: oklch(1 0 0);
   --color-popover-foreground: oklch(0.222 0 89.9);
-  /* Menstrocare primary: warm brown #7A4B28, cream accents, white surfaces */
+  /* Primary: warm brown #7A4B28, cream accents, white surfaces */
   --color-primary: oklch(0.460 0.081 55.7);
   --color-primary-foreground: oklch(0.99 0 0);
   --color-secondary: oklch(0.954 0.014 78.3);
@@ -54,7 +54,7 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Menstrocare brand tokens
+   Brand tokens
    ─────────────────────────────────────────────────────────────
    Primary   #7A4B28 warm brown — deepened enough to clear 4.5:1 for white
              button text, the anchor of the whole palette
@@ -65,21 +65,23 @@
    component consumes these as `var(--brand-*)`, never as a literal.
    ───────────────────────────────────────────────────────────── */
 :root {
-  --brand-primary: #7a4b28;
-  --brand-primary-light: #8f5a33;
-  --brand-primary-dark: #5c3718;
+  /* Reddish brown palette */
+  --brand-primary: #8b4513;
+  --brand-primary-light: #a0522d;
+  --brand-primary-dark: #6b3410;
   --brand-secondary: #b4553a;
   --brand-secondary-light: #c46a45;
+  --brand-secondary-dark: #9a442f;
   /* Action colours: the support (partner) and giving (donate) calls to action. */
   --brand-yellow: #f5c518;
   --brand-yellow-dark: #d9a800;
   --brand-on-yellow: #3a2a00;
   --brand-red: #c33a2c;
   --brand-red-dark: #a12e22;
-  --brand-accent: #f5efe6;
-  --brand-warm: #f3e9df;
+  --brand-accent: #f6ebe2;
+  --brand-warm: #f8f1ea;
   --brand-text: #1c1c1c;
-  --brand-text-light: #6b6b6b;
+  --brand-text-light: #7a4f35;
 }
 
 .dark {
@@ -88,6 +90,7 @@
   --brand-primary-dark: #a8703f;
   --brand-secondary: #d97a56;
   --brand-secondary-light: #e69a7a;
+  --brand-secondary-dark: #c46a45;
   --brand-yellow: #f5c518;
   --brand-yellow-dark: #d9a800;
   --brand-on-yellow: #3a2a00;

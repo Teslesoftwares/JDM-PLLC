@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { clinicServices, clinicBranches, siteConfig } from "@/config/site";
+import { centreServices, centreBranches, siteConfig } from "@/config/site";
 
 /**
  * Public sitemap.
@@ -47,13 +47,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: entry.changeFrequency,
       priority: entry.priority,
     })),
-    ...clinicServices.map((service) => ({
+    ...centreServices.map((service) => ({
       url: `${base}/services/${service.slug}`,
       lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
-    ...clinicBranches.map((branch) => ({
+    ...centreBranches.map((branch) => ({
       url: `${base}/branches/${branch.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,

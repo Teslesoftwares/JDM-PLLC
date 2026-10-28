@@ -6,7 +6,7 @@ import { cn } from "@/utils";
  *
  * Brand marks are inlined (Simple Icons, CC0) because lucide dropped its brand
  * icon set. Only networks with a configured URL in `siteConfig.links` render,
- * so the clinic never publishes a handle it has not verified.
+ * so the Centre never publishes a handle it has not verified.
  */
 const NETWORKS = [
   {

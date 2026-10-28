@@ -16,10 +16,10 @@ import {
   Phone,
   Ticket,
 } from "lucide-react";
-import { clinicBranches, siteConfig } from "@/config/site";
+import { centreBranches, siteConfig } from "@/config/site";
 
 export function generateStaticParams() {
-  return clinicBranches.map((branch) => ({ slug: branch.slug }));
+  return centreBranches.map((branch) => ({ slug: branch.slug }));
 }
 
 /**
@@ -76,7 +76,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const branch = clinicBranches.find((item) => item.slug === slug);
+  const branch = centreBranches.find((item) => item.slug === slug);
 
   if (!branch) return { title: "Branch not found" };
 
@@ -97,7 +97,7 @@ export default async function BranchDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const branch = clinicBranches.find((item) => item.slug === slug);
+  const branch = centreBranches.find((item) => item.slug === slug);
 
   if (!branch) notFound();
 

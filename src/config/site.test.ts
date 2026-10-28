@@ -7,9 +7,7 @@ describe("homepage hero configuration", () => {
     expect(siteConfig.heroSlides[1]?.video).toBe(
       "/videos/couple-holding-hands-on-sofa.mp4",
     );
-    expect(siteConfig.heroSlides[2]?.video).toBe(
-      "/videos/doctor-consulting-couple-in-clinic.mp4",
-    );
+    expect(siteConfig.heroSlides[2]?.video).toBeUndefined();
     expect(siteConfig.heroSlides[5]?.video).toBe(
       "/videos/baby-sleeping-in-nursery.mp4",
     );

@@ -1,305 +1,235 @@
+"use client";
+
 import Link from "next/link";
-import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/page-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
-  Forward,
-  Globe,
-  Mail,
-  Phone,
-  Quote,
+  MessageCircle,
+  Copy,
   Share2,
-  Star,
-  Users,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
-  title: "Share the vision",
-  description: `Help spread the word about ${siteConfig.formalName} — an invitation, not a conclusion. Share the key facts and forward the vision to someone who should know about it.`,
-  alternates: { canonical: "/share" },
-};
+// metadata moved to layout or removed for client component
 
-const keyMessages = [
+const platforms = [
   {
-    stat: siteConfig.tagline,
-    title: "The founding promise",
-    body: "A continental institution for leadership, heritage, research and human dignity — rooted in Northern Ghana and serving Africa and the world.",
+    name: "LinkedIn",
+    icon: Share2,
+    color: "bg-[#0A66C2]",
+    size: "1200×627",
+    copy: `The JDM Presidential Library & Legacy Centre — The Northern Star Centre — is now open for strategic partnerships and investment.
+
+🏛️ A world-class presidential library, museum, and leadership academy honouring H.E. John Dramani Mahama — Ghana's 12th & 14th President.
+
+📍 Three campuses: Tamale · Busunu · Bole (Northern Ghana)
+🎯 PEECS Framework: Preserve · Empower · Educate · Celebrate · Sustain
+💼 Investment opportunities from GHS 50,000 to institutional partnerships
+
+This is more than a building. It is a living institution for Africa and the world.
+
+Partner with us: https://jdmpresidentiallibrary.org/partner
+Download the prospectus: https://jdmpresidentiallibrary.org/data/PDF%20-Preserving-Legacy-Building-Futures.pdf
+
+#JDMPresidentialLibrary #NorthernStarCentre #GhanaLeadership #AfricanHeritage #PresidentialLegacy #Investment #Ghana`,
+    shareUrl: "https://www.linkedin.com/sharing/share-offsite/?url=https://jdmpresidentiallibrary.org",
   },
   {
-    stat: "2021",
-    title: "Vision Established",
-    body: "The idea of transforming presidential legacy into leadership capital for future generations was conceived.",
+    name: "X / Twitter",
+    icon: Share2,
+    color: "bg-black",
+    size: "1200×675",
+    copy: `🌟 The JDM Presidential Library & Legacy Centre is seeking partners to build Africa's next great institution of memory and leadership.
+
+H.E. John Dramani Mahama's legacy — preserved, celebrated, and activated for generations.
+
+🏛️ Three campuses across Northern Ghana
+📖 Presidential library, museum & leadership academy
+🤝 Partnership opportunities open now
+
+https://jdmpresidentiallibrary.org | #NorthernStarCentre #Ghana #PresidentialLegacy`,
+    shareUrl: "https://twitter.com/intent/tweet?url=https://jdmpresidentiallibrary.org&text=The%20JDM%20Presidential%20Library%20%26%20Legacy%20Centre%20is%20seeking%20partners%20to%20build%20Africa's%20next%20great%20institution%20of%20memory%20and%20leadership.%20%23NorthernStarCentre%20%23Ghana%20%23PresidentialLegacy",
   },
   {
-    stat: "3",
-    title: "Integrated Branches",
-    body: "Mind in Tamale, Soul in Busunu and Heart in Bole — three branches, one constellation.",
+    name: "WhatsApp",
+    icon: MessageCircle,
+    color: "bg-[#25D366]",
+    size: "1080×1080",
+    copy: `*JDM Presidential Library & Legacy Centre*
+_The Northern Star Centre_
+
+Greetings,
+
+I wanted to share an exciting opportunity with you. The JDM Presidential Library & Legacy Centre — honouring the legacy of H.E. John Dramani Mahama, Ghana's 12th & 14th President — is now seeking strategic partners and investors.
+
+*What is it?*
+A world-class presidential library, museum, leadership academy, and heritage centre across three campuses in Northern Ghana (Tamale, Busunu, and Bole).
+
+*Why it matters:*
+• Preserves a defining chapter of Ghana's democratic history
+• Creates a Pan-African centre for leadership development
+• Drives heritage tourism and economic development in the North
+
+*How to get involved:*
+Visit: https://jdmpresidentiallibrary.org
+Contact: info@jdmpresidentiallibrary.org
+Call: +233 244 020 280
+
+Download the full prospectus at: https://jdmpresidentiallibrary.org/data/PDF%20-Preserving-Legacy-Building-Futures.pdf
+
+The Northern Star Shall Rise. 🌟`,
+    shareUrl: "https://wa.me/?text=JDM%20Presidential%20Library%20%26%20Legacy%20Centre%20-%20The%20Northern%20Star%20Centre%20is%20now%20seeking%20strategic%20partners%20and%20investors.%20https://jdmpresidentiallibrary.org",
   },
   {
-    stat: "2031",
-    title: "Decade Delivered",
-    body: "A fully operational, self-sustaining institution connecting all three branches by the end of the founding decade.",
+    name: "Facebook",
+    icon: Share2,
+    color: "bg-[#1877F2]",
+    size: "1200×630",
+    copy: `The JDM Presidential Library & Legacy Centre — The Northern Star Centre — is now open for strategic partnerships and investment. A world-class presidential library, museum, and leadership academy honouring H.E. John Dramani Mahama, Ghana's 12th & 14th President. Three campuses: Tamale · Busunu · Bole (Northern Ghana). Partner with us: https://jdmpresidentiallibrary.org/partner`,
+    shareUrl: "https://www.facebook.com/sharer/sharer.php?u=https://jdmpresidentiallibrary.org",
   },
   {
-    stat: "1B+",
-    title: "Africans to Serve",
-    body: "Africa and the global African family — the scale of the community this institution is built to serve.",
+    name: "Instagram",
+    icon: Share2,
+    color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737]",
+    size: "1080×1080",
+    copy: `The Northern Star Shall Rise. 🌟
+
+We are building something extraordinary in Northern Ghana — a presidential library, museum, and leadership academy that will honour the legacy of H.E. John Dramani Mahama and inspire generations of African leaders.
+
+The JDM Presidential Library & Legacy Centre — The Northern Star Centre — is now open for partnerships and investment.
+
+Three campuses. One vision. A legacy for Africa.
+
+📍 Tamale · Busunu · Bole, Northern Ghana
+🏛️ Presidential Library & Museum
+🎓 Leadership Academy & Fellowships
+🌍 Pan-African Heritage Centre
+
+Partner with us. Link in bio.
+
+#JDMPresidentialLibrary #NorthernStarCentre #Ghana #GhanaLeadership #PresidentialLegacy #AfricanHeritage #JohnDramaniMahama #NorthernGhana #HeritageGhana #InvestInGhana #PanAfrica #Leadership #LegacyCentre #GhanaHistory`,
+    shareUrl: "https://www.instagram.com/",
   },
 ];
-
-const waysToShare = [
-  {
-    icon: Users,
-    title: "Tell someone",
-    body: "The simplest way to share the vision: tell a colleague, a student, a traditional authority or a family member about the Centre and what it is being built to become.",
-    href: null,
-    linkLabel: null,
-  },
-  {
-    icon: Forward,
-    title: "Forward the website",
-    body: "Send www.jdmpllc.org to anyone who should know about the Centre — a one-link introduction to the vision, the branches and the founding decade.",
-    href: siteConfig.website,
-    linkLabel: siteConfig.website.replace(/^https?:\/\//, ""),
-  },
-  {
-    icon: Mail,
-    title: "Email us",
-    body: "Questions, introduction requests and partnership conversations are all welcome by email.",
-    href: `mailto:${siteConfig.contact.email}`,
-    linkLabel: siteConfig.contact.email,
-  },
-  {
-    icon: Phone,
-    title: "Call us",
-    body: `Speak to the Centre directly on ${siteConfig.contact.phone}. Visiting hours: ${siteConfig.openingHours.summary}.`,
-    href: siteConfig.contact.phoneHref,
-    linkLabel: siteConfig.contact.phone,
-  },
-];
-
-/** Only verified social profiles are listed; empty config entries render nothing. */
-const socialLinks = [
-  { label: "Facebook", href: siteConfig.links.facebook },
-  { label: "Instagram", href: siteConfig.links.instagram },
-  { label: "X", href: siteConfig.links.x },
-  { label: "LinkedIn", href: siteConfig.links.linkedin },
-].filter((link) => link.href.length > 0);
 
 export default function SharePage() {
   return (
     <>
       <PageHero
-        eyebrow="Spread the word"
-        title="Share the vision"
-        description="This is an invitation, not a conclusion. Help the Northern Star Centre reach the people — across Africa and the world — who belong in the constellation."
+        eyebrow="Partnership Promotion"
+        title="Share the Legacy"
+        description="Help us build the Northern Star Centre. Below are ready-to-use posts, captions, and sharing cards — optimised for each platform — so you can spread the word with one click."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Share" }]}
-        actions={
-          <Button
-            asChild
-            size="lg"
-            className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
-          >
-            <Link href="/contact">
-              Contact the Centre
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        }
       />
 
-      {/* Invitation prose */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-                This is an invitation, not a conclusion
-              </p>
-              <h2 className="mb-6 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-                In every generation, a few illuminate the path
-              </h2>
-            </div>
-            <div className="space-y-5 leading-relaxed text-[var(--brand-text-light)]">
-              <p>
-                The Northern Star Centre is not being built merely to remember
-                the past. It is being built to shape the future.
-              </p>
-              <p>
-                In every generation, a few individuals illuminate the path for
-                others. We call them Northern Stars. This institution exists to
-                preserve their stories, study their leadership, and prepare
-                those who will follow.
-              </p>
-              <p>
-                Every African carries a Northern Star within them. Sharing the
-                vision is how the first light reaches them.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Key messages / fact sheet */}
-      <section className="bg-[var(--brand-accent)]/40 py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-              Key messages
-            </p>
-            <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-              The facts, in one place
-            </h2>
-            <p className="text-[var(--brand-text-light)]">
-              A short fact sheet you can use when telling others about the
-              Centre — every figure comes straight from the institutional
-              prospectus.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {keyMessages.map((item) => (
-              <Card key={item.title} className="border-0 bg-white shadow-sm">
-                <CardContent className="p-6">
-                  <p className="mb-2 text-3xl font-bold text-[var(--brand-primary)]">
-                    {item.stat}
-                  </p>
-                  <h3 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-[var(--brand-text-light)]">
-                    {item.body}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-            <Card className="border-0 bg-[var(--brand-primary)] text-white shadow-md">
-              <CardContent className="flex h-full flex-col justify-between p-6">
-                <div>
-                  <Star
-                    className="mb-3 h-8 w-8 text-white"
-                    aria-hidden="true"
-                  />
-                  <h3 className="mb-2 text-lg font-semibold">
-                    The Northern Star shall rise
-                  </h3>
-                  <p className="text-sm leading-relaxed text-white/85">
-                    The constellation begins now — and it grows every time the
-                    vision is shared.
-                  </p>
-                </div>
-                <Button
-                  asChild
-                  variant="link"
-                  className="mt-4 p-0 text-white hover:text-white/85"
-                >
-                  <Link href="/about">
-                    Learn more about the Centre
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Ways to share */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-              Ways to share
-            </p>
-            <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-              Four simple ways to carry the light
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {waysToShare.map((way) => (
-              <Card key={way.title} className="border-0 shadow-md">
-                <CardContent className="p-6">
-                  <way.icon
-                    className="mb-3 h-6 w-6 text-[var(--brand-primary)]"
-                    aria-hidden="true"
-                  />
-                  <h3 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
-                    {way.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-[var(--brand-text-light)]">
-                    {way.body}
-                  </p>
-                  {way.href && way.linkLabel ? (
-                    <a
-                      href={way.href}
-                      className="mt-3 inline-flex items-center text-sm font-semibold text-[var(--brand-primary)] hover:underline"
-                    >
-                      {way.linkLabel}
-                      <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-                    </a>
-                  ) : null}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Social profiles — only rendered once the Centre has supplied verified links */}
-          <div className="mt-10 rounded-xl bg-[var(--brand-accent)]/60 p-6">
-            <div className="flex items-start gap-4">
-              <Share2
-                className="mt-0.5 h-6 w-6 shrink-0 text-[var(--brand-primary)]"
-                aria-hidden="true"
-              />
-              <div>
-                <h3 className="font-semibold text-[var(--brand-text)]">
-                  Follow and share online
-                </h3>
-                {socialLinks.length > 0 ? (
-                  <div className="mt-3 flex flex-wrap gap-3">
-                    {socialLinks.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        className="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-[var(--brand-primary)] shadow-sm hover:bg-[var(--brand-accent)]"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="mt-1 text-sm text-[var(--brand-text-light)]">
-                    Official social media profiles will be published here once
-                    they have been verified by the Centre. Until then, the
-                    surest ways to share are this website (
-                    <a
-                      href={siteConfig.website}
-                      className="font-semibold text-[var(--brand-primary)] hover:underline"
-                    >
-                      {siteConfig.website.replace(/^https?:\/\//, "")}
-                    </a>
-                    ), email and telephone.
-                  </p>
-                )}
-              </div>
+          <div className="mb-8">
+            <p className="mb-2 text-lg font-semibold text-[var(--brand-text)]">Quick share the Legacy page directly:</p>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild className="bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://jdmpresidentiallibrary.org" target="_blank" rel="noopener noreferrer">
+                  <Share2 className="mr-2 h-4 w-4" />
+                  LinkedIn
+                </a>
+              </Button>
+              <Button asChild className="bg-black text-white hover:bg-black/90">
+                <a href="https://twitter.com/intent/tweet?url=https://jdmpresidentiallibrary.org&text=The%20JDM%20Presidential%20Library%20%26%20Legacy%20Centre%20-%20The%20Northern%20Star%20Centre%20is%20now%20open%20for%20strategic%20partnerships%20and%20investment." target="_blank" rel="noopener noreferrer">
+                  <Share2 className="mr-2 h-4 w-4" />
+                  X / Twitter
+                </a>
+              </Button>
+              <Button asChild className="bg-[#25D366] text-white hover:bg-[#25D366]/90">
+                <a href="https://wa.me/?text=JDM%20Presidential%20Library%20%26%20Legacy%20Centre%20-%20The%20Northern%20Star%20Centre%20is%20now%20seeking%20strategic%20partners%20and%20investors.%20https://jdmpresidentiallibrary.org" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  WhatsApp
+                </a>
+              </Button>
+              <Button asChild className="bg-[#1877F2] text-white hover:bg-[#1877F2]/90">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://jdmpresidentiallibrary.org" target="_blank" rel="noopener noreferrer">
+                  <Share2 className="mr-2 h-4 w-4" />
+                  Facebook
+                </a>
+              </Button>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Quote band */}
-      <section className="bg-[var(--brand-text)] py-16 text-white">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <Quote
-            className="mx-auto mb-6 h-10 w-10 text-white/60"
-            aria-hidden="true"
-          />
-          <p className="text-2xl font-bold leading-snug sm:text-3xl">
-            The Northern Star shall rise. The constellation begins now.
-          </p>
+          <div className="mb-12">
+            <h2 className="mb-6 text-2xl font-bold text-[var(--brand-text)]">Platform-Optimised Cards</h2>
+            <p className="mb-8 text-[var(--brand-text-light)]">Ready-to-Use Sharing Kits</p>
+
+            <div className="space-y-6">
+              {platforms.map((platform) => (
+                <Card key={platform.name} className="border-0 shadow-md overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="grid lg:grid-cols-2">
+                      <div className="p-6">
+                        <div className="mb-4 flex items-center gap-3">
+                          <div className={`flex h-10 w-10 items-center justify-center rounded-full ${platform.color} text-white`}>
+                            <platform.icon className="h-5 w-5" />
+                          </div>
+                          <div>
+                            <h3 className="font-bold text-[var(--brand-text)]">{platform.name}</h3>
+                            <p className="text-xs text-[var(--brand-text-light)]">Optimised for {platform.size}</p>
+                          </div>
+                        </div>
+                        <div className="mb-4 rounded-lg bg-[var(--brand-accent)] p-4">
+                          <div className="mb-2 flex items-center gap-2">
+                            <div className="h-8 w-8 rounded bg-[var(--brand-primary)] flex items-center justify-center text-white text-xs font-bold">JDM</div>
+                            <div>
+                              <p className="text-sm font-semibold text-[var(--brand-text)]">JDM Presidential Library & Legacy Centre</p>
+                              <p className="text-xs text-[var(--brand-text-light)]">jdmpresidentiallibrary.org</p>
+                            </div>
+                          </div>
+                          <p className="text-sm text-[var(--brand-text)]">
+                            {platform.name === "LinkedIn" && "Invest in Africa's Most Significant Presidential Legacy Project"}
+                            {platform.name === "X / Twitter" && "The Northern Star Shall Rise"}
+                            {platform.name === "WhatsApp" && "Share With Your Network"}
+                            {platform.name === "Facebook" && "JDM Presidential Library & Legacy Centre"}
+                            {platform.name === "Instagram" && "Caption for Instagram Post"}
+                          </p>
+                        </div>
+                        <div className="mb-4">
+                          <p className="mb-2 text-xs font-semibold text-[var(--brand-text)]">Post Copy — {platform.name}</p>
+                          <div className="max-h-40 overflow-y-auto rounded bg-gray-50 p-3 text-xs whitespace-pre-wrap text-[var(--brand-text-light)]">
+                            {platform.copy}
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          <Button
+                            size="sm"
+                            className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]"
+                            onClick={() => navigator.clipboard.writeText(platform.copy)}
+                          >
+                            <Copy className="mr-2 h-3 w-3" />
+                            Copy for {platform.name}
+                          </Button>
+                          <Button asChild size="sm" variant="outline" className="border-[var(--brand-primary)] text-[var(--brand-primary)]">
+                            <a href={platform.shareUrl} target="_blank" rel="noopener noreferrer">
+                              Open {platform.name}
+                              <ArrowRight className="ml-2 h-3 w-3" />
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-br from-[var(--brand-accent)] to-[var(--brand-warm)] p-6 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="mx-auto mb-3 h-16 w-16 rounded-full bg-[var(--brand-primary)] flex items-center justify-center text-white font-bold">
+                            JDM
+                          </div>
+                          <p className="font-semibold text-[var(--brand-text)]">JDM Presidential Library & Legacy Centre</p>
+                          <p className="text-sm text-[var(--brand-text-light)]">The Northern Star Centre</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -307,20 +237,17 @@ export default function SharePage() {
       <section className="bg-[var(--brand-primary)] py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-            Keep the conversation going
+            The Northern Star Shall Rise
           </h2>
           <p className="mb-8 text-white/85">
-            Questions about the Centre, or want to introduce someone to the
-            vision? Reach us on {siteConfig.contact.phone} or at{" "}
-            {siteConfig.contact.email}.
+            Every share brings us closer to building this legacy for Africa and the world.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
-            >
-              <Link href="/contact">Contact Us</Link>
+            <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+              <Link href="/partner">
+                Partner With Us
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
             <Button
               asChild
@@ -328,7 +255,7 @@ export default function SharePage() {
               size="lg"
               className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
             >
-              <Link href="/donate">Support the Centre</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

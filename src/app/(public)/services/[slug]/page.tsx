@@ -5,11 +5,11 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Info, Phone } from "lucide-react";
-import { clinicServices, siteConfig, isPending, servicePricingNote } from "@/config/site";
+import { centreServices, siteConfig, isPending, servicePricingNote } from "@/config/site";
 
 /** Only configured services exist, so the tree is fully static at build time. */
 export function generateStaticParams() {
-  return clinicServices.map((service) => ({ slug: service.slug }));
+  return centreServices.map((service) => ({ slug: service.slug }));
 }
 
 export async function generateMetadata({
@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const service = clinicServices.find((item) => item.slug === slug);
+  const service = centreServices.find((item) => item.slug === slug);
 
   if (!service) {
     return { title: "Programme not found" };
@@ -91,11 +91,11 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const service = clinicServices.find((item) => item.slug === slug);
+  const service = centreServices.find((item) => item.slug === slug);
 
   if (!service) notFound();
 
-  const related = clinicServices.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const related = centreServices.filter((item) => item.slug !== service.slug).slice(0, 3);
   const overview = getProgrammeOverview(slug);
 
   return (

@@ -3,58 +3,72 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/page-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Megaphone, Newspaper } from "lucide-react";
+import { ArrowRight, Calendar, Tag } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Updates from the Centre",
-  description: `Institutional milestones in the founding decade of ${siteConfig.formalName} — from the 2021 vision to the Vision 2031 commitments.`,
+  title: "News",
+  description: "Latest news and updates from the JDM Presidential Library & Legacy Centre",
   alternates: { canonical: "/news" },
 };
 
-const updates = [
+const tags = ["#AfYEF", "#Ghana", "#JDM", "#MoU", "#Northern Ghana"];
+
+const posts = [
   {
-    label: "2021",
-    title: "The vision emerges",
-    summary:
-      "A bold idea was conceived: to transform presidential legacy into leadership capital for future generations, and to create a globally respected institution rooted in Northern Ghana and serving the African continent.",
+    id: 1,
+    category: "Design & Planning",
+    title: "JDM Presidential Library Concept Design Unveiled: A Three-Branch Institution for Ghana and Africa",
+    excerpt: "AfYEF has shared the architectural and institutional concept for the JDM Presidential Library & Legacy Centre, revealing a three-branch design that integrates a presidential archive, a civic education centre, and a cultural heritage museum under one roof.",
+    date: "Aug 20, 2026",
+    readTime: "3 min read",
+    author: "AfYEF Communications",
+    tags: ["#architecture", "#concept", "#design"],
+    image: "/Images/airo-assets/images/pages/home/architecture-campus.jpg",
   },
   {
-    label: "2021–2025",
-    title: "Foundations secured",
-    summary:
-      "Land acquisition completed. Institutional endorsements secured. Conceptual, architectural and programmatic frameworks refined, and strategic stakeholder engagement initiated. The foundation has been laid.",
+    id: 2,
+    category: "Development",
+    title: "Northern Ghana Investment Forum Highlights JDM Presidential Library as Anchor Development Project",
+    excerpt: "The JDM Presidential Library & Legacy Centre has been identified as a flagship anchor project for Northern Ghana's cultural and knowledge economy, drawing attention from investors, development partners, and civic leaders at a regional investment forum.",
+    date: "Aug 5, 2026",
+    readTime: "3 min read",
+    author: "AfYEF Communications",
+    tags: ["#Northern Ghana", "#investment", "#development"],
+    image: "/Images/airo-assets/images/pages/home/architecture-entrance.jpg",
   },
   {
-    label: "2026",
-    title: "Year of First Light: soft infrastructure launches",
-    summary:
-      "While physical construction is mobilised, the Centre activates its soft infrastructure — programmes, partnerships, fellowships, archives and digital platforms — establishing intellectual credibility and continental relevance from day one.",
+    id: 3,
+    category: "Partnership",
+    title: "Telecel Ghana Joins as Communications & Digital Solutions Partner for JDM Presidential Library",
+    excerpt: "Telecel Ghana has confirmed its partnership with AfYEF in support of the JDM Presidential Library & Legacy Centre, providing communications infrastructure and digital solutions expertise to the initiative.",
+    date: "Jul 20, 2026",
+    readTime: "2 min read",
+    author: "AfYEF Communications",
+    tags: ["#Telecel", "#Ghana", "#digital"],
+    image: "/Images/airo-assets/images/pages/home/architecture-interior.jpg",
   },
   {
-    label: "2026",
-    title: "Pan-African Fellowship Programme opens",
-    summary:
-      "A flagship cohort programme selecting exceptional young leaders from across Africa for immersive leadership development, mentorship and continental networking — the first cohort of the Northern Star generation.",
+    id: 4,
+    category: "Announcement",
+    title: "AfYEF Formally Launches the JDM Presidential Library & Legacy Centre Initiative",
+    excerpt: "The AfcFTA Young Entrepreneurs Federation has formally announced the establishment of the JDM Presidential Library & Legacy Centre, a landmark institution dedicated to preserving the legacy of President John Dramani Mahama and advancing civic education across Africa.",
+    date: "Jul 15, 2026",
+    readTime: "3 min read",
+    author: "AfYEF Communications",
+    tags: ["#AfYEF", "#launch", "#legacy"],
+    image: "/Images/airo-assets/images/pages/home/architecture-rotunda.jpg",
   },
   {
-    label: "Partnership",
-    title:
-      "Foundational anchor partnership with the University for Development Studies (UDS), Tamale",
-    summary:
-      "UDS anchors the Centre's university partnerships, with collaboration spanning the Leadership Laboratory, Indigenous Knowledge Systems Research, Fellowship Programmes, Student Leadership Development and Joint Publications.",
-  },
-  {
-    label: "Partnership",
-    title: "Call for strategic partnerships issued",
-    summary:
-      "The Centre invites partners from every sector and every continent — universities, foundations, development partners, corporations, philanthropists, traditional authorities, governments and diaspora communities — to help shape this enduring institution.",
-  },
-  {
-    label: "Vision 2031",
-    title: "The decade delivered",
-    summary:
-      "By 2031, the commitment is a fully operational, globally recognised institution connecting Mind (Tamale), Soul (Busunu) and Heart (Bole) — with global digital reach, a premier Annual Lecture and long-term financial sustainability.",
+    id: 5,
+    category: "Partnership",
+    title: "UDS Partners AfYEF to Advance Plans for John Dramani Mahama Presidential Library and Legacy Centre",
+    excerpt: "The University for Development Studies has signed a Memorandum of Understanding with the AfcFTA Young Entrepreneurs Federation to support the development of the proposed JDM Presidential Library and Legacy Centre.",
+    date: "Jul 6, 2026",
+    readTime: "2 min read",
+    author: "Osman Najaht, UDS Media",
+    tags: ["#UDS", "#AfYEF", "#MoU"],
+    image: "/Images/airo-assets/images/pages/home/architecture-campus.jpg",
   },
 ];
 
@@ -62,152 +76,72 @@ export default function NewsPage() {
   return (
     <>
       <PageHero
-        eyebrow="News & updates"
-        title="Updates from the Centre"
-        description="Institutional milestones from the founding decade — reported as they are, from the 2021 vision to the Vision 2031 commitments."
+        eyebrow="News"
+        title="Latest Updates"
+        description="News and announcements from the JDM Presidential Library & Legacy Centre"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "News" }]}
-        actions={
-          <Button
-            asChild
-            size="lg"
-            className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
-          >
-            <Link href="/partner">
-              Partner With Us
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        }
       />
 
-      {/* Milestone listing */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-              Founding decade · 2021–2031
-            </p>
-            <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-              The story so far
-            </h2>
-            <p className="text-[var(--brand-text-light)]">
-              These entries record institutional milestones set out in the
-              Centre&rsquo;s prospectus. They are milestones, not press articles
-              — no publication dates are claimed beyond the milestones
-              themselves.
-            </p>
+          <div className="mb-8 flex flex-wrap items-center gap-3">
+            <span className="text-sm font-medium text-[var(--brand-text)]">Filter by category</span>
+            <span className="text-sm text-[var(--brand-text-light)]">|</span>
+            <span className="text-sm text-[var(--brand-text-light)]">Tags:</span>
+            {tags.map((tag) => (
+              <span key={tag} className="rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs text-[var(--brand-primary)]">
+                {tag}
+              </span>
+            ))}
+            <span className="ml-auto text-sm text-[var(--brand-text-light)]">{posts.length} posts</span>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {updates.map((update) => (
-              <Card
-                key={`${update.label}-${update.title}`}
-                className="border-0 shadow-md"
-              >
-                <CardContent className="p-6">
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-[var(--brand-accent)] px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary)]">
-                      {update.label}
-                    </span>
-                    <Newspaper
-                      className="h-4 w-4 text-[var(--brand-text-light)]"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <h3 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
-                    {update.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-[var(--brand-text-light)]">
-                    {update.summary}
-                  </p>
-                </CardContent>
+          <div className="space-y-6">
+            {posts.map((post) => (
+              <Card key={post.id} className="border-0 shadow-sm transition-shadow hover:shadow-md overflow-hidden">
+                <div className="md:flex">
+                  {(post as any).image && (
+                    <div className="md:w-80 h-48 md:h-auto flex-shrink-0">
+                      <img
+                        src={(post as any).image}
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <CardContent className="p-6 flex-1">
+                    <div className="mb-3">
+                      <span className="rounded bg-[var(--brand-primary)]/10 px-2 py-1 text-xs font-semibold text-[var(--brand-primary)]">
+                        {post.category}
+                      </span>
+                    </div>
+                    <h2 className="mb-3 text-xl font-bold text-[var(--brand-text)] hover:text-[var(--brand-primary)] transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="mb-4 leading-relaxed text-[var(--brand-text-light)]">
+                      {post.excerpt}
+                    </p>
+                    <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-[var(--brand-text-light)]">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        <span>{post.date}</span>
+                      </div>
+                      <span>•</span>
+                      <span>{post.readTime}</span>
+                      <span>•</span>
+                      <span>{post.author}</span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {post.tags.map((tag) => (
+                        <span key={tag} className="text-xs text-[var(--brand-primary)]">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </div>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Media inquiries */}
-      <section className="bg-[var(--brand-accent)]/40 py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-                Media inquiries
-              </p>
-              <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-                Writing or reporting on the Centre?
-              </h2>
-              <p className="leading-relaxed text-[var(--brand-text-light)]">
-                We welcome media inquiries, research access requests and
-                partnership proposals. Get in touch and we will respond with
-                accurate, on-record information about the institution, its
-                programmes and its founding decade.
-              </p>
-              <div className="mt-6">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary)]/90"
-                >
-                  <Link href="/contact">
-                    Contact the Centre
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            <div className="grid gap-4">
-              <Card className="border-0 bg-white shadow-sm">
-                <CardContent className="flex items-start gap-4 p-6">
-                  <Megaphone
-                    className="mt-0.5 h-6 w-6 shrink-0 text-[var(--brand-primary)]"
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <h3 className="font-semibold text-[var(--brand-text)]">
-                      On-record enquiries
-                    </h3>
-                    <p className="mt-1 text-sm text-[var(--brand-text-light)]">
-                      Media inquiries are welcomed at{" "}
-                      <a
-                        href={`mailto:${siteConfig.contact.email}`}
-                        className="font-semibold text-[var(--brand-primary)] hover:underline"
-                      >
-                        {siteConfig.contact.email}
-                      </a>{" "}
-                      or{" "}
-                      <a
-                        href={siteConfig.contact.phoneHref}
-                        className="font-semibold text-[var(--brand-primary)] hover:underline"
-                      >
-                        {siteConfig.contact.phone}
-                      </a>
-                      .
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="border-0 bg-white shadow-sm">
-                <CardContent className="flex items-start gap-4 p-6">
-                  <Newspaper
-                    className="mt-0.5 h-6 w-6 shrink-0 text-[var(--brand-primary)]"
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <h3 className="font-semibold text-[var(--brand-text)]">
-                      Honest by design
-                    </h3>
-                    <p className="mt-1 text-sm text-[var(--brand-text-light)]">
-                      Where a date, figure or arrangement has not yet been
-                      confirmed by the Centre, we say so plainly rather than
-                      publish a claim we cannot stand behind.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
@@ -216,19 +150,17 @@ export default function NewsPage() {
       <section className="bg-[var(--brand-primary)] py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-            Be part of what comes next
+            Stay Connected
           </h2>
           <p className="mb-8 text-white/85">
-            The light begins in 2026. Partner with us, or start a conversation
-            on {siteConfig.contact.phone}.
+            Get the latest news and updates about the JDM Presidential Library & Legacy Centre.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
-            >
-              <Link href="/partner">Partner With Us</Link>
+            <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+              <Link href="/contact">
+                Contact Us
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
             <Button
               asChild
@@ -236,7 +168,7 @@ export default function NewsPage() {
               size="lg"
               className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
             >
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/partner">Partner With Us</Link>
             </Button>
           </div>
         </div>

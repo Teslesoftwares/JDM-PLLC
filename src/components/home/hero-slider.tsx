@@ -160,7 +160,7 @@ export function HeroSlider() {
                   />
                   {/* Scrim keeps the copy legible over any moving background. */}
                   <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-primary)]/25 via-[var(--brand-primary)]/35 to-[var(--brand-primary)]/60 sm:bg-gradient-to-r sm:from-[var(--brand-primary)]/80 sm:via-[var(--brand-primary)]/50 sm:to-[var(--brand-primary)]/10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/40 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/65 via-[var(--brand-primary)]/20 to-transparent" />
                 </>
               ) : slide.image ? (
                 <>
@@ -174,7 +174,7 @@ export function HeroSlider() {
                   />
                   {/* Scrim keeps the copy legible over any photograph. */}
                   <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-primary)]/25 via-[var(--brand-primary)]/35 to-[var(--brand-primary)]/60 sm:bg-gradient-to-r sm:from-[var(--brand-primary)]/80 sm:via-[var(--brand-primary)]/50 sm:to-[var(--brand-primary)]/10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/40 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/65 via-[var(--brand-primary)]/20 to-transparent" />
                 </>
               ) : (
                 <BrandMotif />
@@ -231,6 +231,18 @@ export function HeroSlider() {
                   >
                     <Link href={slide.secondary.href}>{slide.secondary.label}</Link>
                   </Button>
+                  {(slide as any).tertiary ? (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="w-fit min-w-[14rem] max-w-full justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:min-w-0 sm:px-8"
+                    >
+                      <Link href={(slide as any).tertiary.href} target={(slide as any).tertiary.external ? "_blank" : undefined} rel={(slide as any).tertiary.external ? "noopener noreferrer" : undefined}>
+                        {(slide as any).tertiary.label}
+                      </Link>
+                    </Button>
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -294,15 +306,15 @@ export function HeroSlider() {
         </p>
       </div>
 
-      {/* Static sub-bar — patient sign-in stays put while the slides rotate. */}
+      {/* Static sub-bar — partnership stays put while the slides rotate. */}
       <div className="relative z-10 shrink-0 border-t border-white/10 bg-[var(--brand-primary)]">
         <div className="mx-auto max-w-7xl px-4 py-4">
           <p className="text-sm text-white/75">
-            Already a patient?{" "}
-            <Link href="/login" className="underline underline-offset-4 hover:text-white">
-              Sign in to your portal
+            Interested in partnering with us?{" "}
+            <Link href="/partner" className="underline underline-offset-4 hover:text-white">
+              Partner with the Centre
             </Link>{" "}
-            to view results and appointments.
+            to help shape this enduring institution.
           </p>
         </div>
       </div>

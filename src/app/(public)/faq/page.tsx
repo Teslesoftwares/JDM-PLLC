@@ -186,7 +186,6 @@ export default function FAQPage() {
         <div className="mx-auto max-w-7xl px-4">
           <script
             type="application/ld+json"
-            // Static, developer-authored JSON-LD built from the FAQ content above.
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
 

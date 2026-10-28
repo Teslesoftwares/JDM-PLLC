@@ -143,8 +143,7 @@ export default function LoginPageClient() {
               </form>
 
               <div className="mt-4 text-center text-sm text-[var(--brand-text-light)] [@media(max-height:520px)]:mt-2">
-                New to Menstrocare? Ask at reception &mdash; patient accounts are
-                created for you when you register at the clinic.
+                Access restricted to authorized personnel only.
               </div>
             </CardContent>
           </Card>
@@ -156,20 +155,19 @@ export default function LoginPageClient() {
         className="relative isolate hidden overflow-hidden bg-[var(--brand-primary)] bg-cover bg-center lg:flex lg:flex-1 lg:items-center lg:justify-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)), linear-gradient(rgba(45, 133, 0, 0.22), rgba(31, 107, 0, 0.22)), url('/images/hero/newborn-baby-sleeping.jpg')",
+            "linear-gradient(rgba(107, 52, 16, 0.65), rgba(107, 52, 16, 0.65)), url('/Images/airo-assets/images/pages/home/architecture-rotunda.jpg')",
         }}
       >
         <div className="relative z-10 max-w-md px-8 text-center text-white">
           <Heart className="mx-auto mb-6 h-16 w-16" aria-hidden="true" />
           <h2 className="mb-4 text-3xl font-bold">
-            Your care, in one place
+            JDM Presidential Library & Legacy Centre
           </h2>
-          <p className="text-lg text-white/80">
-            {siteConfig.tagline}. Sign in to see your appointments, laboratory results,
-            prescriptions and invoices, and to manage your {siteConfig.shortName} account.
+          <p className="text-lg text-white/90">
+            The Northern Star Centre — Preserving Legacy. Building Futures.
           </p>
-          <p className="mt-6 text-sm text-white/70">
-            Need an appointment? Call {siteConfig.contact.phone} or book online.
+          <p className="mt-6 text-sm text-white/80">
+            Access to staff dashboard for news and campaign management.
           </p>
         </div>
       </div>
