@@ -8,7 +8,8 @@ import { siteConfig } from "@/config/site";
  * must never be indexed. Served from the public origin.
  */
 export default function robots(): MetadataRoute.Robots {
-  const base = siteConfig.url.replace(/\/$/, "");
+  const base = (process.env.NEXT_PUBLIC_APP_URL || siteConfig.url).replace(/\/$/, "");
+  const sitemap = process.env.SITEMAP_URL?.trim() || `${base}/sitemap.xml`;
 
   return {
     rules: [
@@ -25,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: `${base}/sitemap.xml`,
+    sitemap,
     host: base,
   };
 }

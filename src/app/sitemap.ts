@@ -12,7 +12,7 @@ import { articles } from "@/config/articles";
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const base = siteConfig.url.replace(/\/$/, "");
+  const base = (process.env.NEXT_PUBLIC_APP_URL || siteConfig.url).replace(/\/$/, "");
 
   const staticPaths: Array<{ path: string; changeFrequency: "daily" | "weekly" | "monthly"; priority: number }> = [
     { path: "/", changeFrequency: "weekly", priority: 1 },
