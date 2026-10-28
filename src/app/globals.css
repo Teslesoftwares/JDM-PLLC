@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.222 0 89.9);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.222 0 89.9);
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.222 0 89.9);
+  /* Menstrocare primary: warm brown #7A4B28, cream accents, white surfaces */
+  --color-primary: oklch(0.460 0.081 55.7);
+  --color-primary-foreground: oklch(0.99 0 0);
+  --color-secondary: oklch(0.954 0.014 78.3);
+  --color-secondary-foreground: oklch(0.460 0.081 55.7);
+  --color-muted: oklch(0.965 0.010 81.8);
+  --color-muted-foreground: oklch(0.511 0 89.9);
+  --color-accent: oklch(0.954 0.014 78.3);
+  --color-accent-foreground: oklch(0.460 0.081 55.7);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: oklch(0.99 0 0);
+  --color-border: oklch(0.943 0 89.9);
+  --color-input: oklch(0.943 0 89.9);
+  --color-ring: oklch(0.460 0.081 55.7);
+  /* Chart ramp: browns first, clay last, so Recharts series stay in-palette */
+  --color-chart-1: oklch(0.460 0.081 55.7);
+  --color-chart-2: oklch(0.518 0.088 55.7);
+  --color-chart-3: oklch(0.687 0.097 55.3);
+  --color-chart-4: oklch(0.562 0.130 36.7);
+  --color-chart-5: oklch(0.375 0.069 58.2);
+  --color-sidebar: oklch(0.970 0 89.9);
+  --color-sidebar-foreground: oklch(0.222 0 89.9);
+  --color-sidebar-primary: oklch(0.460 0.081 55.7);
+  --color-sidebar-primary-foreground: oklch(0.99 0 0);
+  --color-sidebar-accent: oklch(0.954 0.014 78.3);
+  --color-sidebar-accent-foreground: oklch(0.460 0.081 55.7);
+  --color-sidebar-border: oklch(0.943 0 89.9);
+  --color-sidebar-ring: oklch(0.460 0.081 55.7);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Menstrocare brand tokens
+   ─────────────────────────────────────────────────────────────
+   Primary   #7A4B28 warm brown — deepened enough to clear 4.5:1 for white
+             button text, the anchor of the whole palette
+   Secondary #B4553A clay terracotta — accent only: highlights, never primary actions
+   Surface   #FFFFFF white, Accent is a soft cream tint, Warm a pale sand
+
+   Change the hex values here to re-skin the whole product; every
+   component consumes these as `var(--brand-*)`, never as a literal.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --brand-primary: #7a4b28;
+  --brand-primary-light: #8f5a33;
+  --brand-primary-dark: #5c3718;
+  --brand-secondary: #b4553a;
+  --brand-secondary-light: #c46a45;
+  /* Action colours: the support (partner) and giving (donate) calls to action. */
+  --brand-yellow: #f5c518;
+  --brand-yellow-dark: #d9a800;
+  --brand-on-yellow: #3a2a00;
+  --brand-red: #c33a2c;
+  --brand-red-dark: #a12e22;
+  --brand-accent: #f5efe6;
+  --brand-warm: #f3e9df;
+  --brand-text: #1c1c1c;
+  --brand-text-light: #6b6b6b;
+}
+
+.dark {
+  --brand-primary: #c98a5e;
+  --brand-primary-light: #e0b48c;
+  --brand-primary-dark: #a8703f;
+  --brand-secondary: #d97a56;
+  --brand-secondary-light: #e69a7a;
+  --brand-yellow: #f5c518;
+  --brand-yellow-dark: #d9a800;
+  --brand-on-yellow: #3a2a00;
+  --brand-red: #cf4437;
+  --brand-red-dark: #ac3527;
+  --brand-accent: #3a2a1d;
+  --brand-warm: #2b1c18;
+  --brand-text: #ffffff;
+  --brand-text-light: #d8d8d8;
+}
+
+/* Opt a surface out of dark mode, e.g. the mobile menu which stays light */
+.on-light {
+  --brand-primary: #7a4b28;
+  --brand-primary-light: #8f5a33;
+  --brand-primary-dark: #5c3718;
+  --brand-secondary: #b4553a;
+  --brand-secondary-light: #c46a45;
+  --brand-yellow: #f5c518;
+  --brand-yellow-dark: #d9a800;
+  --brand-on-yellow: #3a2a00;
+  --brand-red: #c33a2c;
+  --brand-red-dark: #a12e22;
+  --brand-accent: #f5efe6;
+  --brand-warm: #f3e9df;
+  --brand-text: #1c1c1c;
+  --brand-text-light: #6b6b6b;
+}
+
+/* Shared focus treatment: visible on every interactive element. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-image-drift {
+  from {
+    transform: scale(1.075);
+  }
+  to {
+    transform: scale(1.015);
+  }
+}
+
+@keyframes hero-copy-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.motion-page-enter {
+  animation: page-enter 650ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+.motion-hero-image {
+  animation: hero-image-drift 18s cubic-bezier(0.2, 0.65, 0.25, 1) both;
+  will-change: transform;
+}
+
+.motion-hero-copy > * {
+  animation: hero-copy-reveal 700ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+.motion-hero-copy > :nth-child(1) { animation-delay: 100ms; }
+.motion-hero-copy > :nth-child(2) { animation-delay: 190ms; }
+.motion-hero-copy > :nth-child(3) { animation-delay: 280ms; }
+.motion-hero-copy > :nth-child(4) { animation-delay: 370ms; }
+
+.cinematic-page-hero::before {
+  animation: hero-image-drift 24s cubic-bezier(0.2, 0.65, 0.25, 1) both;
+  background-image: inherit;
+  background-position: center;
+  background-size: cover;
+  content: "";
+  inset: -4%;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .motion-page-enter,
+  .motion-hero-image,
+  .motion-hero-copy > *,
+  .cinematic-page-hero::before {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
