@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { FloatingActions } from "@/components/layout/floating-actions";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { HeroSlider } from "@/components/home/hero-slider";
+import { EndorsementSlider } from "@/components/home/endorsement-slider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -576,6 +577,8 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </div>
+
+            <EndorsementSlider />
           </div>
         </section>
 

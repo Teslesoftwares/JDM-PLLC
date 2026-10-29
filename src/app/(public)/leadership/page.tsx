@@ -68,19 +68,19 @@ const members = [
   {
     name: "Mr. Ronnie Dunn",
     title: "Global Ambassador for International Outreach & Strategic Engagement — United Kingdom & Europe",
-    image: "/images/airo-assets/images/people/committee/member-003.png",
+    image: "/images/airo-assets/images/people/committee/ops-007.jpg",
     bio: "Ronnie \"Big Sbuda\" Dunn is a South African-American artist, entrepreneur, cultural ambassador, philanthropist and U.S. military veteran. As Global Ambassador for AUUDA-Africa and Founder of CIGAR Music USA, he advances diaspora reconnection, African heritage, cultural diplomacy and international partnerships. A delegate in the G20 South Africa Presidency 2025 under the Civil Society C20: Working Group 6: Cultural Diversity Recognition and Embracement representing the African Union's Sixth Region, Ronnie transforms ancestral reconnection into enduring cultural and economic relationships between Africa and its global diaspora.",
   },
   {
     name: "John Hardy-Bey",
     title: "Member — Global Steering Committee",
-    image: "/images/airo-assets/images/people/committee/ops-001.png",
+    image: "/images/airo-assets/images/people/committee/member-003.png",
     bio: "Mr. John Hardy-Bey is a distinguished member of the JDM-PLLC Global Steering Committee, contributing his expertise in international relations and diaspora engagement to the Centre's mission. With a strong background in cross-cultural diplomacy and community mobilisation, he serves as a vital bridge between the Centre and its global network of supporters, partners, and advocates.",
   },
   {
     name: "Ms. Stacey Reddy",
     title: "Global Ambassador — South Africa",
-    image: "/images/airo-assets/images/people/committee/ops-002.png",
+    image: "/images/airo-assets/images/people/committee/ops-008.png",
     bio: "Stacey Reddy is a South African legal professional, entrepreneur and property practitioner with an LLB from the University of South Africa. Her experience spans legal administration, property management, business development and stakeholder engagement. As a JDM-PLLC Global Ambassador, she draws on her professional expertise and international perspective to strengthen relationships between South Africa, the wider African continent, diaspora communities and global partners.",
   },
 ];
@@ -89,37 +89,37 @@ const opsLeads = [
   {
     name: "Mr. Diakite Abdoulaye Aziz",
     title: "International Operational Lead — Côte d'Ivoire & Francophone West Africa",
-    image: "/images/airo-assets/images/people/committee/ops-003.png",
+    image: "/images/airo-assets/images/people/committee/ops-001.png",
     bio: "Mr. Diakite Abdoulaye Aziz leads the Centre's operational engagement across Côte d'Ivoire and Francophone West Africa. A seasoned professional with deep regional networks, he coordinates outreach, partnership development, and programme delivery across French-speaking West African nations, ensuring the Centre's vision resonates across linguistic and cultural boundaries throughout the sub-region.",
   },
   {
     name: "Ms. Mpho Machaka",
     title: "International Operational Lead — South Africa & Southern Africa",
-    image: "/images/airo-assets/images/people/committee/ops-004.jpg",
+    image: "/images/airo-assets/images/people/committee/ops-002.png",
     bio: "Ms. Mpho Machaka (MBA, PMP, Adv Dip–Risk) is the Founder and CEO of IETSA, its innovation and commercial arm IETSATech, and Baruwileng Consulting Services (Pty) Ltd. She serves on several boards and continental committees, including the AfYEF Board, and is Continental Director for Women in Trade. Her work advances digital transformation, enterprise development and inclusive economic participation across Africa.",
   },
   {
     name: "Dr. Babajide Ojuola",
     title: "International Operational Lead — Nigeria & Anglophone West Africa",
-    image: "/images/airo-assets/images/people/committee/ops-005.jpg",
+    image: "/images/airo-assets/images/people/committee/ops-003.png",
     bio: "Dr. Babajide Ojuola (PhD, FNSE, FIOGRHS, FIMC, COREN) is an accomplished energy and technology executive with nearly two decades of experience delivering major engineering and infrastructure projects across Africa. He specialises in strategic transformation, project management, knowledge systems and human-centred artificial intelligence. A Forbes Technology Council member, he serves as a JDM-PLLC Global Steering Committee member and International Operational Lead for Nigeria and Anglophone West Africa.",
   },
   {
     name: "Ms. Patience Mafu",
     title: "International Operational Lead — United Kingdom & Europe",
-    image: "/images/airo-assets/images/people/committee/ops-006.png",
+    image: "/images/airo-assets/images/people/committee/ops-004.jpg",
     bio: "Patience Mafu is a UK-based international development practitioner, diaspora engagement advocate and cultural diplomacy leader. She is the Founder of AUUDA-Africa and serves as JDM-PLLC Global Champion and International Operational Lead for the United Kingdom and Europe. Drawing on her experience in development, accounting and the G20 South Africa Presidency 2025 Civil20 process, she builds strategic partnerships that connect African institutions, cultural leadership and diaspora communities worldwide.",
   },
   {
     name: "Dr. Monohn Prudhomme",
     title: "International Operational Lead — United States of America & North America",
-    image: "/images/airo-assets/images/people/committee/ops-007.jpg",
+    image: "/images/airo-assets/images/people/committee/ops-005.jpg",
     bio: "Dr. Monohn Prudhomme leads the Centre's operational presence across the United States and North America. Drawing on his academic credentials and extensive professional network in the diaspora community, he champions the Centre's fundraising, advocacy, and partnership initiatives across North America, connecting the Ghanaian diaspora and international stakeholders to the legacy and vision of President John Dramani Mahama.",
   },
   {
     name: "Ms. Corelli Lyons",
     title: "International Operational Lead — Trinidad & Tobago & the Caribbean",
-    image: "/images/airo-assets/images/people/committee/ops-008.png",
+    image: "/images/airo-assets/images/people/committee/ops-006.png",
     bio: "Ms. Corelli Lyons is a Tobago-born multi-entrepreneur, philanthropist and cultural-trade pioneer with over 35 years of banking experience. She is a certified talent coach, founder of a non-profit organisation and Chief Executive of several companies. Her work advances women entrepreneurs, develops young leaders and strengthens trade and cultural connections between Africa and the Caribbean.",
   },
 ];

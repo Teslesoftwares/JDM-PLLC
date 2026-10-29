@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -22,13 +21,13 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 /**
  * Floating actions for the public site: a WhatsApp bubble that opens a short
- * chat panel and hands off to `wa.me`, plus the Google review badge from `sm` up.
+ * chat panel and hands off to `wa.me`.
  *
  * Everything is read from `@/config/site`, so a new number or opener is a config
  * change.
  */
 export function FloatingActions() {
-  const { whatsapp, googleReview } = siteConfig;
+  const { whatsapp } = siteConfig;
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState<string>(whatsapp.message);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,7 +56,7 @@ export function FloatingActions() {
     };
   }, [open]);
 
-  if (!whatsapp.number && !googleReview.url) return null;
+  if (!whatsapp.number) return null;
 
   return (
     <div
@@ -129,23 +128,6 @@ export function FloatingActions() {
             </p>
           </div>
         </div>
-      ) : null}
-
-      {googleReview.url ? (
-        <a
-          href={googleReview.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl ring-1 ring-black/10 transition-transform active:scale-95 sm:flex"
-        >
-          <Image
-            src="/google-review-badge.png"
-            alt={googleReview.label}
-            width={40}
-            height={40}
-            className="h-10 w-10"
-          />
-        </a>
       ) : null}
 
       {whatsapp.number ? (
