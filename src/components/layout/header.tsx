@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, Phone, MapPin, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/logo";
@@ -21,12 +22,26 @@ export function Header() {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [portalReady, setPortalReady] = useState(false);
   const isHomePage = pathname === "/";
 
   const closeMobileMenu = useCallback(() => {
     setMobileMenuOpen(false);
     setOpenSubmenu(null);
   }, []);
+
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const onChange = () => {
+      if (desktop.matches) closeMobileMenu();
+    };
+    desktop.addEventListener("change", onChange);
+    return () => desktop.removeEventListener("change", onChange);
+  }, [closeMobileMenu]);
 
   useEffect(() => {
     if (!isHomePage) {
@@ -231,22 +246,32 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile sidebar overlay */}
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/50 lg:hidden"
-          onClick={closeMobileMenu}
-        />
-      )}
+      {portalReady
+        ? createPortal(
+            <>
+              {/* Mobile sidebar overlay */}
+              {mobileMenuOpen ? (
+                <div
+                  className="fixed inset-0 z-[70] bg-black/50 backdrop-blur-[1px] lg:hidden"
+                  onClick={closeMobileMenu}
+                  aria-hidden="true"
+                />
+              ) : null}
 
-      {/* Mobile sidebar */}
-      <div
-        id="mobile-navigation"
-        className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-72 max-w-[85vw] flex-col overflow-y-auto overscroll-contain bg-white shadow-xl transition-transform duration-300 on-light lg:hidden",
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        )}
-      >
+              {/* Mobile sidebar: portalled to <body> so the header's
+                  backdrop-filter can't clip it to the header's height. */}
+              <div
+                id="mobile-navigation"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile navigation"
+                aria-hidden={!mobileMenuOpen}
+                inert={!mobileMenuOpen}
+                className={cn(
+                  "on-light fixed inset-y-0 left-0 z-[80] flex w-72 max-w-[85vw] flex-col overflow-y-auto overscroll-contain bg-white shadow-2xl transition-transform duration-300 lg:hidden",
+                  mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+                )}
+              >
         <div className="flex items-center justify-between border-b px-4 py-4">
           <Logo size="sm" />
           <Button
@@ -377,7 +402,11 @@ export function Header() {
             {siteConfig.contact.phone}
           </a>
         </nav>
-      </div>
+              </div>
+            </>,
+            document.body,
+          )
+        : null}
     </header>
   );
 }

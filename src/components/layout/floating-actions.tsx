@@ -22,7 +22,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 /**
  * Floating actions for the public site: a WhatsApp bubble that opens a short
- * chat panel and hands off to `wa.me`, plus the Google review badge on mobile.
+ * chat panel and hands off to `wa.me`, plus the Google review badge from `sm` up.
  *
  * Everything is read from `@/config/site`, so a new number or opener is a config
  * change.
@@ -136,7 +136,7 @@ export function FloatingActions() {
           href={googleReview.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl ring-1 ring-black/10 transition-transform active:scale-95 sm:hidden"
+          className="hidden h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl ring-1 ring-black/10 transition-transform active:scale-95 sm:flex"
         >
           <Image
             src="/google-review-badge.png"
