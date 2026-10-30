@@ -271,7 +271,7 @@ export const siteConfig = {
       body: "JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole. Each location may contribute to the Centre's historical, educational, cultural and community development objectives.",
       mobileBody:
         "JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole.",
-      image: "/hero/ghana-route-map-golden-horizon.png",
+      image: "/images/hero/ghana-neon-route-map-at-sunset.png",
       duration: 12000,
       videoLoop: false,
       primary: { label: "Branches & Locations", href: "/branches" },
