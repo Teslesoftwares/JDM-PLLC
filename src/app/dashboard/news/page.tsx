@@ -113,7 +113,7 @@ export default function NewsManagementPage() {
   return (
     <div>
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className="text-2xl font-semibold">News Management</h2>
+        <h2 className="text-2xl font-semibold">News and Project Updates</h2>
         <button
           onClick={() => {
             if (showForm && editingId) {
@@ -126,13 +126,13 @@ export default function NewsManagementPage() {
           }}
           className="rounded bg-blue-600 px-4 py-2 text-center text-white hover:bg-blue-700"
         >
-          {showForm && !editingId ? "Cancel" : editingId ? "Cancel Edit" : "Add News Article"}
+          {showForm && !editingId ? "Cancel" : editingId ? "Cancel Edit" : "Add News Update"}
         </button>
       </div>
 
       {showForm && (
         <div className="mb-6 rounded-lg border bg-white p-4 shadow-sm sm:p-6">
-          <h3 className="mb-4 text-lg font-medium">{editingId ? "Edit Article" : "Create New Article"}</h3>
+          <h3 className="mb-4 text-lg font-medium">{editingId ? "Edit Update" : "Create New Update"}</h3>
           <form onSubmit={(e) => handleSubmit(e, false)} className="space-y-4">
             <div>
               <label className="mb-1 block text-sm font-medium">Title</label>
@@ -145,7 +145,7 @@ export default function NewsManagementPage() {
               />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium">Excerpt</label>
+              <label className="mb-1 block text-sm font-medium">Summary</label>
               <textarea
                 value={formData.excerpt}
                 onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
@@ -182,7 +182,7 @@ export default function NewsManagementPage() {
 
       <div className="rounded-lg border bg-white shadow-sm">
         <div className="border-b px-4 py-4 sm:px-6">
-          <h3 className="text-lg font-medium">All Articles</h3>
+          <h3 className="text-lg font-medium">News and Updates</h3>
         </div>
         {loading ? (
           <p className="p-6">Loading...</p>

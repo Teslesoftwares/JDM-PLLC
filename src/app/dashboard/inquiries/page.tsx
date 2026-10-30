@@ -42,7 +42,7 @@ export default function InquiriesPage() {
   return (
     <div>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold sm:text-2xl">Contact Inquiries</h2>
+        <h2 className="text-xl font-semibold sm:text-2xl">Contact Enquiries</h2>
         <span className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700">
           {inquiries.filter((i) => i.status === "NEW").length} New
         </span>
