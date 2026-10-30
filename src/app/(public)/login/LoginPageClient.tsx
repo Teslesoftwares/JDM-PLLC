@@ -164,7 +164,7 @@ export default function LoginPageClient() {
             JDM Presidential Library & Legacy Centre
           </h2>
           <p className="text-lg text-white/90">
-            The Northern Star Centre — Preserving Legacy. Building Futures.
+            Preserving Legacy. Empowering the Youth.
           </p>
           <p className="mt-6 text-sm text-white/80">
             Access to staff dashboard for news and campaign management.

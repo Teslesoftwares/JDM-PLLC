@@ -41,16 +41,34 @@ export function HeroSlider() {
   const slides = siteConfig.heroSlides;
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [engaged, setEngaged] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
+
+  const rotating = engaged && !paused;
 
   const goTo = useCallback(
     (index: number) => setActive((index + slides.length) % slides.length),
     [slides.length],
   );
 
+  // Rotation starts only after the visitor engages with the page. This keeps
+  // the first hero image as the LCP candidate instead of a later slide, and
+  // respects visitors who never asked the carousel to move.
   useEffect(() => {
-    if (paused || slides.length < 2) return;
+    const engage = () => setEngaged(true);
+    window.addEventListener("pointerdown", engage, { once: true });
+    window.addEventListener("touchstart", engage, { once: true, passive: true });
+    window.addEventListener("keydown", engage, { once: true });
+    return () => {
+      window.removeEventListener("pointerdown", engage);
+      window.removeEventListener("touchstart", engage);
+      window.removeEventListener("keydown", engage);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!rotating || slides.length < 2) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const currentDuration = slides[active]?.duration ?? AUTOPLAY_MS;
@@ -59,7 +77,7 @@ export function HeroSlider() {
       currentDuration,
     );
     return () => clearInterval(timer);
-  }, [active, paused, slides]);
+  }, [active, rotating, slides]);
 
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
@@ -75,7 +93,7 @@ export function HeroSlider() {
   }, [active, slides.length]);
 
   // Rotating slides must not steal focus or announce themselves mid-read.
-  const live = paused ? "polite" : "off";
+  const live = rotating ? "off" : "polite";
 
   return (
     <section
@@ -128,7 +146,7 @@ export function HeroSlider() {
                     ref={(video) => {
                       videoRefs.current[index] = video;
                     }}
-                    src={slide.video}
+                    src={isActive ? slide.video : undefined}
                     className={cn(
                       "absolute inset-0 h-full w-full object-cover",
                       isActive && "motion-hero-image",
@@ -137,7 +155,7 @@ export function HeroSlider() {
                     autoPlay={isActive}
                     loop={slide.videoLoop ?? false}
                     playsInline
-                    preload="auto"
+                    preload={isActive ? "auto" : "none"}
                     controls={false}
                     muted={!shouldPlayAudio}
                     onCanPlay={(event) => {
@@ -169,6 +187,7 @@ export function HeroSlider() {
                     alt=""
                     fill
                     preload={index === 0}
+                    fetchPriority={index === 0 ? "high" : "auto"}
                     sizes="100vw"
                     className={cn("object-cover", isActive && "motion-hero-image")}
                   />
@@ -217,7 +236,7 @@ export function HeroSlider() {
                       size="lg"
                       className="w-full max-w-sm justify-center px-4 text-center text-sm bg-white text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
                     >
-                      <Link href={slide.primary.href}>
+                      <Link prefetch={false} href={slide.primary.href}>
                         {slide.primary.label}
                         <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                       </Link>
@@ -229,17 +248,22 @@ export function HeroSlider() {
                     size="lg"
                     className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
                   >
-                    <Link href={slide.secondary.href}>{slide.secondary.label}</Link>
+                    <Link prefetch={false} href={slide.secondary.href}>{slide.secondary.label}</Link>
                   </Button>
-                  {(slide as any).tertiary ? (
+                  {"tertiary" in slide && slide.tertiary ? (
                     <Button
                       asChild
                       variant="outline"
                       size="lg"
                       className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
                     >
-                      <Link href={(slide as any).tertiary.href} target={(slide as any).tertiary.external ? "_blank" : undefined} rel={(slide as any).tertiary.external ? "noopener noreferrer" : undefined}>
-                        {(slide as any).tertiary.label}
+                      <Link
+                        prefetch={false}
+                        href={slide.tertiary.href}
+                        target={slide.tertiary.external ? "_blank" : undefined}
+                        rel={slide.tertiary.external ? "noopener noreferrer" : undefined}
+                      >
+                        {slide.tertiary.label}
                       </Link>
                     </Button>
                   ) : null}
@@ -260,25 +284,36 @@ export function HeroSlider() {
                   aria-current={index === active}
                   aria-label={`Show slide ${index + 1}: ${slide.title}`}
                   onClick={() => goTo(index)}
-                  className={cn(
-                    "h-2.5 rounded-full bg-white/40 transition-all duration-300 hover:bg-white/70",
-                    index === active ? "w-8 bg-white" : "w-2.5",
-                  )}
-                />
+                  className="group flex h-6 w-6 items-center justify-center"
+                >
+                  <span
+                    className={cn(
+                      "block h-2.5 rounded-full bg-white/40 transition-all duration-300 group-hover:bg-white/70",
+                      index === active ? "w-6 bg-white" : "w-2.5",
+                    )}
+                  />
+                </button>
               ))}
             </div>
 
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => setPaused((value) => !value)}
-                aria-label={paused ? "Resume slide rotation" : "Pause slide rotation"}
+                onClick={() => {
+                  if (rotating) {
+                    setPaused(true);
+                  } else {
+                    setEngaged(true);
+                    setPaused(false);
+                  }
+                }}
+                aria-label={rotating ? "Pause slide rotation" : "Start slide rotation"}
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition-colors hover:bg-white/25"
               >
-                {paused ? (
-                  <Play className="h-4 w-4" aria-hidden="true" />
-                ) : (
+                {rotating ? (
                   <Pause className="h-4 w-4" aria-hidden="true" />
+                ) : (
+                  <Play className="h-4 w-4" aria-hidden="true" />
                 )}
               </button>
               <button
@@ -306,15 +341,12 @@ export function HeroSlider() {
         </p>
       </div>
 
-      {/* Static sub-bar — partnership stays put while the slides rotate. */}
+      {/* Static project statement remains visible while the slides rotate. */}
       <div className="relative z-10 shrink-0 border-t border-white/10 bg-[var(--brand-primary)]">
         <div className="mx-auto max-w-7xl px-4 py-4">
           <p className="text-sm text-white/75">
-            Interested in partnering with us?{" "}
-            <Link href="/partner" className="underline underline-offset-4 hover:text-white">
-              Partner with the Centre
-            </Link>{" "}
-            to help shape this enduring institution.
+            Document the legacy, preserve and protect the historical record, and
+            inspire the youth to learn from the past and shape the future.
           </p>
         </div>
       </div>

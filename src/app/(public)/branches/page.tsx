@@ -5,118 +5,102 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
+  BookOpen,
+  Building2,
   ChevronRight,
-  Clock,
   GraduationCap,
-  Heart,
+  HeartHandshake,
   Info,
-  Landmark,
   MapPin,
-  Phone,
-  Ticket,
 } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import { siteConfig, isPending } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Our branches",
-  description: `Mind in Tamale, Soul in Busunu and Heart in Bole — three integrated branches of ${siteConfig.formalName}, rooted in Northern Ghana and serving Africa and the world.`,
+  title: "Branches and Geographic Development",
+  description:
+    "JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole. No location is designated as the principal campus.",
   alternates: { canonical: "/branches" },
 };
 
 const branchRoles: Record<
   string,
-  { role: string; summary: string; icon: typeof GraduationCap }
+  { role: string; points: string[]; icon: typeof GraduationCap }
 > = {
   tamale: {
-    role: "The Mind",
-    summary:
-      "The engine of analysis, innovation and leadership development — where ideas are tested, frameworks are built, and future leaders are trained.",
-    icon: GraduationCap,
+    role: "Secretariat, Research and Institutional Collaboration",
+    points: [
+      "Hosts the JDM-PLLC Main Secretariat at the University for Development Studies (UDS), Tamale Campus.",
+      "The location of the Secretariat does not designate Tamale as the project's principal physical campus.",
+    ],
+    icon: Building2,
+  },
+  damongo: {
+    role: "Legacy, Culture and Development",
+    points: [
+      "Being considered for activities relating to presidential legacy preservation, historical research, cultural heritage, education, conferences and tourism-linked development.",
+    ],
+    icon: MapPin,
   },
   busunu: {
-    role: "The Soul",
-    summary:
-      "A sanctuary dedicated to the moral foundations of leadership — inspired by the enduring legacy of Mama Nnaba Habiba Mahama.",
-    icon: Heart,
+    role: "Heritage and Community Engagement",
+    points: [
+      "Being considered for activities supporting historical documentation, cultural preservation, community participation and education.",
+    ],
+    icon: HeartHandshake,
   },
   bole: {
-    role: "The Heart",
-    summary:
-      "The historical and emotional core of the institution — where Africa's stories are preserved, celebrated and projected to the world.",
-    icon: Landmark,
+    role: "Historical Documentation and Youth Development",
+    points: [
+      "Being considered for legacy-related educational, historical and community development activities.",
+    ],
+    icon: BookOpen,
   },
 };
-
-const days = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
 
 export default function BranchesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Three integrated branches"
-        title="Three branches. One constellation."
-        description="Mind in Tamale, Soul in Busunu and Heart in Bole — three integrated branches of a continental institution for leadership, heritage, research and human dignity, built to last for generations."
+        eyebrow="Branches and Geographic Development"
+        title="One Vision. Four Project Locations."
+        description="JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Branches" }]}
         actions={
-          <>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
-            >
-              <Link href="/contact">
-                Ask About a Visit
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
-            >
-              <Link href="/contact">Contact the Centre</Link>
-            </Button>
-          </>
+          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+            <Link prefetch={false} href="/contact">
+              Contact the Secretariat
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         }
       />
 
-      {/* The three branches */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-              Mind · Soul · Heart
-            </p>
-            <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-              A journey through three integrated branches
-            </h2>
-            <p className="text-[var(--brand-text-light)]">
-              The Northern Star Centre is structured around three branches, each
-              carrying one dimension of the institution — and together forming a
-              single constellation serving Africa and the world.
-            </p>
+          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]" aria-hidden="true" />
+            <div className="space-y-3 text-sm leading-relaxed text-[var(--brand-text)]">
+              <p>
+                Each location may contribute to the Centre&apos;s historical,
+                educational, cultural and community development objectives.
+                Their specific functions and development stages will depend on
+                documented land arrangements, community consultations,
+                technical planning, approvals, partnerships and available
+                resources.
+              </p>
+              <p className="font-semibold">
+                No location is designated here as the principal campus.
+              </p>
+            </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {siteConfig.branches.map((branch) => {
               const role = branchRoles[branch.slug];
-
               return (
-                <Card
-                  key={branch.slug}
-                  className="border-0 bg-white shadow-md"
-                >
+                <Card key={branch.slug} className="border-0 bg-white shadow-md">
                   <CardContent className="flex h-full flex-col p-8">
-                    <div className="mb-4 flex items-center gap-3">
+                    <div className="mb-4 flex items-start gap-3">
                       <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-accent)]">
                         <role.icon
                           className="h-6 w-6 text-[var(--brand-primary)]"
@@ -125,30 +109,42 @@ export default function BranchesPage() {
                       </span>
                       <div>
                         <p className="text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-                          {role.role}
+                          {branch.city}
                         </p>
-                        <h3 className="text-xl font-bold text-[var(--brand-text)]">
-                          {branch.name}
-                        </h3>
+                        <h2 className="text-xl font-bold text-[var(--brand-text)]">
+                          {role.role}
+                        </h2>
                       </div>
                     </div>
 
-                    <p className="mb-5 text-sm leading-relaxed text-[var(--brand-text-light)]">
-                      {role.summary}
-                    </p>
+                    <div className="mb-4 space-y-2 text-sm leading-relaxed text-[var(--brand-text-light)]">
+                      {role.points.map((point) => (
+                        <p key={point}>{point}</p>
+                      ))}
+                    </div>
 
-                    <p className="mb-5 flex items-start gap-2 text-sm text-[var(--brand-text)]">
+                    <p className="mb-4 flex items-start gap-2 text-sm text-[var(--brand-text)]">
                       <MapPin
                         className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
                         aria-hidden="true"
                       />
                       <span>
-                        {branch.address}, {branch.region} Region, {branch.country}
+                        {branch.address}, {branch.region}, {branch.country}
                       </span>
                     </p>
 
+                    {isPending(branch.status) ? (
+                      <p className="mb-4 rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs font-semibold text-[var(--brand-primary)]">
+                        Being considered
+                      </p>
+                    ) : (
+                      <p className="mb-4 rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs font-semibold text-[var(--brand-primary)]">
+                        Secretariat location
+                      </p>
+                    )}
+
                     <ul className="mb-6 flex flex-wrap gap-2">
-                      {branch.departments.map((department) => (
+                      {branch.departments.slice(0, 4).map((department) => (
                         <li
                           key={department}
                           className="rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs font-medium text-[var(--brand-primary)]"
@@ -164,7 +160,7 @@ export default function BranchesPage() {
                       className="mt-auto self-start border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-[var(--brand-accent)]"
                     >
                       <Link href={`/branches/${branch.slug}`}>
-                        Explore this branch
+                        Explore this location
                         <ChevronRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
@@ -176,124 +172,24 @@ export default function BranchesPage() {
         </div>
       </section>
 
-      {/* Directions and visits */}
-      <section className="bg-[var(--brand-accent)]/40 py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
-                Plan your visit
-              </p>
-              <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-                Before you travel
-              </h2>
-              <div className="space-y-5 leading-relaxed text-[var(--brand-text-light)]">
-                <p>
-                  Each branch has its own setting, from GHANASCO in Tamale to
-                  the Global Headquarters in Bole. Exact directions and entrance
-                  details are confirmed when you contact the Centre — call or
-                  write ahead and we will make sure you arrive at the right
-                  place.
-                </p>
-                <p>
-                  The Centre&rsquo;s administrative office is at{" "}
-                  <span className="font-medium text-[var(--brand-text)]">
-                    {siteConfig.contact.address}
-                  </span>
-                  . Enquiries are welcome for research access, event
-                  registration, partnerships, media and scholarship enquiries.
-                </p>
-              </div>
-            </div>
-
-            <Card className="border-0 bg-white shadow-md">
-              <CardContent className="p-8">
-                <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-[var(--brand-text)]">
-                  <Clock
-                    className="h-5 w-5 text-[var(--brand-primary)]"
-                    aria-hidden="true"
-                  />
-                  Directions and visits
-                </h3>
-
-                <dl className="mb-6 space-y-1.5 text-sm">
-                  {days.map((day) => (
-                    <div
-                      key={day}
-                      className="flex justify-between gap-4 border-b border-[var(--brand-accent)] pb-1.5 last:border-0"
-                    >
-                      <dt className="text-[var(--brand-text-light)]">{day}</dt>
-                      <dd className="font-medium text-[var(--brand-text)]">
-                        {siteConfig.openingHours.schedule[day]}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-
-                <div className="mb-6 flex items-start gap-3 rounded-lg bg-[var(--brand-accent)]/60 p-4">
-                  <Ticket
-                    className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]"
-                    aria-hidden="true"
-                  />
-                  <p className="text-sm leading-relaxed text-[var(--brand-text)]">
-                    Admission to the Presidential Library &amp; Museum at the
-                    Heart branch in Bole is free for Ghanaian citizens.
-                    International visitors: GHS 50.
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-4">
-                  <Button
-                    asChild
-                    className="bg-[var(--brand-primary)] text-white hover:opacity-90"
-                  >
-                    <Link href="/contact">
-                      Ask About a Visit
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-[var(--brand-accent)]"
-                  >
-                    <a href={siteConfig.contact.phoneHref}>
-                      <Phone className="mr-2 h-4 w-4" />
-                      {siteConfig.contact.phone}
-                    </a>
-                  </Button>
-                </div>
-
-                <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-[var(--brand-text-light)]">
-                  <Info
-                    className="mt-0.5 h-3.5 w-3.5 shrink-0"
-                    aria-hidden="true"
-                  />
-                  Sunday and public holidays are closed.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
       <section className="bg-[var(--brand-primary)] py-16 text-white">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-            See the constellation for yourself
+        <div className="mx-auto max-w-4xl px-4 text-center">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-white/80">
+            A Coordinated Network
+          </p>
+          <h2 className="mb-6 text-3xl font-bold sm:text-4xl">
+            One connected institutional vision
           </h2>
-          <p className="mb-8 text-white/85">
-            Visit us at any of the three branches, or start a conversation on{" "}
-            {siteConfig.contact.phone}.
+          <p className="mb-8 text-lg leading-relaxed text-white/85">
+            The four locations are intended to contribute to one connected
+            institutional vision. Their activities may complement one another
+            through shared research, educational programmes, digital resources,
+            events and community engagement. Their precise roles will be
+            confirmed as the project advances.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
-            >
-              <Link href="/contact">Ask About a Visit</Link>
+            <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+              <Link prefetch={false} href="/services">The Library &amp; Legacy Centre</Link>
             </Button>
             <Button
               asChild
@@ -301,7 +197,7 @@ export default function BranchesPage() {
               size="lg"
               className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
             >
-              <Link href="/contact">Contact the Centre</Link>
+              <Link prefetch={false} href="/contact">Contact the Secretariat</Link>
             </Button>
           </div>
         </div>

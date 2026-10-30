@@ -7,6 +7,7 @@ interface Inquiry {
   reference: string;
   name: string;
   email: string;
+  organisation?: string;
   phone?: string;
   subject?: string;
   message: string;
@@ -79,6 +80,9 @@ export default function InquiriesPage() {
                   <p className="mt-1 break-words text-sm text-gray-600">
                     {inquiry.email} {inquiry.phone && `• ${inquiry.phone}`}
                   </p>
+                  {inquiry.organisation && (
+                    <p className="text-sm text-gray-600">{inquiry.organisation}</p>
+                  )}
                   <p className="text-sm text-gray-500">
                     {new Date(inquiry.createdAt).toLocaleString()}
                   </p>

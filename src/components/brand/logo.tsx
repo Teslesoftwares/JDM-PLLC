@@ -15,6 +15,7 @@ export function Logo({
   href = "/",
   size = "default",
   invert = false,
+  preload = false,
   className,
 }: {
   /** `null` renders the lockup without wrapping it in a link. */
@@ -22,6 +23,8 @@ export function Logo({
   size?: "sm" | "default";
   /** For use on dark surfaces, where the mark must render in its gold colourway. */
   invert?: boolean;
+  /** Preload the mark when it is the above-the-fold brand lockup. */
+  preload?: boolean;
   className?: string;
 }) {
   const content = (
@@ -30,7 +33,13 @@ export function Logo({
       alt={siteConfig.name}
       width={1200}
       height={519}
-      priority
+      preload={preload}
+      fetchPriority={preload ? "high" : "auto"}
+      sizes={
+        size === "sm"
+          ? "(max-width: 768px) 84px, (max-width: 1024px) 92px, 102px"
+          : "(max-width: 768px) 112px, (max-width: 1024px) 130px, (max-width: 1280px) 148px, 185px"
+      }
       className={cn(
         "w-auto shrink-0",
         size === "sm" ? "h-9 md:h-10 lg:h-11" : "h-12 md:h-14 lg:h-16 xl:h-20"

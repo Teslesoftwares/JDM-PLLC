@@ -5,14 +5,14 @@ import { auth } from "@/lib/auth";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, subject, message, category = "GENERAL", website } = body;
+    const { name, email, organisation, message, category = "GENERAL", consent, website } = body;
 
     // Honeypot
     if (website) {
       return NextResponse.json({ success: true, reference: "JDM-" + Date.now().toString().slice(-6) });
     }
 
-    if (!name || !email || !message || message.length < 10) {
+    if (!name || !email || !message || message.length < 10 || consent !== true) {
       return NextResponse.json({ error: "Invalid submission" }, { status: 400 });
     }
 
@@ -23,10 +23,10 @@ export async function POST(request: NextRequest) {
         reference,
         name,
         email,
-        phone: phone || null,
-        subject: subject || null,
+        organisation: organisation || null,
         message,
         category,
+        consent: true,
         status: "NEW",
         ipAddress: request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip"),
         userAgent: request.headers.get("user-agent"),

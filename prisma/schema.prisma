@@ -1014,13 +1014,15 @@ model Message {
 model ContactMessage {
   id        String    @id @default(uuid())
   reference String    @unique
-  name      String
-  email     String
-  phone     String?
-  subject   String?
-  message   String
-  category  String    @default("GENERAL")
-  status    String    @default("NEW")
+  name         String
+  email        String
+  organisation String?
+  phone        String?
+  subject      String?
+  message      String
+  category     String    @default("GENERAL")
+  consent      Boolean   @default(false)
+  status       String    @default("NEW")
   readAt    DateTime?
   repliedAt DateTime?
   notes     String?

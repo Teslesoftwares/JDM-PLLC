@@ -21,10 +21,6 @@ export default function NewsManagementPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState({ title: "", excerpt: "", content: "", featuredImage: "" });
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
   const fetchPosts = async () => {
     try {
       const res = await fetch("/api/news");
@@ -36,6 +32,10 @@ export default function NewsManagementPage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent, publish = false) => {
     e.preventDefault();

@@ -5,32 +5,32 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Use",
   description: `Terms for using the ${siteConfig.name} website and its institutional information.`,
   alternates: { canonical: "/terms" },
 };
 
-const LAST_UPDATED = "1 October 2026";
+const LAST_UPDATED = "30 October 2026";
 
 const sections = [
   {
     heading: "1. About these terms",
     body: [
-      `These terms apply to your use of the ${siteConfig.name} website, which shares information about the Centre, its mission, programmes, partnerships and locations.`,
+      `These terms apply to your use of the ${siteConfig.name} website, which provides information about the Centre, its proposed facilities, programmes, partnerships and project locations.`,
       "By using this website you accept these terms. If you do not accept them, please stop using the site.",
     ],
   },
   {
-    heading: "2. Information about programmes and plans",
+    heading: "2. Information about plans and facilities",
     body: [
-      "Website content is provided for general information about the Centre. Programme plans, facilities and initiatives are being developed across the founding decade; contact the Centre for current details before making arrangements.",
-      "References to the 2031 vision describe the Centre's stated commitments and goals.",
+      "Website content is provided for general information. Facilities, programmes and activities are being developed progressively and are subject to planning, approvals, partnerships, funding and available resources.",
+      "References to proposed facilities, programmes or dates do not mean that they are operational or confirmed. Contact the Secretariat for current information before making arrangements.",
     ],
   },
   {
     heading: "3. Enquiries",
     body: [
-      "A message sent through this website is an enquiry and does not by itself confirm an event registration, visit, partnership or programme place. The Centre will respond with any next steps.",
+      "A message sent through this website is an enquiry and does not by itself confirm a visit, event registration, partnership, donation or programme place. The Secretariat will respond with any next steps.",
     ],
   },
   {
@@ -40,9 +40,9 @@ const sections = [
     ],
   },
   {
-    heading: "5. Admission and visits",
+    heading: "5. Payments and donations",
     body: [
-      "The prospectus lists admission to the Presidential Library & Museum as free for Ghanaian citizens and GHS 50 for international visitors. Contact the Centre to confirm current visitor arrangements before travelling.",
+      "Payment or donation details are only valid when published on this official website after verification. Do not send money to an account or number that has not been verified through the Secretariat. Donations are subject to the Centre's donation policy.",
     ],
   },
   {
@@ -61,7 +61,7 @@ const sections = [
   {
     heading: "8. Changes",
     body: [
-      "We may update these terms. The date at the top of this page shows when they were last revised, and the version in force when you use the site is the version then published.",
+      "We may update these terms. The date at the top of this page shows when they were last revised.",
     ],
   },
 ];
@@ -71,9 +71,9 @@ export default function TermsPage() {
     <>
       <PageHero
         eyebrow="Legal"
-        title="Terms of service"
-        description={`Terms for using this website and the Centre's institutional information.`}
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Terms of Service" }]}
+        title="Terms of use"
+        description="Terms for using this website and the Centre's institutional information."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Terms of Use" }]}
       />
 
       <section className="py-16">
@@ -98,16 +98,18 @@ export default function TermsPage() {
           </div>
 
           <div className="mt-12 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-6">
-            <h2 className="mb-2 font-semibold text-[var(--brand-text)]">Need to talk to us?</h2>
+            <h2 className="mb-2 font-semibold text-[var(--brand-text)]">
+              Need to talk to us?
+            </h2>
             <p className="mb-4 text-sm leading-relaxed text-[var(--brand-text)]">
-              Contact the Centre with questions about these terms.
+              Contact the Secretariat with questions about these terms.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
                 <Link href="/contact">Contact the Centre</Link>
               </Button>
               <Button asChild variant="outline">
-                <Link href="/privacy">Read the privacy policy</Link>
+                <Link href="/data-protection">Data protection</Link>
               </Button>
             </div>
           </div>

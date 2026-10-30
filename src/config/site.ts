@@ -1,17 +1,11 @@
 /**
  * Central institutional configuration.
  *
- * Every piece of institutional identity used by the public site, the staff
- * dashboard, the portal, emails and generated documents is read from this file.
- * Nothing about the Centre is hardcoded in a page component, so a content
- * change is a single-file change.
- *
- * Values marked `pendingConfirmation: true` are placeholders. They are shown in
- * the interface only where it would be dishonest to hide them (an empty link or
- * an empty phone number renders worse than an explicit "to be confirmed" note).
- *
- * Nothing in this file may claim an accreditation, a success rate, a
- * qualification or a price that has not been confirmed by the Centre.
+ * Every piece of institutional identity used by the public site is read from
+ * this file. The content follows the approved JDM-PLLC website copy: it
+ * describes the initiative accurately, keeps proposed facilities clearly
+ * labelled, and never presents an unconfirmed partnership, payment channel or
+ * endorsement as established.
  */
 
 /** How a configurable item is presented until confirmation. */
@@ -20,7 +14,7 @@ export type PublicationStatus = "CONFIRMED" | "PENDING_CONFIRMATION";
 export interface CentreService {
   name: string;
   slug: string;
-  /** One-line summary shown on cards. Never includes a price or a claim. */
+  /** One-line summary shown on cards. */
   description: string;
   /** Bulleted detail shown on the service page. */
   highlights: string[];
@@ -60,17 +54,8 @@ export type OpeningHours = Record<string, string>;
 export interface NavItem {
   label: string;
   href: string;
-  /**
-   * Child links rendered as a dropdown on desktop and an accordion on mobile.
-   * Absent for plain links.
-   */
   children?: { label: string; href: string }[];
 }
-
-/**
- * Hero photograph shared by every slide. Swap to per-slide paths once the
- * Centre supplies a photo for each one.
- */
 
 export interface HeroSlide {
   id: string;
@@ -84,288 +69,338 @@ export interface HeroSlide {
   videoLoop?: boolean;
   primary: { label: string; href: string };
   secondary: { label: string; href: string };
+  tertiary?: { label: string; href: string; external?: boolean };
 }
 
 /**
- * Programme and facilities catalogue, hoisted so the primary navigation can
- * build its submenu from the same list the pages render.
+ * Facilities of the Library & Legacy Centre. These are proposed facilities and
+ * programme areas, implemented progressively and subject to planning,
+ * agreements, approvals, funding and available resources.
  */
 const SERVICES = [
   {
-    name: "Leadership Laboratory",
-    slug: "leadership-laboratory",
+    name: "Presidential Library and Archives",
+    slug: "presidential-library-archives",
     description:
-      "\"How to Govern\" Institute — a trans-partisan training ground where participants examine the realities of governance through immersive case studies.",
+      "A proposed facility for preserving and interpreting records relating to President Mahama, presidential leadership and Ghana's democratic history.",
     highlights: [
-      "Crisis management and infrastructure delivery",
-      "Public accountability and ethical decision-making",
-      "Democratic governance and national development planning",
-      "Immersive, real-world leadership case studies",
+      "Historical document and archival preservation.",
+      "Digital records and electronic catalogues.",
+      "Preservation of speeches, publications and photographs.",
+      "Audiovisual collections and oral histories.",
+      "Research access for approved users.",
+      "Historical exhibitions and educational resources.",
     ],
-    status: "CONFIRMED" as PublicationStatus,
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
     statusNote:
-      "Cohort dates, fees and application windows are confirmed with the Centre at the time of enquiry.",
+      "All materials will be managed in accordance with applicable ownership, copyright, privacy and access requirements.",
   },
   {
-    name: "Pan-African Fellowship Programme",
-    slug: "pan-african-fellowships",
+    name: "Historical Research and Knowledge Centre",
+    slug: "research-knowledge-centre",
     description:
-      "A flagship cohort programme selecting exceptional young leaders from across Africa for immersive leadership development, mentorship and continental networking.",
+      "A platform for research, scholarship and public learning on leadership, democratic development, public policy, Ghanaian history and African transformation.",
     highlights: [
-      "Cohort-based selection of exceptional young leaders",
-      "Mentorship and continental networking",
-      "The first cohort of the Northern Star generation",
-      "Applications open ahead of each annual cohort",
+      "Research projects",
+      "Publications",
+      "Academic seminars",
+      "Public lectures",
+      "Oral history",
+      "Student research",
+      "Collaboration with universities",
     ],
-    status: "CONFIRMED" as PublicationStatus,
-    statusNote:
-      "Cohort dates, eligibility and application windows are confirmed with the Centre at the time of enquiry.",
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
+    statusNote: "",
   },
   {
-    name: "Indigenous Knowledge Systems Centre",
-    slug: "indigenous-knowledge",
+    name: "Leadership and Civic Education",
+    slug: "leadership-civic-education",
     description:
-      "The root system of the institution — researching and preserving the governance traditions, oral histories and ancestral wisdom embedded in Indigenous Knowledge Systems.",
+      "Programmes designed to promote ethical leadership, responsible citizenship, democratic learning and public-service values.",
     highlights: [
-      "Traditional governance systems and conflict resolution",
-      "Oral histories and African languages",
-      "Traditional ecological knowledge",
-      "Intergenerational knowledge transfer",
+      "Leadership workshops",
+      "Civic education",
+      "Governance seminars",
+      "Mentorship and youth dialogue",
     ],
-    status: "CONFIRMED" as PublicationStatus,
-    statusNote:
-      "Research access and collaboration terms are agreed with the Centre before any visit.",
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
+    statusNote: "",
   },
   {
-    name: "Presidential Library & Museum",
-    slug: "library-museum",
+    name: "Youth Skills and Enterprise Development",
+    slug: "youth-skills-enterprise",
     description:
-      "The historical and emotional core of the institution at the Heart branch in Bole — where Africa's stories are preserved, celebrated and projected to the world.",
+      "In alignment with AfYEF's youth empowerment mission, the Centre seeks to connect learning with practical opportunities for young people.",
     highlights: [
-      "Presidential archives and exhibits",
-      "Museum collections and public galleries",
-      "Research access for scholars and students",
-      "Admission free for Ghanaian citizens",
+      "Digital and technology skills.",
+      "Entrepreneurship and enterprise readiness.",
+      "Innovation and problem-solving.",
+      "Career development and mentorship.",
+      "Youth enterprise exhibitions.",
+      "Partnerships with relevant training institutions.",
     ],
-    status: "CONFIRMED" as PublicationStatus,
-    statusNote:
-      "Visiting hours: Monday–Friday, 9:00 AM–5:00 PM; Saturday, 10:00 AM–4:00 PM. Admission is free for Ghanaian citizens; international visitors: GHS 50.",
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
+    statusNote: "",
   },
   {
-    name: "Northern Star Hall of Fame",
-    slug: "hall-of-fame",
+    name: "Conference and Public Dialogue Facilities",
+    slug: "conference-public-dialogue",
     description:
-      "The premier Pan-African repository celebrating transformational leadership and public service — honouring those whose leadership changed lives and shaped history.",
+      "Subject to the final development plans, the Centre may provide facilities for conferences, lectures, seminars, workshops, exhibitions and public dialogue.",
     highlights: [
-      "Public service and traditional leadership",
-      "Scholarship and entrepreneurship",
-      "Arts and culture, humanitarian service",
-      "Preserving the stories of those who illuminated the path",
+      "Conferences",
+      "Lectures",
+      "Seminars",
+      "Workshops",
+      "Exhibitions",
+      "Public dialogue",
     ],
-    status: "CONFIRMED" as PublicationStatus,
-    statusNote:
-      "Nomination procedures and induction timelines are confirmed with the Centre.",
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
+    statusNote: "",
   },
   {
-    name: "Virtual Northern Star Library & Digital Archive",
-    slug: "digital-archive",
+    name: "Museum and Cultural Heritage",
+    slug: "museum-cultural-heritage",
     description:
-      "A globally accessible digital repository of leadership case studies, oral histories, governance research and archival materials from across the African continent.",
+      "The project seeks to contribute to the preservation and presentation of Ghanaian, Northern Ghanaian and wider African history and culture.",
     highlights: [
-      "Leadership case studies and governance research",
-      "Oral histories from across the continent",
-      "Archival materials available worldwide from day one",
-      "Remote research access on request",
+      "Historical exhibitions",
+      "Traditional leadership histories",
+      "Indigenous Knowledge documentation",
+      "Cultural education",
+      "Collaboration with museums and cultural institutions",
     ],
-    status: "CONFIRMED" as PublicationStatus,
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
+    statusNote: "",
+  },
+  {
+    name: "Digital and Virtual Learning",
+    slug: "digital-virtual-learning",
+    description:
+      "Digital systems may expand access to historical records and educational resources through:",
+    highlights: [
+      "Digitised archival collections.",
+      "Virtual exhibitions and tours.",
+      "Online learning resources.",
+      "Digital research tools.",
+      "Recorded lectures and discussions.",
+      "Remote access for researchers and students.",
+    ],
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
+    statusNote: "",
+  },
+  {
+    name: "Family and Community History",
+    slug: "family-community-history",
+    description:
+      "Where supported by credible documentation and appropriate permissions, the Centre may examine the family, community and social influences that contributed to President Mahama's journey and public service.",
+    highlights: [
+      "Family and community documentation",
+      "Responsible historical interpretation",
+      "Oral history with consent",
+      "Respect for source materials and privacy",
+    ],
+    status: "PENDING_CONFIRMATION" as PublicationStatus,
     statusNote:
-      "Archive access terms and launch dates are confirmed with the Centre at the time of enquiry.",
+      "The aim will be to preserve relevant history responsibly and accurately.",
   },
 ] satisfies CentreService[];
 
 export const siteConfig = {
   /** Full legal-facing name used in metadata, footers and documents. */
-  name: "JDM Presidential Library & Legacy Centre",
-  /** Formal name. */
-  formalName: "John Dramani Mahama Presidential Library & Legacy Centre (JDM PLLC)",
-  /** Compact name used where the full name will not fit (logo lockups, tabs). */
-  shortName: "JDM PLLC",
+  name: "John Dramani Mahama Presidential Library & Legacy Centre",
+  /** Formal name including the compact acronym. */
+  formalName:
+    "John Dramani Mahama Presidential Library & Legacy Centre (JDM-PLLC)",
+  /** Compact name used where the full name will not fit. */
+  shortName: "JDM-PLLC",
   /** Descriptor shown under the short name. */
-  descriptor: "Operating as The Northern Star Centre",
+  descriptor: "Preserving Legacy. Empowering the Youth.",
   /** Used in the browser tab, emails and document headers. */
-  tagline: "Preserving Legacy. Building Futures.",
+  tagline: "Preserving Legacy. Empowering the Youth.",
   launchDate: "30 November 2026",
   description:
-    "A continental institution for leadership, heritage, research and human dignity — rooted in Northern Ghana and serving Africa and the world.",
-  /**
-   * Homepage hero carousel. Slides without an `image` fall back to the brand
-   * green treatment, so the Centre can add photography one slide at a time.
-   */
+    "The John Dramani Mahama Presidential Library & Legacy Centre (JDM-PLLC) is an AfYEF-led initiative to document, preserve and protect the legacy of President John Dramani Mahama, while inspiring young people and future generations through history, knowledge, leadership and opportunity.",
+  /** Homepage hero carousel. */
   heroSlides: [
     {
       id: "welcome",
-      eyebrow: "JDM PLLC",
-      title: "PRESIDENTIAL LIBRARY &\nLEGACY CENTRE",
-      body: "JDM PLLC  ·  Launching 30 November 2026\n\nAfrica's foremost institution for ethical leadership, living heritage, and transformative learning — now seeking visionary partners to build it.",
-      mobileBody: "JDM PLLC  ·  Launching 30 November 2026\n\nAfrica's foremost institution for ethical leadership, living heritage, and transformative learning — now seeking visionary partners to build it.",
+      eyebrow: "JDM-PLLC",
+      title: "Preserving Legacy. Empowering the Youth.",
+      body: "The John Dramani Mahama Presidential Library & Legacy Centre (JDM-PLLC) is an AfYEF-led initiative to document, preserve and protect the legacy of President John Dramani Mahama, while inspiring young people and future generations through history, knowledge, leadership and opportunity.",
+      mobileBody:
+        "Preserving Legacy. Empowering the Youth.",
       image: "/images/hero/northern-star-sunset.png",
       duration: 9000,
       videoLoop: false,
-      primary: { label: "Partner With Us", href: "/partner" },
-      secondary: { label: "Discover the Centre", href: "/about" },
-      tertiary: { label: "Download Legacy Project Proposal", href: "https://www.jdmpresidentiallibrary.org/data/PDF%20-Preserving-Legacy-Building-Futures.pdf", external: true },
+      primary: { label: "Explore the Project", href: "/about" },
+      secondary: { label: "Become a Partner", href: "/partner" },
     },
     {
-      id: "consultations",
-      eyebrow: "A Living Curriculum for Africa's Future",
-      title: "Study leadership. Practice governance. Serve humanity.",
-      body: "The Mahama Leadership Framework turns decades of public service and governance experience into case studies for leadership education, research and practical application.",
-      mobileBody: "A living leadership curriculum grounded in public service and governance.",
+      id: "legacy",
+      eyebrow: "PRESIDENT JOHN DRAMANI MAHAMA: THE INSPIRATION",
+      title: "Documenting a Journey of Leadership and Public Service",
+      body: "The Centre seeks to document his life, leadership experiences, ideas, development aspirations and contributions to Ghana, preserving relevant historical records so that present and future generations can study his journey and understand its wider national and African context.",
+      mobileBody:
+        "President John Dramani Mahama's public-service journey is the central inspiration for JDM-PLLC.",
       image: "/images/hero/architectural-pan-poster.jpg",
       video: "/images/hero/architectural-pan.mp4",
       duration: 15000,
       videoLoop: false,
-      primary: { label: "Explore the framework", href: "/legacy" },
-      secondary: { label: "Our mission", href: "/mission" },
+      primary: { label: "The Inspiration", href: "/legacy" },
+      secondary: { label: "About JDM-PLLC", href: "/about" },
     },
     {
-      id: "investigations",
-      eyebrow: "Indigenous Knowledge Systems",
-      title: "Ancestral wisdom informing today's leadership",
-      body: "The Centre researches and preserves traditional governance, conflict resolution, oral histories, African languages and ecological knowledge for future generations.",
-      mobileBody: "Preserving Indigenous knowledge and bringing it into conversation with contemporary development.",
+      id: "knowledge",
+      eyebrow: "LEGACY → KNOWLEDGE → SKILLS → ENTERPRISE → OPPORTUNITY",
+      title: "A Living Institution for History, Knowledge and Opportunity",
+      body: "JDM-PLLC is being developed as a centre for historical preservation, research, education, cultural heritage and youth empowerment.",
+      mobileBody:
+        "JDM-PLLC is being developed as a centre for historical preservation, research, education, cultural heritage and youth empowerment.",
       image: "/images/hero/campus-walk-poster.jpg",
       video: "/images/hero/campus-walk.mp4",
       duration: 12000,
       videoLoop: false,
-      primary: { label: "Explore our programmes", href: "/services" },
-      secondary: { label: "Partner with us", href: "/partner" },
-    },
-    {
-      id: "care-plan",
-      eyebrow: "Mind · Soul · Heart",
-      title: "Three branches. One constellation.",
-      body: "The academic and leadership wing in Tamale, character and ethical formation in Busunu, and the global headquarters and living heritage hub in Bole form one integrated institution.",
-      mobileBody: "Tamale, Busunu and Bole: three integrated branches with one shared purpose.",
-      image: "/hero/ghana-route-map-golden-horizon.png",
-      duration: 12000,
-      videoLoop: false,
-      primary: { label: "Explore the branches", href: "/branches" },
-      secondary: { label: "Our founding decade", href: "/legacy" },
+      primary: { label: "The Library & Legacy Centre", href: "/services" },
+      secondary: { label: "Programmes", href: "/programmes" },
     },
     {
       id: "support",
-      eyebrow: "2026 · The Year of First Light",
-      title: "The work begins while the institution is being built.",
-      body: "The Centre is launching its intellectual and programmatic foundations: a digital archive, the Northern Star Annual Lecture, Pan-African fellowships and an Indigenous Knowledge oral history initiative.",
-      mobileBody: "Programmes, partnerships, fellowships and archives establish the Centre's intellectual footprint.",
-      image: "/hero/president-mahama-family.jpg",
+      eyebrow: "One Vision. Four Project Locations.",
+      title: "Tamale, Damongo, Busunu and Bole",
+      body: "JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole. Each location may contribute to the Centre's historical, educational, cultural and community development objectives.",
+      mobileBody:
+        "JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole.",
+      image: "/hero/ghana-route-map-golden-horizon.png",
       duration: 12000,
       videoLoop: false,
-      primary: { label: "See the 2026 initiatives", href: "/news" },
-      secondary: { label: "Become a partner", href: "/partner" },
-    },
-    {
-      id: "visit",
-      eyebrow: "Join the constellation",
-      title: "An invitation to shape an enduring African institution",
-      body: "We welcome universities, foundations, development partners, corporations, philanthropists, traditional authorities, governments and diaspora communities.",
-      mobileBody: "Help shape a lasting institution for Africa and the world.",
-      image: "/hero/ietsa-6.jpg",
-      duration: 12000,
-      videoLoop: false,
-      primary: { label: "Partner with us", href: "/partner" },
-      secondary: { label: "Contact the Centre", href: "/contact" },
+      primary: { label: "Branches & Locations", href: "/branches" },
+      secondary: { label: "Support the Initiative", href: "/donate" },
     },
   ] as HeroSlide[],
-  /**
-   * Canonical origin. Overridden by APP_URL so a deployment can point at its
-   * own domain without a code change.
-   */
+  /** Canonical origin. Overridden by APP_URL for a deployment. */
   url: process.env.APP_URL || "http://localhost:3000",
-  /**
-   * Public website address.
-   */
+  /** Public website address. */
   website: process.env.CLINIC_WEBSITE || "https://www.jdmpllc.org",
-  /** Contact details for The Northern Star Centre in Accra, Ghana. */
+  /** Contact details for the JDM-PLLC Secretariat. */
   contact: {
-    phone: "+233 244 020 280",
-    phoneHref: "tel:+233244020280",
-    email: process.env.CLINIC_EMAIL || "info@jdmpresidentiallibrary.org",
-    additionalEmail: "president@afyef.org",
-    address: "Dome-Kwabenya, Accra, Ghana",
-    addressShort: "Dome-Kwabenya, Accra, Ghana",
-    city: "Accra",
-    region: "Greater Accra",
+    phone: "+233 244 030 280",
+    phoneHref: "tel:+233244030280",
+    email: process.env.CLINIC_EMAIL || "president@afyef.org",
+    additionalEmail: "info@afyef.org",
+    address: "University for Development Studies (UDS), Tamale Campus",
+    addressShort: "Tamale, Northern Region, Ghana",
+    city: "Tamale",
+    region: "Northern Region",
     country: "Ghana",
     countryCode: "GH",
+    postalAddress: "P.O. Box TL 1350, Digital Address NT-0272-1946",
     latitude: null as number | null,
     longitude: null as number | null,
   },
+  /** The two offices are kept separate and labelled accurately. */
+  offices: [
+    {
+      name: "Main Secretariat (Tamale)",
+      role: "",
+      lines: [
+        "University for Development Studies (UDS), Tamale Campus",
+        "P.O. Box TL 1350",
+        "Digital Address: NT-0272-1946",
+        "Tamale, Northern Region, Ghana",
+      ],
+    },
+    {
+      name: "Project Coordination Office (Accra)",
+      role: "",
+      lines: [
+        "AfCFTA Young Entrepreneurs Federation (AfYEF)",
+        "26 Atomic Hills Estates Street, Dome-Kwabenya",
+        "Accra, Ghana",
+      ],
+    },
+  ],
+  websites: [
+    { label: "www.jdmpllc.org", href: "https://www.jdmpllc.org" },
+    {
+      label: "www.jdmpresidentiallibrary.org",
+      href: "https://www.jdmpresidentiallibrary.org",
+    },
+    { label: "www.afyef.org", href: "https://www.afyef.org" },
+  ],
   locale: {
-    /** BCP-47 tag used for metadata and number/date formatting. */
     language: "en-GH",
     currency: "GHS",
     currencySymbol: "GH₵",
     timeZone: "Africa/Accra",
   },
-  /** Social profiles. Empty strings render nothing until the Centre supplies them. */
+  /** Social profiles. Empty strings render nothing until supplied. */
   links: {
-    /**
-     * Social profiles for the Centre (@jdmpllc). Each can still be overridden
-     * via environment variable; an empty string renders nothing, so an
-     * unverified handle is never published.
-     */
     facebook:
       process.env.CLINIC_FACEBOOK || "https://www.facebook.com/share/1CYwsvnias/",
     instagram: process.env.CLINIC_INSTAGRAM || "https://instagram.com/jdmpllc",
     tiktok: process.env.CLINIC_TIKTOK || "https://tiktok.com/@jdmpllc",
     x: process.env.CLINIC_X || "https://x.com/jdmpllc",
-    /** Pending confirmation by the Centre — left empty until then. */
     linkedin: process.env.CLINIC_LINKEDIN || "",
   },
-  /**
-   * Google Business Profile review link, shown as a badge in the footer.
-   * Google's share link lands the visitor on the listing's review prompt; the
-   * footer opens it in a new tab so nobody loses their place on the site.
-   */
+  /** Kept for compatibility; the review badge is not part of this content. */
   googleReview: {
-    url: "https://share.google/G47fxjDAC79bIbrv1",
-    label: "Review us on Google",
+    url: "",
+    label: "",
   },
   /**
-   * Institutional partners and endorsing bodies, shown on the homepage.
-   * Logos are the Centre's own assets; descriptions are limited to what the
-   * Centre has confirmed (see the partner and FAQ pages).
+   * Partner institutions named in the approved website copy. A listing does not
+   * constitute a funding commitment, endorsement, ownership interest or other
+   * obligation unless confirmed through appropriate formal documentation.
    */
   partners: [
     {
-      name: "University for Development Studies",
+      name: "University for Development Studies (UDS)",
       logo: "/images/partners/university-for-development-studies.png",
-      detail: "Foundational anchor partner",
+      detail: "MoU signed 2 July 2026",
     },
     {
-      name: "National Commission on Culture, Ghana",
+      name: "Ghana Library Authority (GhLA)",
+      logo: "",
+      detail: "",
+    },
+    {
+      name: "National Commission on Culture (NCC)",
       logo: "/images/partners/national-commission-on-culture.png",
+      detail: "",
     },
     {
-      name: "Sagnerigu Municipal Assembly",
-      logo: "/images/partners/sagnerigu-municipal-assembly.jpg",
+      name: "Tamale Technical University (TaTU)",
+      logo: "",
+      detail: "",
     },
     {
-      name: "AfCFTA Young Entrepreneurs Federation (AfyEF)",
-      logo: "/images/partners/afyef.jpg",
+      name: "Center for Local Development and Culture (CLDC)",
+      logo: "",
+      detail: "",
+    },
+    {
+      name: "Traditional authorities and community stakeholders",
+      logo: "",
+      detail: "",
+    },
+    {
+      name: "Relevant public institutions",
+      logo: "",
+      detail: "",
+    },
+    {
+      name: "University Administrators Association of Ghana (UACE)",
+      logo: "",
+      detail: "",
     },
   ],
   /**
-   * Ways to give.
-   *
-   * Institutional bank and Mobile Money details are published only once the
-   * Centre supplies them. An empty value renders a "shared on request" note
-   * instead of an unverified account number, so a donor is never sent money to
-   * an account the Centre has not confirmed.
+   * Ways to give. Payment details are not published until verified; the site
+   * directs donors to the approved channel on confirmation.
    */
   donation: {
+    amounts: [100, 250, 500, 1000],
     bank: {
       bankName: process.env.CLINIC_DONATION_BANK_NAME || "",
       accountName: process.env.CLINIC_DONATION_ACCOUNT_NAME || "",
@@ -379,121 +414,131 @@ export const siteConfig = {
       name: process.env.CLINIC_DONATION_MOMO_NAME || "",
     },
   },
-  /**
-   * WhatsApp line behind the mobile floating button. `wa.me` needs the number in
-   * digits-only international form; an empty value hides the button entirely.
-   */
+  /** WhatsApp line behind the mobile floating button. */
   whatsapp: {
-    number: "233244020280",
-    /** Message pre-filled when the visitor opens the chat. */
+    number: "233244030280",
     message: "Hello JDM-PLLC, I would like to make an enquiry.",
-    /** One-tap openers offered in the floating panel. */
     quickReplies: [
       "I would like to partner with JDM-PLLC.",
       "I have a question about the Library.",
     ],
   },
+  /** The Secretariat is contactable on working days. */
   openingHours: {
-    summary: "Monday – Friday, 9:00 AM – 5:00 PM · Saturday, 10:00 AM – 4:00 PM",
-    /** Per-day detail. Sunday and public holidays are closed. */
+    summary: "Monday – Friday, 9:00 AM – 5:00 PM",
     schedule: {
       Monday: "9:00 AM – 5:00 PM",
       Tuesday: "9:00 AM – 5:00 PM",
       Wednesday: "9:00 AM – 5:00 PM",
       Thursday: "9:00 AM – 5:00 PM",
       Friday: "9:00 AM – 5:00 PM",
-      Saturday: "10:00 AM – 4:00 PM",
+      Saturday: "Closed",
       Sunday: "Closed",
     } as OpeningHours,
   },
   /**
-   * Operational locations. The Centre is structured around three integrated
-   * branches — Mind (Tamale), Soul (Busunu) and Heart (Bole) — with its
-   * administrative contact office in Accra.
+   * Project locations. No location is designated as the principal campus.
+   * Specific functions and development stages depend on documented land
+   * arrangements, consultations, technical planning, approvals, partnerships
+   * and available resources.
    */
   branches: [
     {
-      name: "Mind — Tamale",
+      name: "Tamale — Secretariat, Research and Institutional Collaboration",
       slug: "tamale",
-      address: "GHANASCO, Tamale",
+      address: "University for Development Studies (UDS), Tamale Campus",
       city: "Tamale",
-      region: "Northern",
+      region: "Northern Region",
       country: "Ghana",
-      phone: "+233 244 020 280",
+      phone: "+233 244 030 280",
       status: "CONFIRMED" as PublicationStatus,
       departments: [
-        "Academic & Leadership Development Wing",
-        "Leadership Laboratory",
-        "Pan-African Fellowships",
-        "Public Policy Dialogues",
+        "Secretariat and administrative coordination",
+        "Academic and institutional collaboration",
+        "Research and archival planning",
+        "Leadership and civic education",
+        "Youth development programmes",
+        "Digital knowledge and innovation",
+        "Academic seminars and public engagement",
       ],
     },
     {
-      name: "Soul — Busunu",
+      name: "Damongo — Legacy, Culture and Development",
+      slug: "damongo",
+      address: "Damongo",
+      city: "Damongo",
+      region: "Savannah Region",
+      country: "Ghana",
+      phone: "+233 244 030 280",
+      status: "PENDING_CONFIRMATION" as PublicationStatus,
+      departments: [
+        "Historical and cultural interpretation",
+        "Research and educational programmes",
+        "Conferences and public dialogue",
+        "Heritage tourism initiatives",
+        "Community and traditional authority engagement",
+        "Hospitality-related development, subject to feasibility and approvals",
+      ],
+    },
+    {
+      name: "Busunu — Heritage and Community Engagement",
       slug: "busunu",
-      address: "Mama Habiba Wing, Busunu",
+      address: "Busunu",
       city: "Busunu",
-      region: "Savannah",
+      region: "Savannah Region",
       country: "Ghana",
-      phone: "+233 244 020 280",
-      status: "CONFIRMED" as PublicationStatus,
+      phone: "+233 244 030 280",
+      status: "PENDING_CONFIRMATION" as PublicationStatus,
       departments: [
-        "Character & Ethical Formation Wing",
-        "Character Formation",
-        "Integrity and Values",
-        "Intergenerational Dialogue",
+        "Oral history and community documentation",
+        "Cultural heritage programmes",
+        "Educational outreach",
+        "Intergenerational dialogue",
+        "Youth development",
+        "Collaboration with local stakeholders and traditional authorities",
       ],
     },
     {
-      name: "Heart — Bole",
+      name: "Bole — Historical Documentation and Youth Development",
       slug: "bole",
-      address: "Global Headquarters, Bole",
+      address: "Bole",
       city: "Bole",
-      region: "Savannah",
+      region: "Savannah Region",
       country: "Ghana",
-      phone: "+233 244 020 280",
-      status: "CONFIRMED" as PublicationStatus,
+      phone: "+233 244 030 280",
+      status: "PENDING_CONFIRMATION" as PublicationStatus,
       departments: [
-        "Global Headquarters & Living Heritage Hub",
-        "Presidential Library & Museum",
-        "Northern Star Hall of Fame",
-        "Skills Transformation Hub",
+        "Historical and community documentation",
+        "Educational outreach",
+        "Cultural preservation",
+        "Youth leadership and skills development",
+        "Research and oral history",
+        "Collaboration with local authorities and communities",
       ],
     },
   ] satisfies CentreBranch[],
-  /**
-   * Programme catalogue — the Centre's public offerings, as described in the
-   * institutional prospectus.
-   */
+  /** Facilities and programme areas of the Library & Legacy Centre. */
   services: SERVICES,
-  /**
-   * Public team directory.
-   *
-   * Empty by design: a person's name, role and credentials are not published
-   * until the Centre verifies them. Add verified profiles here and the
-   * directory renders.
-   */
+  /** Public team directory. Empty until profiles are verified. */
   team: [] as CentreTeamMember[],
-  /**
-   * Published testimonials.
-   *
-   * Empty by design. Only add an entry once the person has given written
-   * consent.
-   */
+  /** Published testimonials. Empty until written consent is given. */
   testimonials: [] as Array<{
     name: string;
     content: string;
     service: string;
   }>,
-  /**
-   * Institutional milestones shown on the About and Legacy pages — the
-   * founding decade, 2021–2031.
-   */
+  /** Institutional milestones described in the approved copy. */
   milestones: [
-    { year: "2021", event: "The Vision Emerges — the idea of transforming presidential legacy into leadership capital is conceived." },
-    { year: "2021–2025", event: "Foundations Secured — land acquisition, institutional endorsements and conceptual, architectural and programmatic frameworks completed." },
-    { year: "2026", event: "The Inflection Point — soft infrastructure launches: programmes, partnerships, fellowships, archives and digital platforms." },
-    { year: "2031", event: "The Decade Delivered — a fully operational, self-sustaining institution connecting Mind (Tamale), Soul (Busunu) and Heart (Bole)." },
+    {
+      year: "2 July 2026",
+      event:
+        "UDS and AfYEF sign a Memorandum of Understanding to support collaboration in academic research, archival documentation, civic education, leadership studies, digital knowledge preservation and student skills development.",
+    },
+    {
+      year: "30 November 2026",
+      event:
+        "Proposed official launch at the University for Development Studies, Tamale, at 10:00 AM. Venue to be confirmed by the secretariat.",
+    },
   ] as Array<{ year: string; event: string }>,
   /** Photography of the facilities. Empty until genuine photographs are supplied. */
   facilityPhotos: [] as string[],
@@ -501,12 +546,35 @@ export const siteConfig = {
   navigation: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Legacy", href: "/legacy" },
-    { label: "Events", href: "/events" },
-    { label: "Leadership", href: "/leadership" },
-    { label: "News", href: "/news" },
+    {
+      label: "The Centre",
+      href: "/services",
+      children: [
+        { label: "Library & Legacy Centre", href: "/services" },
+        { label: "Programmes", href: "/programmes" },
+        { label: "Research & Archives", href: "/research" },
+        { label: "Governance", href: "/governance" },
+      ],
+    },
+    { label: "Branches", href: "/branches" },
+    {
+      label: "Partners",
+      href: "/partner",
+      children: [
+        { label: "Institutional Partners", href: "/partner" },
+        { label: "EAM-TERDI", href: "/eam-terdi" },
+      ],
+    },
+    { label: "Support", href: "/donate" },
+    {
+      label: "News & Events",
+      href: "/news",
+      children: [
+        { label: "News & Updates", href: "/news" },
+        { label: "Events & Activities", href: "/events" },
+      ],
+    },
     { label: "Contact", href: "/contact" },
-    { label: "Share", href: "/share" },
   ] satisfies NavItem[],
 } as const;
 
@@ -523,7 +591,7 @@ export const clinicName = centreName;
 export const centreBranches = siteConfig.branches;
 export const clinicBranches = centreBranches;
 
-/** Programmes grouped for the programmes hub. */
+/** Facilities grouped for the Centre hub. */
 export const centreServices = siteConfig.services;
 export const clinicServices = centreServices;
 
@@ -536,5 +604,5 @@ export function isPending(status: PublicationStatus): boolean {
  * Programme dates and enrolment details are shared as initiatives open.
  */
 export function servicePricingNote(): string {
-  return "Programme dates and enrolment details are shared by the Centre as initiatives open.";
+  return "Programme dates and participation details are shared by the Centre as initiatives open.";
 }

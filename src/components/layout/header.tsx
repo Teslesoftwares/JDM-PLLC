@@ -100,7 +100,7 @@ export function Header() {
               <Phone className="h-3.5 w-3.5" aria-hidden="true" />
               {siteConfig.contact.phone}
             </a>
-            <Link href="/branches" className="flex items-center gap-1.5 hover:underline">
+            <Link prefetch={false} href="/branches" className="flex items-center gap-1.5 hover:underline">
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
               {siteConfig.contact.addressShort}
             </Link>
@@ -117,14 +117,14 @@ export function Header() {
 
       {/* Main nav */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-        <Logo invert={homeAtTop} />
+        <Logo invert={homeAtTop} preload />
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
           {siteConfig.navigation.map((item) =>
-            (item as any).children ? (
+            "children" in item ? (
               <div key={item.href} className="group relative">
-                <Link
+                <Link prefetch={false}
                   href={item.href}
                   aria-haspopup="true"
                   aria-current={isActive(pathname, item.href) ? "page" : undefined}
@@ -154,9 +154,9 @@ export function Header() {
                   className="invisible absolute left-0 top-full z-50 w-64 pt-1 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
                 >
                   <ul className="overflow-hidden rounded-xl border border-black/10 bg-white py-2 shadow-lg">
-                    {(item as any).children.map((child: any, index: number) => (
+                    {item.children?.map((child, index) => (
                       <li key={child.href}>
-                        <Link
+                        <Link prefetch={false}
                           href={child.href}
                           aria-current={pathname === child.href ? "page" : undefined}
                           className={cn(
@@ -176,7 +176,7 @@ export function Header() {
                 </div>
               </div>
             ) : (
-              <Link
+              <Link prefetch={false}
                 key={item.href}
                 href={item.href}
                 aria-current={isActive(pathname, item.href) ? "page" : undefined}
@@ -208,19 +208,19 @@ export function Header() {
               homeAtTop ? "border border-white/80 bg-white/10 text-white hover:bg-white hover:text-[var(--brand-primary)]" : "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
             )}
           >
-            <Link href="/login">Login</Link>
+            <Link prefetch={false} href="/login">Login</Link>
           </Button>
           <Button
             asChild
             className="hidden bg-[var(--brand-yellow)] text-[var(--brand-on-yellow)] hover:bg-[var(--brand-yellow-dark)] lg:inline-flex"
           >
-            <Link href="/partner">Partner With Us</Link>
+            <Link prefetch={false} href="/partner">Partner</Link>
           </Button>
           <Button
             asChild
             className="hidden bg-[var(--brand-red)] text-white hover:bg-[var(--brand-red-dark)] lg:inline-flex"
           >
-            <Link href="/donate">Donate</Link>
+            <Link prefetch={false} href="/donate">Support</Link>
           </Button>
           <Button
             variant="ghost"
@@ -285,10 +285,10 @@ export function Header() {
         </div>
         <nav className="min-h-0 flex-1 space-y-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
           {siteConfig.navigation.map((item) =>
-            (item as any).children ? (
+            "children" in item ? (
               <div key={item.href}>
                 <div className="flex items-stretch gap-1">
-                  <Link
+                  <Link prefetch={false}
                     href={item.href}
                     onClick={closeMobileMenu}
                     className={cn(
@@ -331,9 +331,9 @@ export function Header() {
                     id={"mobile-submenu-" + item.href.replace(/\//g, "")}
                     className="mt-1 space-y-0.5 border-l-2 border-[var(--brand-primary)]/20 pl-3"
                   >
-                    {(item as any).children.map((child: any) => (
+                    {item.children?.map((child) => (
                       <li key={child.href}>
-                        <Link
+                        <Link prefetch={false}
                           href={child.href}
                           onClick={closeMobileMenu}
                           className={cn(
@@ -351,7 +351,7 @@ export function Header() {
                 ) : null}
               </div>
             ) : (
-              <Link
+              <Link prefetch={false}
                 key={item.href}
                 href={item.href}
                 onClick={closeMobileMenu}
@@ -370,28 +370,28 @@ export function Header() {
             asChild
             className="mt-3 w-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
           >
-            <Link href="/login" onClick={closeMobileMenu}>Login</Link>
+            <Link prefetch={false} href="/login" onClick={closeMobileMenu}>Login</Link>
           </Button>
           <Button
             asChild
             className="mt-3 w-full bg-[var(--brand-yellow)] text-[var(--brand-on-yellow)] hover:bg-[var(--brand-yellow-dark)]"
           >
-            <Link
+            <Link prefetch={false}
               href="/partner"
               onClick={closeMobileMenu}
             >
-              Partner With Us
+              Partner
             </Link>
           </Button>
           <Button
             asChild
             className="mt-3 w-full bg-[var(--brand-red)] text-white hover:bg-[var(--brand-red-dark)]"
           >
-            <Link
+            <Link prefetch={false}
               href="/donate"
               onClick={closeMobileMenu}
             >
-              Donate
+              Support
             </Link>
           </Button>
           <a

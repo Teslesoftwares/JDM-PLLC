@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,32 +11,42 @@ import { siteConfig } from "@/config/site";
 
 type Category =
   | "GENERAL"
-  | "VISITING"
-  | "RESEARCH"
   | "PARTNERSHIP"
+  | "DONATION"
+  | "RESEARCH"
   | "MEDIA"
-  | "EVENTS"
-  | "FELLOWSHIP";
+  | "PROGRAMMES"
+  | "EAM_TERDI"
+  | "OTHER";
 
 const CATEGORIES: Array<{ value: Category; label: string }> = [
-  { value: "GENERAL", label: "General enquiry" },
-  { value: "VISITING", label: "Visiting & admission" },
-  { value: "RESEARCH", label: "Research access" },
-  { value: "PARTNERSHIP", label: "Partnership proposal" },
-  { value: "MEDIA", label: "Media inquiry" },
-  { value: "EVENTS", label: "Event registration" },
-  { value: "FELLOWSHIP", label: "Fellowship or scholarship" },
+  { value: "GENERAL", label: "General Enquiry" },
+  { value: "PARTNERSHIP", label: "Institutional Partnership" },
+  { value: "DONATION", label: "Donations and Sponsorship" },
+  { value: "RESEARCH", label: "Research and Archives" },
+  { value: "MEDIA", label: "Media Enquiry" },
+  { value: "PROGRAMMES", label: "Youth Programmes" },
+  { value: "EAM_TERDI", label: "EAM-TERDI" },
+  { value: "OTHER", label: "Other" },
 ];
 
-const EMPTY = { name: "", email: "", phone: "", subject: "", message: "", category: "GENERAL" as Category, website: "" };
+const EMPTY = {
+  name: "",
+  email: "",
+  organisation: "",
+  message: "",
+  category: "GENERAL" as Category,
+  consent: false,
+  website: "",
+};
 
 /**
  * Public contact form.
  *
  * Posts to `/api/contact`, which persists the message as a `ContactMessage`
- * with a quotable reference and sends the sender an acknowledgement. The
- * `website` field is a honeypot: it is hidden from people and rejected by the
- * API, which answers bots exactly as it answers people.
+ * with a quotable reference. The `website` field is a honeypot: it is hidden
+ * from people and rejected by the API, which answers bots exactly as it answers
+ * people.
  */
 export function ContactForm() {
   const [form, setForm] = useState(EMPTY);
@@ -56,7 +67,12 @@ export function ContactForm() {
     setError("");
 
     if (!form.name.trim() || !form.email.trim() || form.message.trim().length < 10) {
-      setError("Please provide your name, a valid email address and a message of at least 10 characters.");
+      setError("Please provide your full name, email address and a message of at least 10 characters.");
+      return;
+    }
+
+    if (!form.consent) {
+      setError("Please consent to the Privacy Notice before sending your message.");
       return;
     }
 
@@ -124,7 +140,7 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <Label htmlFor="contact-name">Name *</Label>
+          <Label htmlFor="contact-name">Full name *</Label>
           <Input
             id="contact-name"
             name="name"
@@ -137,7 +153,7 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <Label htmlFor="contact-email">Email *</Label>
+          <Label htmlFor="contact-email">Email address *</Label>
           <Input
             id="contact-email"
             name="email"
@@ -154,19 +170,19 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <Label htmlFor="contact-phone">Phone (optional)</Label>
+          <Label htmlFor="contact-organisation">Organisation if applicable</Label>
           <Input
-            id="contact-phone"
-            name="phone"
-            type="tel"
-            value={form.phone}
+            id="contact-organisation"
+            name="organisation"
+            value={form.organisation}
             onChange={handleChange}
-            autoComplete="tel"
+            autoComplete="organization"
+            maxLength={200}
             className="mt-2"
           />
         </div>
         <div>
-          <Label htmlFor="contact-category">What is this about?</Label>
+          <Label htmlFor="contact-category">Enquiry category</Label>
           <select
             id="contact-category"
             name="category"
@@ -189,35 +205,38 @@ export function ContactForm() {
       </div>
 
       <div>
-        <Label htmlFor="contact-subject">Subject (optional)</Label>
-        <Input
-          id="contact-subject"
-          name="subject"
-          value={form.subject}
-          onChange={handleChange}
-          maxLength={200}
-          className="mt-2"
-        />
-      </div>
-
-      <div>
         <Label htmlFor="contact-message">Message *</Label>
         <textarea
           id="contact-message"
           name="message"
-          rows={5}
+          rows={6}
           value={form.message}
           onChange={handleChange}
           maxLength={5000}
           required
           className="mt-2 flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm"
-          placeholder="Tell us how we can help — include any relevant dates, references or the branch you are interested in."
         />
-        <p className="mt-2 text-xs text-[var(--brand-text-light)]">
-          A few sentences is enough. Please avoid sensitive personal details here —
-          anything that needs a full conversation is better arranged directly with
-          the Centre.
-        </p>
+      </div>
+
+      <div className="flex items-start gap-3">
+        <input
+          id="contact-consent"
+          name="consent"
+          type="checkbox"
+          checked={form.consent}
+          onChange={(event) =>
+            setForm((previous) => ({ ...previous, consent: event.target.checked }))
+          }
+          className="mt-1 h-4 w-4 rounded border-input text-[var(--brand-primary)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          required
+        />
+        <Label htmlFor="contact-consent" className="text-sm font-normal leading-relaxed">
+          Consent to the{" "}
+          <Link href="/data-protection" className="font-medium text-[var(--brand-primary)] hover:underline">
+            Privacy Notice
+          </Link>
+          . *
+        </Label>
       </div>
 
       {/* Honeypot: hidden from people, rejected by the API. */}

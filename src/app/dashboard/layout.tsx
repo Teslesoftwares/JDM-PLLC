@@ -1,4 +1,5 @@
 import { auth } from "@/lib/auth";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
 
@@ -28,18 +29,18 @@ export default async function DashboardLayout({
             <span className="min-w-0 truncate text-xs text-gray-600 sm:text-sm">
               {session.user.email} ({role})
             </span>
-            <a
+            <Link
               href="/"
               className="shrink-0 rounded border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 sm:text-sm"
             >
               Back to Site
-            </a>
+            </Link>
           </div>
         </div>
         <nav className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-2 sm:px-4">
-          <a href="/dashboard" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Overview</a>
-          <a href="/dashboard/inquiries" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Inquiries</a>
-          <a href="/dashboard/news" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">News Management</a>
+          <Link href="/dashboard" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Overview</Link>
+          <Link href="/dashboard/inquiries" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Inquiries</Link>
+          <Link href="/dashboard/news" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">News Management</Link>
         </nav>
       </header>
       <div className="motion-page-enter mx-auto max-w-7xl px-4 py-6 sm:py-8">{children}</div>

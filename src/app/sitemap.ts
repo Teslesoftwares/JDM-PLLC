@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { centreServices, centreBranches, siteConfig } from "@/config/site";
-import { articles } from "@/config/articles";
 
 /**
  * Public sitemap.
@@ -17,23 +16,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths: Array<{ path: string; changeFrequency: "daily" | "weekly" | "monthly"; priority: number }> = [
     { path: "/", changeFrequency: "weekly", priority: 1 },
     { path: "/about", changeFrequency: "monthly", priority: 0.8 },
-    { path: "/mission", changeFrequency: "monthly", priority: 0.8 },
     { path: "/legacy", changeFrequency: "monthly", priority: 0.8 },
-    { path: "/leadership", changeFrequency: "monthly", priority: 0.8 },
     { path: "/services", changeFrequency: "weekly", priority: 0.9 },
+    { path: "/programmes", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/research", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/governance", changeFrequency: "monthly", priority: 0.7 },
     { path: "/branches", changeFrequency: "monthly", priority: 0.6 },
     { path: "/events", changeFrequency: "weekly", priority: 0.7 },
     { path: "/news", changeFrequency: "weekly", priority: 0.7 },
-    { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
     { path: "/partner", changeFrequency: "monthly", priority: 0.8 },
-    { path: "/share", changeFrequency: "monthly", priority: 0.5 },
+    { path: "/eam-terdi", changeFrequency: "monthly", priority: 0.6 },
     { path: "/donate", changeFrequency: "monthly", priority: 0.7 },
     { path: "/faq", changeFrequency: "monthly", priority: 0.6 },
     { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
-    { path: "/book-appointment", changeFrequency: "monthly", priority: 0.6 },
-    { path: "/login", changeFrequency: "monthly", priority: 0.3 },
-    { path: "/privacy", changeFrequency: "monthly", priority: 0.3 },
     { path: "/terms", changeFrequency: "monthly", priority: 0.3 },
+    { path: "/donation-policy", changeFrequency: "monthly", priority: 0.4 },
+    { path: "/data-protection", changeFrequency: "monthly", priority: 0.4 },
+    { path: "/accessibility", changeFrequency: "monthly", priority: 0.4 },
   ];
 
   return [
@@ -51,12 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...centreBranches.map((branch) => ({
       url: `${base}/branches/${branch.slug}`,
-      lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
-    ...articles.map((article) => ({
-      url: `${base}/blog/${article.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.6,

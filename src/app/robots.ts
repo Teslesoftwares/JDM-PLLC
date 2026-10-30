@@ -27,6 +27,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap,
-    host: base,
   };
 }
