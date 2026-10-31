@@ -16,7 +16,7 @@ type Category =
   | "RESEARCH"
   | "MEDIA"
   | "PROGRAMMES"
-  | "EAM_TERDI"
+  | "EAMMC_TERDI"
   | "OTHER";
 
 const CATEGORIES: Array<{ value: Category; label: string }> = [
@@ -26,7 +26,7 @@ const CATEGORIES: Array<{ value: Category; label: string }> = [
   { value: "RESEARCH", label: "Research and Archives" },
   { value: "MEDIA", label: "Media Enquiry" },
   { value: "PROGRAMMES", label: "Youth Programmes" },
-  { value: "EAM_TERDI", label: "EAM-TERDI" },
+  { value: "EAMMC_TERDI", label: "EAMMC-TERDI" },
   { value: "OTHER", label: "Other" },
 ];
 

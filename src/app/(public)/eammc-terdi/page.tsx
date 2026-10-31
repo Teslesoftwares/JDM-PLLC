@@ -13,10 +13,10 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "EAM-TERDI",
+  title: "EAMMC-TERDI",
   description:
-    "EAM-TERDI refers to the E.A. Mahama Memorial Centre for Teacher Education, Research and Digital Innovation. It is a related initiative honouring Emmanuel Adama Mahama.",
-  alternates: { canonical: "/eam-terdi" },
+    "EAMMC-TERDI refers to the E.A. Mahama Memorial Centre for Teacher Education, Research and Digital Innovation. It is a related initiative honouring Emmanuel Adama Mahama.",
+  alternates: { canonical: "/eammc-terdi" },
 };
 
 const focusAreas = [
@@ -26,22 +26,22 @@ const focusAreas = [
   { icon: MonitorPlay, title: "Digital innovation." },
 ];
 
-export default function EamTerdiPage() {
+export default function EammcTerdiPage() {
   return (
     <>
       <PageHero
         eyebrow="A Related Educational Initiative"
-        title="EAM-TERDI"
-        description="EAM-TERDI refers to the E.A. Mahama Memorial Centre for Teacher Education, Research and Digital Innovation."
+        title="EAMMC-TERDI"
+        description="EAMMC-TERDI refers to the E.A. Mahama Memorial Centre for Teacher Education, Research and Digital Innovation."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Partners", href: "/partner" },
-          { label: "EAM-TERDI" },
+          { label: "EAMMC-TERDI" },
         ]}
         actions={
           <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
             <Link prefetch={false} href="/contact">
-              Enquire About EAM-TERDI
+              Enquire About EAMMC-TERDI
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -53,7 +53,7 @@ export default function EamTerdiPage() {
           <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-5">
             <Info className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]" aria-hidden="true" />
             <p className="text-sm leading-relaxed text-[var(--brand-text)]">
-              EAM-TERDI is separate from JDM-PLLC. It has its own identity,
+              EAMMC-TERDI is separate from JDM-PLLC. It has its own identity,
               planning and governance. It is not an operational department of
               the Centre, and its activities are subject to separate
               arrangements and approvals.
@@ -67,7 +67,7 @@ export default function EamTerdiPage() {
               </h2>
               <div className="space-y-4 leading-relaxed text-[var(--brand-text-light)]">
                 <p>
-                  EAM-TERDI refers to the E.A. Mahama Memorial Centre for
+                  EAMMC-TERDI refers to the E.A. Mahama Memorial Centre for
                   Teacher Education, Research and Digital Innovation.
                 </p>
                 <p>
@@ -76,7 +76,7 @@ export default function EamTerdiPage() {
                   commitment to learning and public service.
                 </p>
                 <p>
-                  EAM-TERDI is separate from JDM-PLLC. It has its own identity,
+                  EAMMC-TERDI is separate from JDM-PLLC. It has its own identity,
                   planning and governance. It is not an operational department
                   of the Centre, and its activities are subject to separate
                   arrangements and approvals.
@@ -147,18 +147,18 @@ export default function EamTerdiPage() {
             contributing to improved learning outcomes.
           </p>
           <p>
-            Further information about EAM-TERDI will be published as its plans,
+            Further information about EAMMC-TERDI will be published as its plans,
             partnerships and governance arrangements are confirmed.
           </p>
           <p>
-            EAM-TERDI is associated with Bagabaga College of Education (BACE),
+            EAMMC-TERDI is associated with Bagabaga College of Education (BACE),
             where Emmanuel Adama Mahama served as Principal. Its relationship
             with BACE is intended to support teacher education, research,
             professional development and digital innovation.
           </p>
           <p>
             For institutional collaboration, contact the Secretariat. A
-            dedicated EAM-TERDI website may be developed and published
+            dedicated EAMMC-TERDI website may be developed and published
             separately.
           </p>
           <Button asChild className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">

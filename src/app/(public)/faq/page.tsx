@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers about JDM-PLLC, its leadership, locations, launch, programmes, research access, donations and relationship with EAM-TERDI.",
+    "Answers about JDM-PLLC, its leadership, locations, launch, programmes, research access, donations and relationship with EAMMC-TERDI.",
   alternates: { canonical: "/faq" },
 };
 

@@ -74,7 +74,7 @@ export default function InquiriesPage() {
                       {inquiry.status}
                     </span>
                     <span className="rounded bg-purple-100 px-2 py-1 text-xs text-purple-700">
-                      {inquiry.category}
+                      {inquiry.category === "EAM_TERDI" ? "EAMMC-TERDI" : inquiry.category}
                     </span>
                   </div>
                   <p className="mt-1 break-words text-sm text-gray-600">

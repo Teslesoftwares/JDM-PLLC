@@ -492,8 +492,8 @@ export default function HomePage() {
                     variant="outline"
                     className="border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-[var(--brand-accent)]"
                   >
-                    <Link prefetch={false} href="/eam-terdi">
-                      EAM-TERDI
+                    <Link prefetch={false} href="/eammc-terdi">
+                      EAMMC-TERDI
                     </Link>
                   </Button>
                 </div>

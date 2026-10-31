@@ -139,16 +139,16 @@ export default function PartnerPage() {
             <Card className="border-0 bg-white shadow-sm">
               <CardContent className="p-8">
                 <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
-                  EAM-TERDI
+                  EAMMC-TERDI
                 </h2>
                 <p className="mb-4 leading-relaxed text-[var(--brand-text-light)]">
-                  Separately, EAM-TERDI is a related initiative honouring
+                  Separately, EAMMC-TERDI is a related initiative honouring
                   Emmanuel Adama Mahama, focused on teacher education, research,
                   professional development and digital innovation.
                 </p>
                 <Button asChild variant="link" className="p-0 text-[var(--brand-primary)]">
-                  <Link href="/eam-terdi">
-                    Learn about EAM-TERDI
+                  <Link href="/eammc-terdi">
+                    Learn about EAMMC-TERDI
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>

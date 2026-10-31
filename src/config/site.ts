@@ -562,7 +562,7 @@ export const siteConfig = {
       href: "/partner",
       children: [
         { label: "Institutional Partners", href: "/partner" },
-        { label: "EAM-TERDI", href: "/eam-terdi" },
+        { label: "EAMMC-TERDI", href: "/eammc-terdi" },
       ],
     },
     { label: "Support", href: "/donate" },

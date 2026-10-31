@@ -126,18 +126,18 @@ export default function GovernancePage() {
                     />
                     <div>
                       <h3 className="font-semibold text-[var(--brand-text)]">
-                        EAM-TERDI
+                        EAMMC-TERDI
                       </h3>
                       <p className="mt-1 text-sm leading-relaxed text-[var(--brand-text-light)]">
-                        EAM-TERDI is a separate related initiative honouring
+                        EAMMC-TERDI is a separate related initiative honouring
                         Emmanuel Adama Mahama. It is not an operational
                         department of JDM-PLLC.
                       </p>
                       <Link
-                        href="/eam-terdi"
+                        href="/eammc-terdi"
                         className="mt-2 inline-block text-sm font-semibold text-[var(--brand-primary)] hover:underline"
                       >
-                        Learn about EAM-TERDI
+                        Learn about EAMMC-TERDI
                       </Link>
                     </div>
                   </CardContent>

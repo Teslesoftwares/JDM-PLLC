@@ -63,6 +63,8 @@ const nextConfig: NextConfig = {
       // Legacy fertility-era routes, kept alive for old links and hero slides.
       { source: "/fertility", destination: "/legacy", permanent: true },
       { source: "/doctors", destination: "/leadership", permanent: true },
+      // Preserve existing links to the related initiative's previous URL.
+      { source: "/eam-terdi", destination: "/eammc-terdi", permanent: true },
     ];
   },
   images: {

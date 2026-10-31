@@ -12,7 +12,7 @@ const quickLinks = [
   { label: "Programmes", href: "/programmes" },
   { label: "Research and Archives", href: "/research" },
   { label: "Partners", href: "/partner" },
-  { label: "EAM-TERDI", href: "/eam-terdi" },
+  { label: "EAMMC-TERDI", href: "/eammc-terdi" },
   { label: "Support the Project", href: "/donate" },
   { label: "News and Updates", href: "/news" },
   { label: "Events", href: "/events" },
