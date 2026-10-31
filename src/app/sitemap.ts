@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/legacy", changeFrequency: "monthly", priority: 0.8 },
     { path: "/services", changeFrequency: "weekly", priority: 0.9 },
     { path: "/programmes", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/leadership", changeFrequency: "monthly", priority: 0.7 },
     { path: "/research", changeFrequency: "monthly", priority: 0.8 },
     { path: "/governance", changeFrequency: "monthly", priority: 0.7 },
     { path: "/branches", changeFrequency: "monthly", priority: 0.6 },

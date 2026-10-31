@@ -552,6 +552,7 @@ export const siteConfig = {
       children: [
         { label: "Library & Legacy Centre", href: "/services" },
         { label: "Programmes", href: "/programmes" },
+        { label: "Leadership", href: "/leadership" },
         { label: "Research & Archives", href: "/research" },
         { label: "Governance", href: "/governance" },
       ],
