@@ -210,7 +210,7 @@ export function Footer() {
               www.afyef.org
             </a>
             {" · "}
-            Powered by TEGPA
+            Powered by IETSA and TEGPA
           </p>
         </div>
       </div>
