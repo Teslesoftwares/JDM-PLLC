@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
@@ -14,7 +15,6 @@ import {
   Building2,
   Compass,
   GraduationCap,
-  Handshake,
   Landmark,
   Lightbulb,
   MapPin,
@@ -459,6 +459,20 @@ export default function HomePage() {
                 </Card>
               ))}
             </div>
+
+            <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl bg-[var(--brand-primary)] shadow-lg ring-1 ring-black/10">
+              <Image
+                src="/images/ghana-neon-route-map-at-sunset.png"
+                alt="Map connecting Tamale, Damongo, Bole and Busunu across Northern Ghana"
+                width={1671}
+                height={941}
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="h-auto w-full"
+              />
+              <figcaption className="px-5 py-3 text-center text-sm text-white/90">
+                A route map connecting the four proposed project locations.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -471,7 +485,7 @@ export default function HomePage() {
                   Partnership and Collaboration
                 </p>
                 <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
-                  Partner institutions include:
+                  Institutional partners and supporting organisations
                 </h2>
                 <p className="mb-6 leading-relaxed text-[var(--brand-text-light)]">
                   All partnerships will be formalised through appropriate
@@ -500,25 +514,34 @@ export default function HomePage() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {siteConfig.partners.map((partner) => (
-                  <div
-                    key={partner.name}
-                    className="rounded-xl border border-[var(--brand-accent)] bg-white p-5 shadow-sm"
-                  >
-                    <Handshake
-                      className="mb-3 h-5 w-5 text-[var(--brand-primary)]"
-                      aria-hidden="true"
-                    />
-                    <p className="text-sm font-semibold text-[var(--brand-text)]">
-                      {partner.name}
-                    </p>
-                    {partner.detail ? (
-                      <p className="mt-1 text-xs text-[var(--brand-text-light)]">
-                        {partner.detail}
+                {siteConfig.partners
+                  .filter((partner) => partner.logo || "textOnly" in partner)
+                  .map((partner) => (
+                    <div
+                      key={partner.name}
+                      className="flex min-h-40 flex-col items-center justify-center rounded-xl border border-[var(--brand-accent)] bg-white p-5 text-center shadow-sm"
+                    >
+                      {partner.logo ? (
+                        <div className="relative mb-3 h-16 w-full max-w-40">
+                          <Image
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            fill
+                            sizes="160px"
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : null}
+                      <p className="text-sm font-semibold text-[var(--brand-text)]">
+                        {partner.name}
                       </p>
-                    ) : null}
-                  </div>
-                ))}
+                      {partner.detail ? (
+                        <p className="mt-1 text-xs text-[var(--brand-text-light)]">
+                          {partner.detail}
+                        </p>
+                      ) : null}
+                    </div>
+                  ))}
               </div>
             </div>
           </div>

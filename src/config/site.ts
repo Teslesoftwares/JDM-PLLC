@@ -355,6 +355,16 @@ export const siteConfig = {
    */
   partners: [
     {
+      name: "AfCFTA Young Entrepreneurs Federation (AfYEF)",
+      logo: "/images/partners/afyef.jpg",
+      detail: "Lead organisation",
+    },
+    {
+      name: "Sagnarigu Municipal Assembly",
+      logo: "/images/partners/sagnerigu-municipal-assembly.jpg",
+      detail: "Supporting organisation",
+    },
+    {
       name: "University for Development Studies (UDS)",
       logo: "/images/partners/university-for-development-studies.png",
       detail: "MoU signed 2 July 2026",
@@ -375,8 +385,9 @@ export const siteConfig = {
       detail: "",
     },
     {
-      name: "Center for Local Development and Culture (CLDC)",
+      name: "Continental Legacy Development Company (CLDC)",
       logo: "",
+      textOnly: true,
       detail: "",
     },
     {
@@ -390,8 +401,8 @@ export const siteConfig = {
       detail: "",
     },
     {
-      name: "University Administrators Association of Ghana (UACE)",
-      logo: "",
+      name: "USA Africa Caribbean Exchange (UACE)",
+      logo: "/images/partners/usa-africa-caribbean-exchange.jpg",
       detail: "",
     },
   ],
@@ -552,21 +563,21 @@ export const siteConfig = {
       children: [
         { label: "Library & Legacy Centre", href: "/services" },
         { label: "Programmes", href: "/programmes" },
-        { label: "Leadership", href: "/leadership" },
+        { label: "Branches", href: "/branches" },
+        { label: "Partners", href: "/partner" },
+        { label: "EAMMC-TERDI", href: "/eammc-terdi" },
         { label: "Research & Archives", href: "/research" },
         { label: "Governance", href: "/governance" },
       ],
     },
-    { label: "Branches", href: "/branches" },
     {
-      label: "Partners",
-      href: "/partner",
+      label: "Our Team",
+      href: "/leadership",
       children: [
-        { label: "Institutional Partners", href: "/partner" },
-        { label: "EAMMC-TERDI", href: "/eammc-terdi" },
+        { label: "Global Steering Committee", href: "/leadership" },
       ],
     },
-    { label: "Support", href: "/donate" },
+    { label: "Proposed Project Site", href: "/project-site" },
     {
       label: "News & Events",
       href: "/news",

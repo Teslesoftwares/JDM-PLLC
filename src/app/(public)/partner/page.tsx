@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/page-hero";
@@ -30,6 +31,10 @@ const partnerTypes = [
   { icon: Lightbulb, title: "Development and philanthropic partners." },
   { icon: Handshake, title: "Private-sector and technology partners." },
 ];
+
+const displayedPartners = siteConfig.partners.filter(
+  (partner) => partner.logo || "textOnly" in partner,
+);
 
 export default function PartnerPage() {
   return (
@@ -86,25 +91,36 @@ export default function PartnerPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div>
               <h2 className="mb-6 text-3xl font-bold text-[var(--brand-text)]">
-                Named institutional relationships include:
+                Institutional partners and supporting organisations
               </h2>
-              <ul className="space-y-4">
-                {siteConfig.partners.map((partner) => (
-                  <li
+              <div className="grid gap-4 sm:grid-cols-2">
+                {displayedPartners.map((partner) => (
+                  <article
                     key={partner.name}
-                    className="rounded-lg border bg-white p-4 shadow-sm"
+                    className="flex min-h-48 flex-col items-center justify-center rounded-xl border bg-white p-6 text-center shadow-sm"
                   >
-                    <p className="font-semibold text-[var(--brand-text)]">
+                    {partner.logo ? (
+                      <div className="relative mb-4 h-20 w-full max-w-48">
+                        <Image
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          fill
+                          sizes="192px"
+                          className="object-contain"
+                        />
+                      </div>
+                    ) : null}
+                    <h3 className="font-semibold text-[var(--brand-text)]">
                       {partner.name}
-                    </p>
+                    </h3>
                     {partner.detail ? (
-                      <p className="text-sm text-[var(--brand-text-light)]">
+                      <p className="mt-1 text-sm text-[var(--brand-text-light)]">
                         {partner.detail}
                       </p>
                     ) : null}
-                  </li>
+                  </article>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <Card className="border-0 bg-[var(--brand-primary)] text-white">
