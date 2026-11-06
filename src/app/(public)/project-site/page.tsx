@@ -35,15 +35,11 @@ const projectVideos = [
   },
   {
     file: "WhatsApp Video 2026-10-13 at 04.44.45.mp4",
-    title: "Project video — 13 October 2026, 04:44:45",
+    title: "Project site video 1",
   },
   {
     file: "WhatsApp Video 2026-10-13 at 04.45.48.mp4",
-    title: "Project video — 13 October 2026, 04:45:48",
-  },
-  {
-    file: "WhatsApp Video 2026-10-13 at 04.45.52.mp4",
-    title: "Project video — 13 October 2026, 04:45:52",
+    title: "Project site video 2",
   },
 ];
 
