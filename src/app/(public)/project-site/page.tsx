@@ -28,6 +28,25 @@ const conceptViews = [
   },
 ];
 
+const projectVideos = [
+  {
+    file: "visit-centre.mp4",
+    title: "Visit the Centre",
+  },
+  {
+    file: "WhatsApp Video 2026-10-13 at 04.44.45.mp4",
+    title: "Project video — 13 October 2026, 04:44:45",
+  },
+  {
+    file: "WhatsApp Video 2026-10-13 at 04.45.48.mp4",
+    title: "Project video — 13 October 2026, 04:45:48",
+  },
+  {
+    file: "WhatsApp Video 2026-10-13 at 04.45.52.mp4",
+    title: "Project video — 13 October 2026, 04:45:52",
+  },
+];
+
 export default function ProjectSitePage() {
   return (
     <>
@@ -85,7 +104,7 @@ export default function ProjectSitePage() {
           <div className="mb-6 max-w-3xl">
             <h2 className="mb-3 text-3xl font-bold text-[var(--brand-text)]">Project videos</h2>
             <p className="text-[var(--brand-text-light)]">
-              View the proposed campus concept and an introduction to the Centre.
+              View the campus concept and videos from the proposed project site.
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2">
@@ -104,23 +123,25 @@ export default function ProjectSitePage() {
                 Your browser does not support the video element.
               </video>
             </article>
-            <article>
-              <h3 className="mb-3 text-xl font-semibold text-[var(--brand-text)]">
-                Visit the Centre
-              </h3>
-              <video
-                className="aspect-video w-full rounded-2xl bg-black shadow-lg"
-                controls
-                preload="metadata"
-                aria-label="Visit the Centre video"
-              >
-                <source
-                  src="/Proposed%20Project%20Site/visit-centre.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video element.
-              </video>
-            </article>
+            {projectVideos.map((video) => (
+              <article key={video.file}>
+                <h3 className="mb-3 text-xl font-semibold text-[var(--brand-text)]">
+                  {video.title}
+                </h3>
+                <video
+                  className="aspect-video w-full rounded-2xl bg-black shadow-lg"
+                  controls
+                  preload="metadata"
+                  aria-label={video.title}
+                >
+                  <source
+                    src={`/Proposed%20Project%20Site/${encodeURIComponent(video.file)}`}
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video element.
+                </video>
+              </article>
+            ))}
           </div>
         </div>
       </section>
