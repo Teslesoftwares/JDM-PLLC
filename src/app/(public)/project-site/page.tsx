@@ -114,7 +114,10 @@ export default function ProjectSitePage() {
                 preload="metadata"
                 aria-label="Visit the Centre video"
               >
-                <source src="/videos/visit-centre.mp4" type="video/mp4" />
+                <source
+                  src="/Proposed%20Project%20Site/visit-centre.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video element.
               </video>
             </article>
