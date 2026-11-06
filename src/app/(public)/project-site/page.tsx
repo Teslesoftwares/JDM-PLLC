@@ -83,23 +83,42 @@ export default function ProjectSitePage() {
       <section className="bg-[var(--brand-accent)]/40 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 max-w-3xl">
-            <h2 className="mb-3 text-3xl font-bold text-[var(--brand-text)]">
-              Project video
-            </h2>
+            <h2 className="mb-3 text-3xl font-bold text-[var(--brand-text)]">Project videos</h2>
             <p className="text-[var(--brand-text-light)]">
-              A visual walkthrough of the proposed campus concept.
+              View the proposed campus concept and an introduction to the Centre.
             </p>
           </div>
-          <video
-            className="aspect-video w-full rounded-2xl bg-black shadow-lg"
-            controls
-            preload="metadata"
-            poster="/images/hero/campus-walk-poster.jpg"
-            aria-label="Video walkthrough of the proposed Centre campus concept"
-          >
-            <source src="/images/hero/campus-walk.mp4" type="video/mp4" />
-            Your browser does not support the video element.
-          </video>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <article>
+              <h3 className="mb-3 text-xl font-semibold text-[var(--brand-text)]">
+                Proposed campus concept
+              </h3>
+              <video
+                className="aspect-video w-full rounded-2xl bg-black shadow-lg"
+                controls
+                preload="metadata"
+                poster="/images/hero/campus-walk-poster.jpg"
+                aria-label="Video walkthrough of the proposed Centre campus concept"
+              >
+                <source src="/images/hero/campus-walk.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </article>
+            <article>
+              <h3 className="mb-3 text-xl font-semibold text-[var(--brand-text)]">
+                Visit the Centre
+              </h3>
+              <video
+                className="aspect-video w-full rounded-2xl bg-black shadow-lg"
+                controls
+                preload="metadata"
+                aria-label="Visit the Centre video"
+              >
+                <source src="/videos/visit-centre.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </article>
+          </div>
         </div>
       </section>
     </>
