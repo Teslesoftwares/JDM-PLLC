@@ -1,6 +1,49 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
+import nodemailer from "nodemailer";
+
+async function sendContactNotification(input: {
+  reference: string;
+  name: string;
+  email: string;
+  organisation?: string | null;
+  category: string;
+  message: string;
+}) {
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const password = process.env.SMTP_PASS || process.env.SMTP_PASSWORD;
+  const port = Number(process.env.SMTP_PORT || 587);
+  const to = process.env.CONTACT_EMAIL || "info@jdm-pllc.org";
+
+  if (!host || !user || !password || !Number.isInteger(port) || port < 1) {
+    throw new Error("Contact email SMTP settings are incomplete");
+  }
+
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: { user, pass: password },
+  });
+
+  await transporter.sendMail({
+    from: process.env.SMTP_FROM || user,
+    to,
+    replyTo: { name: input.name, address: input.email },
+    subject: `Website enquiry (${input.category}) — ${input.reference}`,
+    text: [
+      `Reference: ${input.reference}`,
+      `Name: ${input.name}`,
+      `Email: ${input.email}`,
+      `Organisation: ${input.organisation || "Not provided"}`,
+      `Category: ${input.category}`,
+      "",
+      input.message,
+    ].join("\n"),
+  });
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,6 +74,15 @@ export async function POST(request: NextRequest) {
         ipAddress: request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip"),
         userAgent: request.headers.get("user-agent"),
       },
+    });
+
+    await sendContactNotification({
+      reference,
+      name,
+      email,
+      organisation: organisation || null,
+      category,
+      message,
     });
 
     return NextResponse.json({ success: true, reference });

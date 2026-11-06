@@ -44,7 +44,8 @@ const EMPTY = {
  * Public contact form.
  *
  * Posts to `/api/contact`, which persists the message as a `ContactMessage`
- * with a quotable reference. The `website` field is a honeypot: it is hidden
+ * and emails it to the Secretariat with a quotable reference. The `website`
+ * field is a honeypot: it is hidden
  * from people and rejected by the API, which answers bots exactly as it answers
  * people.
  */
