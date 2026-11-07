@@ -8,23 +8,23 @@ export default function DashboardPage() {
       <div className="grid gap-4 md:grid-cols-2">
         <a
           href="/dashboard/inquiries"
-          className="group rounded-lg border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--brand-primary)]/40 hover:shadow-md sm:p-6"
+          className="group rounded-lg border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-(--brand-primary)/40 hover:shadow-md sm:p-6"
         >
           <h3 className="mb-2 text-lg font-medium">Contact Enquiries</h3>
           <p className="mb-4 text-gray-600">View messages sent through the Contact Form</p>
-          <span className="font-medium text-[var(--brand-primary)] group-hover:underline">
+          <span className="font-medium text-(--brand-primary) group-hover:underline">
             View Enquiries →
           </span>
         </a>
         <a
           href="/dashboard/news"
-          className="group rounded-lg border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--brand-primary)]/40 hover:shadow-md sm:p-6"
+          className="group rounded-lg border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-(--brand-primary)/40 hover:shadow-md sm:p-6"
         >
           <h3 className="mb-2 text-lg font-medium">News and Project Updates</h3>
           <p className="mb-4 text-gray-600">
             Only confirmed developments should be presented as completed. Proposals, discussions and pending approvals must be identified accurately.
           </p>
-          <span className="font-medium text-[var(--brand-primary)] group-hover:underline">
+          <span className="font-medium text-(--brand-primary) group-hover:underline">
             News and Updates →
           </span>
         </a>

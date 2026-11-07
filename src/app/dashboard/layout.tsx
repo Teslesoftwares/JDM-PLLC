@@ -38,9 +38,9 @@ export default async function DashboardLayout({
           </div>
         </div>
         <nav className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-2 sm:px-4">
-          <Link href="/dashboard" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Overview</Link>
-          <Link href="/dashboard/inquiries" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">Contact Enquiries</Link>
-          <Link href="/dashboard/news" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-[var(--brand-primary)]">News and Project Updates</Link>
+          <Link href="/dashboard" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-(--brand-primary)">Overview</Link>
+          <Link href="/dashboard/inquiries" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-(--brand-primary)">Contact Enquiries</Link>
+          <Link href="/dashboard/news" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-(--brand-primary)">News and Project Updates</Link>
         </nav>
       </header>
       <div className="motion-page-enter mx-auto max-w-7xl px-4 py-6 sm:py-8">{children}</div>

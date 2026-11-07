@@ -91,7 +91,7 @@ export function Header() {
       <div
         className={cn(
           "hidden border-b text-white lg:block",
-          homeAtTop ? "border-white/15 bg-transparent" : "bg-[var(--brand-primary)]",
+          homeAtTop ? "border-white/15 bg-transparent" : "bg-(--brand-primary)",
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-sm">
@@ -132,14 +132,14 @@ export function Header() {
                     "flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors",
                     homeAtTop
                       ? "text-white hover:bg-white/15 hover:text-white"
-                      : "hover:bg-[var(--brand-accent)] hover:text-[var(--brand-primary)]",
+                      : "hover:bg-(--brand-accent) hover:text-(--brand-primary)",
                     isActive(pathname, item.href)
                       ? homeAtTop
                         ? "bg-white/15 text-white"
-                        : "bg-[var(--brand-accent)] text-[var(--brand-primary)]"
+                        : "bg-(--brand-accent) text-(--brand-primary)"
                       : homeAtTop
                         ? "text-white/90"
-                        : "text-[var(--brand-text-light)]"
+                        : "text-(--brand-text-light)"
                   )}
                 >
                   {item.label}
@@ -160,12 +160,12 @@ export function Header() {
                           href={child.href}
                           aria-current={pathname === child.href ? "page" : undefined}
                           className={cn(
-                            "block px-4 py-2 text-sm transition-colors hover:bg-[var(--brand-accent)] hover:text-[var(--brand-primary)]",
+                            "block px-4 py-2 text-sm transition-colors hover:bg-(--brand-accent) hover:text-(--brand-primary)",
                             pathname === child.href
-                              ? "bg-[var(--brand-accent)] text-[var(--brand-primary)]"
-                              : "text-[var(--brand-text)]",
+                              ? "bg-(--brand-accent) text-(--brand-primary)"
+                              : "text-(--brand-text)",
                             index === 0 &&
-                              "border-b border-black/5 pb-2 font-semibold text-[var(--brand-primary)]"
+                              "border-b border-black/5 pb-2 font-semibold text-(--brand-primary)"
                           )}
                         >
                           {child.label}
@@ -184,14 +184,14 @@ export function Header() {
                   "rounded-md px-3 py-2 text-sm font-medium transition-colors",
                   homeAtTop
                     ? "text-white hover:bg-white/15 hover:text-white"
-                    : "hover:bg-[var(--brand-accent)] hover:text-[var(--brand-primary)]",
+                    : "hover:bg-(--brand-accent) hover:text-(--brand-primary)",
                   isActive(pathname, item.href)
                     ? homeAtTop
                       ? "bg-white/15 text-white"
-                      : "bg-[var(--brand-accent)] text-[var(--brand-primary)]"
+                      : "bg-(--brand-accent) text-(--brand-primary)"
                     : homeAtTop
                       ? "text-white/90"
-                      : "text-[var(--brand-text-light)]"
+                      : "text-(--brand-text-light)"
                 )}
               >
                 {item.label}
@@ -203,13 +203,13 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Button
             asChild
-            className="hidden bg-[var(--brand-yellow)] text-[var(--brand-on-yellow)] hover:bg-[var(--brand-yellow-dark)] lg:inline-flex"
+            className="hidden bg-(--brand-yellow) text-(--brand-on-yellow) hover:bg-(--brand-yellow-dark) lg:inline-flex"
           >
             <Link prefetch={false} href="/partner">Partner</Link>
           </Button>
           <Button
             asChild
-            className="hidden bg-[var(--brand-red)] text-white hover:bg-[var(--brand-red-dark)] lg:inline-flex"
+            className="hidden bg-(--brand-red) text-white hover:bg-(--brand-red-dark) lg:inline-flex"
           >
             <Link prefetch={false} href="/donate">Support</Link>
           </Button>
@@ -283,10 +283,10 @@ export function Header() {
                     href={item.href}
                     onClick={closeMobileMenu}
                     className={cn(
-                      "flex-1 rounded-md px-3 py-2.5 text-base font-medium transition-colors hover:bg-[var(--brand-accent)]",
+                      "flex-1 rounded-md px-3 py-2.5 text-base font-medium transition-colors hover:bg-(--brand-accent)",
                       isActive(pathname, item.href)
-                        ? "bg-[var(--brand-accent)] text-[var(--brand-primary)]"
-                        : "text-[var(--brand-text-light)]"
+                        ? "bg-(--brand-accent) text-(--brand-primary)"
+                        : "text-(--brand-text-light)"
                     )}
                   >
                     {item.label}
@@ -305,7 +305,7 @@ export function Header() {
                         ? `Hide ${item.label} links`
                         : `Show ${item.label} links`
                     }
-                    className="flex w-11 items-center justify-center rounded-md text-[var(--brand-text-light)] transition-colors hover:bg-[var(--brand-accent)]"
+                    className="flex w-11 items-center justify-center rounded-md text-(--brand-text-light) transition-colors hover:bg-(--brand-accent)"
                   >
                     <ChevronDown
                       className={cn(
@@ -320,7 +320,7 @@ export function Header() {
                 {openSubmenu === item.href ? (
                   <ul
                     id={"mobile-submenu-" + item.href.replace(/\//g, "")}
-                    className="mt-1 space-y-0.5 border-l-2 border-[var(--brand-primary)]/20 pl-3"
+                    className="mt-1 space-y-0.5 border-l-2 border-(--brand-primary)/20 pl-3"
                   >
                     {item.children?.map((child) => (
                       <li key={child.href}>
@@ -328,10 +328,10 @@ export function Header() {
                           href={child.href}
                           onClick={closeMobileMenu}
                           className={cn(
-                            "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-[var(--brand-accent)]",
+                            "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-(--brand-accent)",
                             pathname === child.href
-                              ? "bg-[var(--brand-accent)] font-medium text-[var(--brand-primary)]"
-                              : "text-[var(--brand-text-light)]"
+                              ? "bg-(--brand-accent) font-medium text-(--brand-primary)"
+                              : "text-(--brand-text-light)"
                           )}
                         >
                           {child.label}
@@ -347,10 +347,10 @@ export function Header() {
                 href={item.href}
                 onClick={closeMobileMenu}
                 className={cn(
-                  "block rounded-md px-3 py-2.5 text-base font-medium transition-colors hover:bg-[var(--brand-accent)]",
+                  "block rounded-md px-3 py-2.5 text-base font-medium transition-colors hover:bg-(--brand-accent)",
                   isActive(pathname, item.href)
-                    ? "bg-[var(--brand-accent)] text-[var(--brand-primary)]"
-                    : "text-[var(--brand-text-light)]"
+                    ? "bg-(--brand-accent) text-(--brand-primary)"
+                    : "text-(--brand-text-light)"
                 )}
               >
                 {item.label}
@@ -359,7 +359,7 @@ export function Header() {
           )}
           <Button
             asChild
-            className="mt-3 w-full bg-[var(--brand-yellow)] text-[var(--brand-on-yellow)] hover:bg-[var(--brand-yellow-dark)]"
+            className="mt-3 w-full bg-(--brand-yellow) text-(--brand-on-yellow) hover:bg-(--brand-yellow-dark)"
           >
             <Link prefetch={false}
               href="/partner"
@@ -370,7 +370,7 @@ export function Header() {
           </Button>
           <Button
             asChild
-            className="mt-3 w-full bg-[var(--brand-red)] text-white hover:bg-[var(--brand-red-dark)]"
+            className="mt-3 w-full bg-(--brand-red) text-white hover:bg-(--brand-red-dark)"
           >
             <Link prefetch={false}
               href="/donate"
@@ -381,7 +381,7 @@ export function Header() {
           </Button>
           <a
             href={siteConfig.contact.phoneHref}
-            className="mt-4 flex items-center gap-2 px-3 text-sm font-medium text-[var(--brand-primary)]"
+            className="mt-4 flex items-center gap-2 px-3 text-sm font-medium text-(--brand-primary)"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             {siteConfig.contact.phone}

@@ -28,7 +28,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "cinematic-page-hero relative isolate overflow-hidden bg-[var(--brand-primary)] bg-cover bg-center py-16 text-white lg:py-20",
+        "cinematic-page-hero relative isolate overflow-hidden bg-(--brand-primary) bg-cover bg-center py-16 text-white lg:py-20",
         className
       )}
       style={{

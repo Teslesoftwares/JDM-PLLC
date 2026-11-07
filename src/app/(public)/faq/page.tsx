@@ -96,10 +96,10 @@ export default function FaqPage() {
             {faqs.map((faq) => (
               <Card key={faq.question} className="border-0 shadow-sm">
                 <CardContent className="p-6">
-                  <h2 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
+                  <h2 className="mb-2 text-lg font-semibold text-(--brand-text)">
                     {faq.question}
                   </h2>
-                  <p className="leading-relaxed text-[var(--brand-text-light)]">
+                  <p className="leading-relaxed text-(--brand-text-light)">
                     {faq.answer}
                   </p>
                 </CardContent>
@@ -107,22 +107,22 @@ export default function FaqPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-lg bg-[var(--brand-accent)] p-8 text-center">
-            <h2 className="mb-2 text-2xl font-bold text-[var(--brand-text)]">
+          <div className="mt-12 rounded-lg bg-(--brand-accent) p-8 text-center">
+            <h2 className="mb-2 text-2xl font-bold text-(--brand-text)">
               Still have a question?
             </h2>
-            <p className="mb-6 text-[var(--brand-text-light)]">
+            <p className="mb-6 text-(--brand-text-light)">
               Contact the Secretariat and we will direct your enquiry to the
               right person.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button asChild className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
+              <Button asChild className="bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)">
                 <Link href="/contact">
                   Contact us
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-[var(--brand-primary)] text-[var(--brand-primary)]">
+              <Button asChild variant="outline" className="border-(--brand-primary) text-(--brand-primary)">
                 <Link href="/governance">Governance</Link>
               </Button>
             </div>

@@ -37,7 +37,7 @@ export function Footer() {
   const { contact } = siteConfig;
 
   return (
-    <footer className="motion-fade-in border-t border-[var(--brand-primary-dark)] bg-[var(--brand-primary)] text-white">
+    <footer className="motion-fade-in border-t border-(--brand-primary-dark) bg-(--brand-primary) text-white">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -172,7 +172,7 @@ export function Footer() {
 
             <SocialLinks
               className="mt-6 flex-wrap"
-              linkClassName="bg-white/10 text-white hover:bg-white hover:text-[var(--brand-primary)]"
+              linkClassName="bg-white/10 text-white hover:bg-white hover:text-(--brand-primary)"
             />
           </div>
         </div>

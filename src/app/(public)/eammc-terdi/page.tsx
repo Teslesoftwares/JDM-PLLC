@@ -39,7 +39,7 @@ export default function EammcTerdiPage() {
           { label: "EAMMC-TERDI" },
         ]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="/contact">
               Enquire About EAMMC-TERDI
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -50,9 +50,9 @@ export default function EammcTerdiPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-5">
-            <Info className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]" aria-hidden="true" />
-            <p className="text-sm leading-relaxed text-[var(--brand-text)]">
+          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-(--brand-primary) bg-(--brand-accent) p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-(--brand-primary)" aria-hidden="true" />
+            <p className="text-sm leading-relaxed text-(--brand-text)">
               EAMMC-TERDI is separate from JDM-PLLC. It has its own identity,
               planning and governance. It is not an operational department of
               the Centre, and its activities are subject to separate
@@ -62,10 +62,10 @@ export default function EammcTerdiPage() {
 
           <div className="grid gap-10 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-4 text-3xl font-bold text-(--brand-text)">
                 A Related Initiative Honouring Emmanuel Adama Mahama
               </h2>
-              <div className="space-y-4 leading-relaxed text-[var(--brand-text-light)]">
+              <div className="space-y-4 leading-relaxed text-(--brand-text-light)">
                 <p>
                   EAMMC-TERDI refers to the E.A. Mahama Memorial Centre for
                   Teacher Education, Research and Digital Innovation.
@@ -84,7 +84,7 @@ export default function EammcTerdiPage() {
               </div>
             </div>
 
-            <Card className="border-0 bg-[var(--brand-primary)] text-white">
+            <Card className="border-0 bg-(--brand-primary) text-white">
               <CardContent className="p-8">
                 <h3 className="mb-4 text-xl font-bold">At a glance</h3>
                 <dl className="space-y-4 text-sm">
@@ -115,10 +115,10 @@ export default function EammcTerdiPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-accent)]/40 py-16">
+      <section className="bg-(--brand-accent)/40 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 max-w-2xl">
-            <h2 className="text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+            <h2 className="text-3xl font-bold text-(--brand-text) sm:text-4xl">
               The initiative is intended to support:
             </h2>
           </div>
@@ -127,10 +127,10 @@ export default function EammcTerdiPage() {
               <Card key={area.title} className="border-0 bg-white shadow-sm">
                 <CardContent className="flex items-center gap-4 p-6">
                   <area.icon
-                    className="h-7 w-7 shrink-0 text-[var(--brand-primary)]"
+                    className="h-7 w-7 shrink-0 text-(--brand-primary)"
                     aria-hidden="true"
                   />
-                  <h3 className="text-lg font-semibold text-[var(--brand-text)]">
+                  <h3 className="text-lg font-semibold text-(--brand-text)">
                     {area.title}
                   </h3>
                 </CardContent>
@@ -141,7 +141,7 @@ export default function EammcTerdiPage() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-4xl space-y-5 px-4 leading-relaxed text-[var(--brand-text-light)]">
+        <div className="mx-auto max-w-4xl space-y-5 px-4 leading-relaxed text-(--brand-text-light)">
           <p>
             Its focus is on strengthening the teaching profession and
             contributing to improved learning outcomes.
@@ -161,7 +161,7 @@ export default function EammcTerdiPage() {
             dedicated EAMMC-TERDI website may be developed and published
             separately.
           </p>
-          <Button asChild className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
+          <Button asChild className="bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)">
             <Link href="/contact">
               Contact the Secretariat
               <ArrowRight className="ml-2 h-4 w-4" />

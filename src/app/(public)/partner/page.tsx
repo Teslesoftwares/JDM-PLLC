@@ -45,7 +45,7 @@ export default function PartnerPage() {
         description="JDM-PLLC welcomes collaboration with institutions that share its commitment to historical preservation, education, research and youth opportunity."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Partners" }]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="/contact">
               Discuss a Partnership
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -56,9 +56,9 @@ export default function PartnerPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-5">
-            <Info className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]" aria-hidden="true" />
-            <div className="space-y-3 text-sm leading-relaxed text-[var(--brand-text)]">
+          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-(--brand-primary) bg-(--brand-accent) p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-(--brand-primary)" aria-hidden="true" />
+            <div className="space-y-3 text-sm leading-relaxed text-(--brand-text)">
               <p>
                 All partnerships will be formalised through appropriate
                 agreements.
@@ -77,10 +77,10 @@ export default function PartnerPage() {
               <Card key={type.title} className="border-0 shadow-sm">
                 <CardContent className="p-6">
                   <type.icon
-                    className="mb-4 h-7 w-7 text-[var(--brand-primary)]"
+                    className="mb-4 h-7 w-7 text-(--brand-primary)"
                     aria-hidden="true"
                   />
-                  <h2 className="text-lg font-semibold text-[var(--brand-text)]">
+                  <h2 className="text-lg font-semibold text-(--brand-text)">
                     {type.title}
                   </h2>
                 </CardContent>
@@ -90,7 +90,7 @@ export default function PartnerPage() {
 
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-6 text-3xl font-bold text-(--brand-text)">
                 Institutional partners and supporting organisations
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -110,11 +110,11 @@ export default function PartnerPage() {
                         />
                       </div>
                     ) : null}
-                    <h3 className="font-semibold text-[var(--brand-text)]">
+                    <h3 className="font-semibold text-(--brand-text)">
                       {partner.name}
                     </h3>
                     {partner.detail ? (
-                      <p className="mt-1 text-sm text-[var(--brand-text-light)]">
+                      <p className="mt-1 text-sm text-(--brand-text-light)">
                         {partner.detail}
                       </p>
                     ) : null}
@@ -123,7 +123,7 @@ export default function PartnerPage() {
               </div>
             </div>
 
-            <Card className="border-0 bg-[var(--brand-primary)] text-white">
+            <Card className="border-0 bg-(--brand-primary) text-white">
               <CardContent className="p-8">
                 <h2 className="mb-4 text-2xl font-bold">
                   Contact the Secretariat
@@ -132,13 +132,13 @@ export default function PartnerPage() {
                   For partnership enquiries, contact the Secretariat.
                 </p>
                 <div className="space-y-3">
-                  <Button asChild className="w-full bg-white text-[var(--brand-primary)] hover:bg-white/90">
+                  <Button asChild className="w-full bg-white text-(--brand-primary) hover:bg-white/90">
                     <Link href="/contact">Contact the Secretariat</Link>
                   </Button>
                   <Button
                     asChild
                     variant="outline"
-                    className="w-full border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
+                    className="w-full border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary)"
                   >
                     <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
                   </Button>
@@ -149,20 +149,20 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-accent)]/40 py-16">
+      <section className="bg-(--brand-accent)/40 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-6 md:grid-cols-2">
             <Card className="border-0 bg-white shadow-sm">
               <CardContent className="p-8">
-                <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+                <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                   EAMMC-TERDI
                 </h2>
-                <p className="mb-4 leading-relaxed text-[var(--brand-text-light)]">
+                <p className="mb-4 leading-relaxed text-(--brand-text-light)">
                   Separately, EAMMC-TERDI is a related initiative honouring
                   Emmanuel Adama Mahama, focused on teacher education, research,
                   professional development and digital innovation.
                 </p>
-                <Button asChild variant="link" className="p-0 text-[var(--brand-primary)]">
+                <Button asChild variant="link" className="p-0 text-(--brand-primary)">
                   <Link href="/eammc-terdi">
                     Learn about EAMMC-TERDI
                     <ArrowRight className="ml-1 h-4 w-4" />
@@ -172,15 +172,15 @@ export default function PartnerPage() {
             </Card>
             <Card className="border-0 bg-white shadow-sm">
               <CardContent className="p-8">
-                <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+                <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                   Support the work
                 </h2>
-                <p className="mb-4 leading-relaxed text-[var(--brand-text-light)]">
+                <p className="mb-4 leading-relaxed text-(--brand-text-light)">
                   Individuals and organisations can support programmes,
                   facilities, research and educational opportunities through
                   lawful contributions.
                 </p>
-                <Button asChild variant="link" className="p-0 text-[var(--brand-primary)]">
+                <Button asChild variant="link" className="p-0 text-(--brand-primary)">
                   <Link href="/donate">
                     Ways to support
                     <ArrowRight className="ml-1 h-4 w-4" />

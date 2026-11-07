@@ -100,7 +100,7 @@ export default function LoginPageClient() {
                     <Label htmlFor="password">Password</Label>
                     <Link
                       href="/forgot-password"
-                      className="text-sm text-[var(--brand-primary)] hover:underline"
+                      className="text-sm text-(--brand-primary) hover:underline"
                     >
                       Forgot password?
                     </Link>
@@ -132,7 +132,7 @@ export default function LoginPageClient() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-dark)] text-white"
+                  className="w-full bg-(--brand-primary) hover:bg-(--brand-primary-dark) text-white"
                   disabled={loading}
                 >
                   {loading ? (
@@ -142,7 +142,7 @@ export default function LoginPageClient() {
                 </Button>
               </form>
 
-              <div className="mt-4 text-center text-sm text-[var(--brand-text-light)] [@media(max-height:520px)]:mt-2">
+              <div className="mt-4 text-center text-sm text-(--brand-text-light) [@media(max-height:520px)]:mt-2">
                 Access restricted to authorized personnel only.
               </div>
             </CardContent>
@@ -152,7 +152,7 @@ export default function LoginPageClient() {
 
       {/* Right - Branding */}
       <div
-        className="relative isolate hidden overflow-hidden bg-[var(--brand-primary)] bg-cover bg-center lg:flex lg:flex-1 lg:items-center lg:justify-center"
+        className="relative isolate hidden overflow-hidden bg-(--brand-primary) bg-cover bg-center lg:flex lg:flex-1 lg:items-center lg:justify-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(107, 52, 16, 0.65), rgba(107, 52, 16, 0.65)), url('/images/airo-assets/images/pages/home/architecture-rotunda.jpg')",

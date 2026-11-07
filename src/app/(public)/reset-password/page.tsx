@@ -81,16 +81,16 @@ export default function ResetPasswordPage() {
             {success ? (
               <div className="text-center">
                 <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-amber-500" />
-                <h3 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
+                <h3 className="mb-2 text-lg font-semibold text-(--brand-text)">
                   Password Reset Successfully
                 </h3>
-                <p className="mb-6 text-sm text-[var(--brand-text-light)]">
+                <p className="mb-6 text-sm text-(--brand-text-light)">
                   Your password has been updated. You can now login with your
                   new password.
                 </p>
                 <Button
                   onClick={() => router.push("/login")}
-                  className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-dark)] text-white"
+                  className="bg-(--brand-primary) hover:bg-(--brand-primary-dark) text-white"
                 >
                   Go to Login
                 </Button>
@@ -166,7 +166,7 @@ export default function ResetPasswordPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-dark)] text-white"
+                  className="w-full bg-(--brand-primary) hover:bg-(--brand-primary-dark) text-white"
                   disabled={loading}
                 >
                   {loading ? (

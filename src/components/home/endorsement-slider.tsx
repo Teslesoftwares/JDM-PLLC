@@ -29,7 +29,7 @@ export function EndorsementSlider() {
   return (
     <div className="mt-12">
       <div className="relative mb-5 flex items-center justify-center gap-4">
-        <p className="text-center text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
+        <p className="text-center text-sm font-semibold uppercase tracking-wider text-(--brand-primary)">
           Official Endorsement
         </p>
         <div className="absolute right-0 hidden gap-2 sm:flex">
@@ -37,7 +37,7 @@ export function EndorsementSlider() {
             type="button"
             onClick={() => scroll(-1)}
             aria-label="Previous endorsement"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--brand-text)] shadow-sm transition-colors hover:bg-[var(--brand-accent)]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-(--brand-text) shadow-sm transition-colors hover:bg-(--brand-accent)"
           >
             <ChevronLeft className="h-5 w-5" aria-hidden="true" />
           </button>
@@ -45,7 +45,7 @@ export function EndorsementSlider() {
             type="button"
             onClick={() => scroll(1)}
             aria-label="Next endorsement"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--brand-text)] shadow-sm transition-colors hover:bg-[var(--brand-accent)]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-(--brand-text) shadow-sm transition-colors hover:bg-(--brand-accent)"
           >
             <ChevronRight className="h-5 w-5" aria-hidden="true" />
           </button>

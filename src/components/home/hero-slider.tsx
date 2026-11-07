@@ -99,7 +99,7 @@ export function HeroSlider() {
     <section
       aria-roledescription="carousel"
       aria-label="Featured highlights"
-      className="relative isolate flex min-h-svh flex-col overflow-hidden bg-[var(--brand-primary)] text-white"
+      className="relative isolate flex min-h-svh flex-col overflow-hidden bg-(--brand-primary) text-white"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -177,8 +177,8 @@ export function HeroSlider() {
                     }}
                   />
                   {/* Scrim keeps the copy legible over any moving background. */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-primary)]/25 via-[var(--brand-primary)]/35 to-[var(--brand-primary)]/60 sm:bg-gradient-to-r sm:from-[var(--brand-primary)]/80 sm:via-[var(--brand-primary)]/50 sm:to-[var(--brand-primary)]/10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/65 via-[var(--brand-primary)]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-(--brand-primary)/25 via-(--brand-primary)/35 to-(--brand-primary)/60 sm:bg-gradient-to-r sm:from-(--brand-primary)/80 sm:via-(--brand-primary)/50 sm:to-(--brand-primary)/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-(--brand-primary)/65 via-(--brand-primary)/20 to-transparent" />
                 </>
               ) : slide.image ? (
                 <>
@@ -196,8 +196,8 @@ export function HeroSlider() {
                     )}
                   />
                   {/* Scrim keeps the copy legible over any photograph. */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-primary)]/25 via-[var(--brand-primary)]/35 to-[var(--brand-primary)]/60 sm:bg-gradient-to-r sm:from-[var(--brand-primary)]/80 sm:via-[var(--brand-primary)]/50 sm:to-[var(--brand-primary)]/10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/65 via-[var(--brand-primary)]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-(--brand-primary)/25 via-(--brand-primary)/35 to-(--brand-primary)/60 sm:bg-gradient-to-r sm:from-(--brand-primary)/80 sm:via-(--brand-primary)/50 sm:to-(--brand-primary)/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-(--brand-primary)/65 via-(--brand-primary)/20 to-transparent" />
                 </>
               ) : (
                 <BrandMotif />
@@ -230,7 +230,7 @@ export function HeroSlider() {
                     <Button
                       asChild
                       size="lg"
-                      className="w-full max-w-sm justify-center px-4 text-center text-sm bg-white text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
+                      className="w-full max-w-sm justify-center px-4 text-center text-sm bg-white text-(--brand-primary) sm:w-auto sm:max-w-none sm:px-8"
                     >
                       <a href={slide.primary.href}>{slide.primary.label}</a>
                     </Button>
@@ -238,7 +238,7 @@ export function HeroSlider() {
                     <Button
                       asChild
                       size="lg"
-                      className="w-full max-w-sm justify-center px-4 text-center text-sm bg-white text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
+                      className="w-full max-w-sm justify-center px-4 text-center text-sm bg-white text-(--brand-primary) sm:w-auto sm:max-w-none sm:px-8"
                     >
                       <Link prefetch={false} href={slide.primary.href}>
                         {slide.primary.label}
@@ -250,7 +250,7 @@ export function HeroSlider() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
+                    className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary) sm:w-auto sm:max-w-none sm:px-8"
                   >
                     <Link prefetch={false} href={slide.secondary.href}>{slide.secondary.label}</Link>
                   </Button>
@@ -259,7 +259,7 @@ export function HeroSlider() {
                       asChild
                       variant="outline"
                       size="lg"
-                      className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)] sm:w-auto sm:max-w-none sm:px-8"
+                      className="w-full max-w-sm justify-center px-4 text-center text-sm border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary) sm:w-auto sm:max-w-none sm:px-8"
                     >
                       <Link
                         prefetch={false}
@@ -346,7 +346,7 @@ export function HeroSlider() {
       </div>
 
       {/* Static project statement remains visible while the slides rotate. */}
-      <div className="relative z-10 shrink-0 border-t border-white/10 bg-[var(--brand-primary)]">
+      <div className="relative z-10 shrink-0 border-t border-white/10 bg-(--brand-primary)">
         <div className="mx-auto max-w-7xl px-4 py-4">
           <p className="text-sm text-white/75">
             Document the legacy, preserve and protect the historical record, and
@@ -377,7 +377,7 @@ function BrandMotif() {
         <circle cx="980" cy="120" r="220" fill="#ffffff" fillOpacity="0.35" />
         <circle cx="1040" cy="480" r="150" fill="#ffffff" fillOpacity="0.25" />
       </svg>
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)] via-[var(--brand-primary)] to-[var(--brand-primary-dark)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-(--brand-primary) via-(--brand-primary) to-(--brand-primary-dark)" />
     </>
   );
 }

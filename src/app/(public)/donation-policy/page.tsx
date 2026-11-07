@@ -22,13 +22,13 @@ export default function DonationPolicyPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4">
-          <p className="mb-8 text-sm text-[var(--brand-text-light)]">
+          <p className="mb-8 text-sm text-(--brand-text-light)">
             Last updated: 30 October 2026
           </p>
 
-          <div className="space-y-10 text-[var(--brand-text-light)]">
+          <div className="space-y-10 text-(--brand-text-light)">
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 1. Purpose
               </h2>
               <p className="leading-relaxed">
@@ -40,7 +40,7 @@ export default function DonationPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 2. Lawful sources
               </h2>
               <p className="leading-relaxed">
@@ -53,7 +53,7 @@ export default function DonationPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 3. Use of donations
               </h2>
               <p className="leading-relaxed">
@@ -67,7 +67,7 @@ export default function DonationPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 4. No ownership or control
               </h2>
               <p className="leading-relaxed">
@@ -79,7 +79,7 @@ export default function DonationPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 5. Payment channels
               </h2>
               <p className="leading-relaxed">
@@ -92,7 +92,7 @@ export default function DonationPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 6. Records and acknowledgements
               </h2>
               <p className="leading-relaxed">
@@ -104,7 +104,7 @@ export default function DonationPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 7. In-kind contributions
               </h2>
               <p className="leading-relaxed">
@@ -116,13 +116,13 @@ export default function DonationPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                 8. Questions
               </h2>
               <p className="leading-relaxed">
                 Questions about this policy or a proposed contribution may be
                 directed to the Secretariat through the{" "}
-                <Link href="/contact" className="font-semibold text-[var(--brand-primary)] hover:underline">
+                <Link href="/contact" className="font-semibold text-(--brand-primary) hover:underline">
                   contact page
                 </Link>
                 .
@@ -131,10 +131,10 @@ export default function DonationPolicyPage() {
           </div>
 
           <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-            <Button asChild className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
+            <Button asChild className="bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)">
               <Link href="/donate">Ways to support</Link>
             </Button>
-            <Button asChild variant="outline" className="border-[var(--brand-primary)] text-[var(--brand-primary)]">
+            <Button asChild variant="outline" className="border-(--brand-primary) text-(--brand-primary)">
               <Link href="/contact">Contact the Secretariat</Link>
             </Button>
           </div>

@@ -64,7 +64,7 @@ export default function ResearchPage() {
         description="The Centre intends to collect, organise, preserve and make accessible materials that deepen public understanding of leadership, governance and national development."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Research & Archives" }]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="/contact">
               Make a Research Enquiry
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -75,9 +75,9 @@ export default function ResearchPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-5">
-            <Info className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]" aria-hidden="true" />
-            <p className="text-sm leading-relaxed text-[var(--brand-text)]">
+          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-(--brand-primary) bg-(--brand-accent) p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-(--brand-primary)" aria-hidden="true" />
+            <p className="text-sm leading-relaxed text-(--brand-text)">
               Archival and research services are being developed. Collections,
               catalogues and access procedures will be published progressively
               as materials are processed and approved for public use.
@@ -89,13 +89,13 @@ export default function ResearchPage() {
               <Card key={area.title} className="border-0 shadow-sm">
                 <CardContent className="p-6">
                   <area.icon
-                    className="mb-4 h-7 w-7 text-[var(--brand-primary)]"
+                    className="mb-4 h-7 w-7 text-(--brand-primary)"
                     aria-hidden="true"
                   />
-                  <h2 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
+                  <h2 className="mb-2 text-lg font-semibold text-(--brand-text)">
                     {area.title}
                   </h2>
-                  <p className="text-sm leading-relaxed text-[var(--brand-text-light)]">
+                  <p className="text-sm leading-relaxed text-(--brand-text-light)">
                     {area.body}
                   </p>
                 </CardContent>
@@ -105,9 +105,9 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-accent)]/40 py-16">
+      <section className="bg-(--brand-accent)/40 py-16">
         <div className="mx-auto max-w-4xl px-4">
-          <p className="leading-relaxed text-[var(--brand-text-light)]">
+          <p className="leading-relaxed text-(--brand-text-light)">
             All archival and research activities will be guided by applicable
             laws and professional standards, including those relating to
             copyright, privacy, data protection, consent and cultural heritage.
@@ -119,22 +119,22 @@ export default function ResearchPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
-              <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-4 text-3xl font-bold text-(--brand-text)">
                 Research access and enquiries
               </h2>
-              <p className="mb-4 leading-relaxed text-[var(--brand-text-light)]">
+              <p className="mb-4 leading-relaxed text-(--brand-text-light)">
                 Researchers, students, institutions and members of the public
                 may contact the Secretariat to enquire about available
                 collections, research collaboration or the donation of
                 historical materials.
               </p>
-              <p className="leading-relaxed text-[var(--brand-text-light)]">
+              <p className="leading-relaxed text-(--brand-text-light)">
                 Formal access procedures, reading-room arrangements and any
                 applicable conditions will be communicated as facilities become
                 available.
               </p>
             </div>
-            <Card className="border-0 bg-[var(--brand-primary)] text-white">
+            <Card className="border-0 bg-(--brand-primary) text-white">
               <CardContent className="p-8">
                 <h3 className="mb-3 text-xl font-bold">Contact the Secretariat</h3>
                 <p className="mb-6 text-sm leading-relaxed text-white/85">
@@ -142,13 +142,13 @@ export default function ResearchPage() {
                   collaboration.
                 </p>
                 <div className="space-y-3">
-                  <Button asChild className="w-full bg-white text-[var(--brand-primary)] hover:bg-white/90">
+                  <Button asChild className="w-full bg-white text-(--brand-primary) hover:bg-white/90">
                     <Link href="/contact">Send an enquiry</Link>
                   </Button>
                   <Button
                     asChild
                     variant="outline"
-                    className="w-full border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
+                    className="w-full border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary)"
                   >
                     <a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phone}</a>
                   </Button>

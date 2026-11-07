@@ -73,7 +73,7 @@ export function FloatingActions() {
           aria-label={`Chat with ${siteConfig.shortName} on WhatsApp`}
           className="w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl"
         >
-          <div className="flex items-start justify-between gap-3 bg-[var(--brand-primary)] px-4 py-3 text-white">
+          <div className="flex items-start justify-between gap-3 bg-(--brand-primary) px-4 py-3 text-white">
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold">{siteConfig.name}</p>
               <p className="text-xs text-white/80">Replies on WhatsApp</p>
@@ -95,7 +95,7 @@ export function FloatingActions() {
                   <button
                     type="button"
                     onClick={() => setDraft(reply)}
-                    className="rounded-full border border-[var(--brand-primary)]/30 px-3 py-1.5 text-left text-xs font-medium text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-accent)]"
+                    className="rounded-full border border-(--brand-primary)/30 px-3 py-1.5 text-left text-xs font-medium text-(--brand-primary) transition-colors hover:bg-(--brand-accent)"
                   >
                     {reply}
                   </button>
@@ -111,7 +111,7 @@ export function FloatingActions() {
               value={draft}
               onChange={(event) => setDraft(event.target.value)}
               rows={3}
-              className="w-full resize-none rounded-xl border border-black/15 px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-primary)]"
+              className="w-full resize-none rounded-xl border border-black/15 px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--brand-primary)"
             />
 
             <a
@@ -123,7 +123,7 @@ export function FloatingActions() {
               <WhatsAppIcon className="h-4 w-4" />
               Continue on WhatsApp
             </a>
-            <p className="text-center text-[11px] text-[var(--brand-text-light)]">
+            <p className="text-center text-[11px] text-(--brand-text-light)">
               Opens WhatsApp with your message ready to send.
             </p>
           </div>
@@ -139,7 +139,7 @@ export function FloatingActions() {
           aria-label={open ? "Close WhatsApp chat" : `Chat with ${siteConfig.shortName} on WhatsApp`}
           className={cn(
             "flex h-14 w-14 items-center justify-center rounded-full text-white shadow-xl transition-transform active:scale-95",
-            open ? "bg-[var(--brand-text)]" : "bg-[#25d366]"
+            open ? "bg-(--brand-text)" : "bg-[#25d366]"
           )}
         >
           <WhatsAppIcon className="h-7 w-7" />

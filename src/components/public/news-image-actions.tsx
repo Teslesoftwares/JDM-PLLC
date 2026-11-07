@@ -40,7 +40,7 @@ export function NewsImageActions({
       <a
         href={src}
         download={filename}
-        className="inline-flex items-center gap-1.5 rounded-md border border-[var(--brand-primary)]/25 px-3 py-2 text-sm font-medium text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-accent)]"
+        className="inline-flex items-center gap-1.5 rounded-md border border-(--brand-primary)/25 px-3 py-2 text-sm font-medium text-(--brand-primary) transition-colors hover:bg-(--brand-accent)"
       >
         <Download className="h-4 w-4" aria-hidden="true" />
         Download
@@ -48,7 +48,7 @@ export function NewsImageActions({
       <button
         type="button"
         onClick={shareImage}
-        className="inline-flex items-center gap-1.5 rounded-md bg-[var(--brand-primary)] px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-primary-dark)]"
+        className="inline-flex items-center gap-1.5 rounded-md bg-(--brand-primary) px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-(--brand-primary-dark)"
       >
         {copied ? (
           <Check className="h-4 w-4" aria-hidden="true" />

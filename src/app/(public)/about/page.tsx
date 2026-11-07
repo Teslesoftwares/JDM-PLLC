@@ -71,7 +71,7 @@ export default function AboutPage() {
         description="The John Dramani Mahama Presidential Library & Legacy Centre is an initiative led by the AfCFTA Young Entrepreneurs Federation (AfYEF)."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="/partner">
               Become a Partner
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -84,10 +84,10 @@ export default function AboutPage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-(--brand-text) sm:text-4xl">
               Who We Are
             </h2>
-            <div className="space-y-5 leading-relaxed text-[var(--brand-text-light)]">
+            <div className="space-y-5 leading-relaxed text-(--brand-text-light)">
               <p>
                 The John Dramani Mahama Presidential Library &amp; Legacy Centre
                 is an initiative led by the AfCFTA Young Entrepreneurs Federation
@@ -124,16 +124,16 @@ export default function AboutPage() {
       </section>
 
       {/* Vision, mission, principle */}
-      <section className="bg-[var(--brand-accent)]/40 py-16">
+      <section className="bg-(--brand-accent)/40 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-6 lg:grid-cols-3">
             <Card className="border-0 bg-white shadow-sm">
               <CardContent className="p-8">
-                <Target className="mb-4 h-8 w-8 text-[var(--brand-primary)]" aria-hidden="true" />
-                <h2 className="mb-3 text-xl font-bold text-[var(--brand-text)]">
+                <Target className="mb-4 h-8 w-8 text-(--brand-primary)" aria-hidden="true" />
+                <h2 className="mb-3 text-xl font-bold text-(--brand-text)">
                   Our Vision
                 </h2>
-                <p className="leading-relaxed text-[var(--brand-text-light)]">
+                <p className="leading-relaxed text-(--brand-text-light)">
                   To preserve the legacy of President John Dramani Mahama and
                   other leaders who have shaped Ghana and Africa, ensuring that
                   their contributions, ideas and aspirations remain a source of
@@ -144,11 +144,11 @@ export default function AboutPage() {
 
             <Card className="border-0 bg-white shadow-sm">
               <CardContent className="p-8">
-                <Compass className="mb-4 h-8 w-8 text-[var(--brand-primary)]" aria-hidden="true" />
-                <h2 className="mb-3 text-xl font-bold text-[var(--brand-text)]">
+                <Compass className="mb-4 h-8 w-8 text-(--brand-primary)" aria-hidden="true" />
+                <h2 className="mb-3 text-xl font-bold text-(--brand-text)">
                   Our Mission
                 </h2>
-                <p className="leading-relaxed text-[var(--brand-text-light)]">
+                <p className="leading-relaxed text-(--brand-text-light)">
                   To document, preserve and protect historical legacies, promote
                   research and civic education, and inspire young people to
                   learn from the past and contribute to Ghana&apos;s and
@@ -157,7 +157,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-[var(--brand-primary)] text-white shadow-sm">
+            <Card className="border-0 bg-(--brand-primary) text-white shadow-sm">
               <CardContent className="p-8">
                 <Sparkles className="mb-4 h-8 w-8 text-white/85" aria-hidden="true" />
                 <h2 className="mb-3 text-xl font-bold">Our Guiding Principle</h2>
@@ -180,7 +180,7 @@ export default function AboutPage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 max-w-2xl">
-            <h2 className="text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+            <h2 className="text-3xl font-bold text-(--brand-text) sm:text-4xl">
               Our Core Values
             </h2>
           </div>
@@ -190,13 +190,13 @@ export default function AboutPage() {
               <Card key={value.title} className="border-0 shadow-sm">
                 <CardContent className="p-6">
                   <value.icon
-                    className="mb-3 h-6 w-6 text-[var(--brand-primary)]"
+                    className="mb-3 h-6 w-6 text-(--brand-primary)"
                     aria-hidden="true"
                   />
-                  <h3 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
+                  <h3 className="mb-2 text-lg font-semibold text-(--brand-text)">
                     {value.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[var(--brand-text-light)]">
+                  <p className="text-sm leading-relaxed text-(--brand-text-light)">
                     {value.body}
                   </p>
                 </CardContent>
@@ -207,7 +207,7 @@ export default function AboutPage() {
       </section>
 
       {/* Institutional character */}
-      <section className="bg-[var(--brand-primary)] py-16 text-white">
+      <section className="bg-(--brand-primary) py-16 text-white">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="mb-6 text-3xl font-bold sm:text-4xl">
             Our Institutional Character
@@ -226,7 +226,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+            <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
               <Link prefetch={false} href="/governance">
                 Governance &amp; Accountability
               </Link>
@@ -235,7 +235,7 @@ export default function AboutPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary)"
             >
               <Link prefetch={false} href="/contact">
                 Contact the Secretariat
@@ -248,15 +248,15 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-(--brand-text) sm:text-4xl">
             Explore the project
           </h2>
-          <p className="mb-8 leading-relaxed text-[var(--brand-text-light)]">
+          <p className="mb-8 leading-relaxed text-(--brand-text-light)">
             Learn about the inspiration behind the Centre, the facilities it is
             developing and the programmes it intends to deliver.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
+            <Button asChild size="lg" className="bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)">
               <Link prefetch={false} href="/legacy">
                 The Inspiration
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -266,7 +266,7 @@ export default function AboutPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-[var(--brand-accent)]"
+              className="border-(--brand-primary) text-(--brand-primary) hover:bg-(--brand-accent)"
             >
               <Link prefetch={false} href="/services">
                 The Library &amp; Legacy Centre

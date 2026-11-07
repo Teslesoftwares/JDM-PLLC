@@ -79,8 +79,8 @@ export function AppShell({
     cn(
       "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
       active
-        ? "bg-[var(--brand-accent)] text-[var(--brand-primary)]"
-        : "text-[var(--brand-text-light)] hover:bg-gray-100",
+        ? "bg-(--brand-accent) text-(--brand-primary)"
+        : "text-(--brand-text-light) hover:bg-gray-100",
       centred && "justify-center px-2"
     );
 
@@ -140,17 +140,17 @@ export function AppShell({
             )}
           >
             <Avatar className="h-8 w-8 shrink-0">
-              <AvatarFallback className="bg-[var(--brand-primary)] text-xs font-bold text-white">
+              <AvatarFallback className="bg-(--brand-primary) text-xs font-bold text-white">
                 {initials}
               </AvatarFallback>
             </Avatar>
             {!collapsed ? (
               <>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium text-[var(--brand-text)]">
+                  <p className="truncate text-sm font-medium text-(--brand-text)">
                     {userName}
                   </p>
-                  <p className="truncate text-xs text-[var(--brand-text-light)]">
+                  <p className="truncate text-xs text-(--brand-text-light)">
                     {userRole}
                   </p>
                 </div>
@@ -210,15 +210,15 @@ export function AppShell({
             <div className="border-t p-4">
               <div className="flex items-center gap-3">
                 <Avatar className="h-8 w-8 shrink-0">
-                  <AvatarFallback className="bg-[var(--brand-primary)] text-xs font-bold text-white">
+                  <AvatarFallback className="bg-(--brand-primary) text-xs font-bold text-white">
                     {initials}
                   </AvatarFallback>
                 </Avatar>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium text-[var(--brand-text)]">
+                  <p className="truncate text-sm font-medium text-(--brand-text)">
                     {userName}
                   </p>
-                  <p className="truncate text-xs text-[var(--brand-text-light)]">
+                  <p className="truncate text-xs text-(--brand-text-light)">
                     {userRole}
                   </p>
                 </div>
@@ -260,7 +260,7 @@ export function AppShell({
           <Logo href={homeHref} size="sm" />
           <div className="ml-auto flex items-center gap-2">
             <Avatar className="h-8 w-8">
-              <AvatarFallback className="bg-[var(--brand-primary)] text-xs font-bold text-white">
+              <AvatarFallback className="bg-(--brand-primary) text-xs font-bold text-white">
                 {initials}
               </AvatarFallback>
             </Avatar>

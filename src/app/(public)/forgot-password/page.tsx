@@ -62,10 +62,10 @@ export default function ForgotPasswordPage() {
             {success ? (
               <div className="text-center">
                 <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-amber-500" />
-                <h3 className="mb-2 text-lg font-semibold text-[var(--brand-text)]">
+                <h3 className="mb-2 text-lg font-semibold text-(--brand-text)">
                   Check Your Email
                 </h3>
-                <p className="mb-6 text-sm text-[var(--brand-text-light)]">
+                <p className="mb-6 text-sm text-(--brand-text-light)">
                   If an account exists with {email}, we&apos;ve sent a password
                   reset link. Please check your inbox and spam folder.
                 </p>
@@ -99,7 +99,7 @@ export default function ForgotPasswordPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-dark)] text-white"
+                  className="w-full bg-(--brand-primary) hover:bg-(--brand-primary-dark) text-white"
                   disabled={loading}
                 >
                   {loading ? (
@@ -111,7 +111,7 @@ export default function ForgotPasswordPage() {
                 <div className="text-center">
                   <Link
                     href="/login"
-                    className="text-sm text-[var(--brand-primary)] hover:underline"
+                    className="text-sm text-(--brand-primary) hover:underline"
                   >
                     <ArrowLeft className="mr-1 inline h-3 w-3" />
                     Back to Login

@@ -65,7 +65,7 @@ export default function ChangePasswordPage() {
     <main className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-8">
       <Card className="w-full max-w-md border-0 shadow-lg">
         <CardHeader>
-          <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-md bg-[var(--brand-accent)] text-[var(--brand-primary)]">
+          <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-md bg-(--brand-accent) text-(--brand-primary)">
             <LockKeyhole className="h-5 w-5" aria-hidden="true" />
           </div>
           <CardTitle className="text-2xl">Change password</CardTitle>
@@ -159,7 +159,7 @@ export default function ChangePasswordPage() {
                 <button
                   type="button"
                   onClick={() => signOut({ callbackUrl: "/login" })}
-                  className="text-sm text-[var(--brand-primary)] hover:underline"
+                  className="text-sm text-(--brand-primary) hover:underline"
                 >
                   Sign out
                 </button>

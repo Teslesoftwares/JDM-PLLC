@@ -100,7 +100,7 @@ export default async function BranchDetailPage({
           { label: branch.city },
         ]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="/contact">
               Contact the Secretariat
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -113,13 +113,13 @@ export default async function BranchDetailPage({
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-(--brand-primary)">
                 {isPending(branch.status) ? "Being considered" : "Secretariat location"}
               </p>
-              <h2 className="mb-6 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+              <h2 className="mb-6 text-3xl font-bold text-(--brand-text) sm:text-4xl">
                 {branch.city}
               </h2>
-              <div className="space-y-5 leading-relaxed text-[var(--brand-text-light)]">
+              <div className="space-y-5 leading-relaxed text-(--brand-text-light)">
                 {(content?.about ?? []).map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -131,17 +131,17 @@ export default async function BranchDetailPage({
                   technical planning, approvals, partnerships and available
                   resources.
                 </p>
-                <p className="font-semibold text-[var(--brand-text)]">
+                <p className="font-semibold text-(--brand-text)">
                   No location is designated here as the principal campus.
                 </p>
               </div>
             </div>
 
-            <Card className="border-0 bg-[var(--brand-accent)]">
+            <Card className="border-0 bg-(--brand-accent)">
               <CardContent className="p-8">
-                <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-[var(--brand-text)]">
+                <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-(--brand-text)">
                   <BranchIcon
-                    className="h-5 w-5 text-[var(--brand-primary)]"
+                    className="h-5 w-5 text-(--brand-primary)"
                     aria-hidden="true"
                   />
                   At a glance
@@ -149,27 +149,27 @@ export default async function BranchDetailPage({
                 <dl className="space-y-4 text-sm">
                   <div className="flex items-start gap-3">
                     <MapPin
-                      className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-(--brand-primary)"
                       aria-hidden="true"
                     />
                     <div>
-                      <dt className="text-[var(--brand-text-light)]">Location</dt>
-                      <dd className="font-medium text-[var(--brand-text)]">
+                      <dt className="text-(--brand-text-light)">Location</dt>
+                      <dd className="font-medium text-(--brand-text)">
                         {branch.address}, {branch.region}, {branch.country}
                       </dd>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Phone
-                      className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-(--brand-primary)"
                       aria-hidden="true"
                     />
                     <div>
-                      <dt className="text-[var(--brand-text-light)]">Phone</dt>
+                      <dt className="text-(--brand-text-light)">Phone</dt>
                       <dd>
                         <a
                           href={siteConfig.contact.phoneHref}
-                          className="font-medium text-[var(--brand-text)] hover:underline"
+                          className="font-medium text-(--brand-text) hover:underline"
                         >
                           {branch.phone}
                         </a>
@@ -177,7 +177,7 @@ export default async function BranchDetailPage({
                     </div>
                   </div>
                 </dl>
-                <p className="mt-6 flex items-start gap-2 text-xs leading-relaxed text-[var(--brand-text-light)]">
+                <p className="mt-6 flex items-start gap-2 text-xs leading-relaxed text-(--brand-text-light)">
                   <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                   No location is designated here as the principal campus.
                 </p>
@@ -187,13 +187,13 @@ export default async function BranchDetailPage({
         </div>
       </section>
 
-      <section className="bg-[var(--brand-accent)]/40 py-16">
+      <section className="bg-(--brand-accent)/40 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-(--brand-primary)">
               Potential areas of activity
             </p>
-            <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold text-(--brand-text) sm:text-4xl">
               What this location may contribute
             </h2>
           </div>
@@ -203,10 +203,10 @@ export default async function BranchDetailPage({
               <Card key={department} className="border-0 bg-white shadow-sm">
                 <CardContent className="p-6">
                   <BranchIcon
-                    className="mb-3 h-5 w-5 text-[var(--brand-primary)]"
+                    className="mb-3 h-5 w-5 text-(--brand-primary)"
                     aria-hidden="true"
                   />
-                  <p className="text-sm font-semibold text-[var(--brand-text)]">
+                  <p className="text-sm font-semibold text-(--brand-text)">
                     {department}
                   </p>
                 </CardContent>
@@ -216,7 +216,7 @@ export default async function BranchDetailPage({
         </div>
       </section>
 
-      <section className="bg-[var(--brand-primary)] py-16 text-white">
+      <section className="bg-(--brand-primary) py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
             Questions about this location?
@@ -226,14 +226,14 @@ export default async function BranchDetailPage({
             {branch.city} and how this location contributes to the wider project.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+            <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
               <Link prefetch={false} href="/contact">Contact the Secretariat</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary)"
             >
               <Link prefetch={false} href="/branches">All locations</Link>
             </Button>

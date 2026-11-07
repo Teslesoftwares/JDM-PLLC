@@ -32,7 +32,7 @@ export default function InspirationPage() {
         description="President John Dramani Mahama's public-service journey is the central inspiration for JDM-PLLC."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "The Inspiration" }]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="/services">
               The Library &amp; Legacy Centre
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -44,7 +44,7 @@ export default function InspirationPage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto max-w-4xl">
-            <div className="space-y-5 leading-relaxed text-[var(--brand-text-light)]">
+            <div className="space-y-5 leading-relaxed text-(--brand-text-light)">
               <p>
                 President John Dramani Mahama&apos;s public-service journey is
                 the central inspiration for JDM-PLLC.
@@ -68,7 +68,7 @@ export default function InspirationPage() {
       </section>
 
       {/* What the Centre seeks to preserve */}
-      <section className="bg-[var(--brand-primary)] py-16 text-white">
+      <section className="bg-(--brand-primary) py-16 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 max-w-3xl">
             <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
@@ -98,15 +98,15 @@ export default function InspirationPage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold text-(--brand-text) sm:text-4xl">
               Preserving a Wider African Legacy
             </h2>
-            <p className="mb-5 leading-relaxed text-[var(--brand-text-light)]">
+            <p className="mb-5 leading-relaxed text-(--brand-text-light)">
               JDM-PLLC will seek to document and study other Ghanaian and
               African leaders whose contributions to public service, education,
               democracy, culture and development deserve preservation.
             </p>
-            <p className="leading-relaxed text-[var(--brand-text-light)]">
+            <p className="leading-relaxed text-(--brand-text-light)">
               The Centre will encourage responsible historical interpretation,
               drawing on credible evidence and appropriate permissions.
             </p>
@@ -115,18 +115,18 @@ export default function InspirationPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--brand-accent)]/50 py-16">
+      <section className="bg-(--brand-accent)/50 py-16">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-(--brand-text) sm:text-4xl">
             Help preserve the record
           </h2>
-          <p className="mb-8 leading-relaxed text-[var(--brand-text-light)]">
+          <p className="mb-8 leading-relaxed text-(--brand-text-light)">
             Researchers, institutions and individuals with relevant materials,
             expertise or partnership interests are invited to contact the
             Secretariat.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
+            <Button asChild size="lg" className="bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)">
               <Link prefetch={false} href="/research">
                 Research &amp; Archives
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -136,14 +136,14 @@ export default function InspirationPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-white"
+              className="border-(--brand-primary) text-(--brand-primary) hover:bg-white"
             >
               <Link prefetch={false} href="/contact">
                 Contact the Secretariat
               </Link>
             </Button>
           </div>
-          <p className="mt-6 text-sm text-[var(--brand-text-light)]">
+          <p className="mt-6 text-sm text-(--brand-text-light)">
             {siteConfig.contact.email} · {siteConfig.contact.phone}
           </p>
         </div>

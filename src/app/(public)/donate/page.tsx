@@ -53,7 +53,7 @@ export default function DonatePage() {
         description="JDM-PLLC welcomes lawful financial, material and professional contributions towards its approved priorities."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Support" }]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="#how-to-give">
               How to Give
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -64,9 +64,9 @@ export default function DonatePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-5">
-            <Info className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]" aria-hidden="true" />
-            <p className="text-sm leading-relaxed text-[var(--brand-text)]">
+          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-(--brand-primary) bg-(--brand-accent) p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-(--brand-primary)" aria-hidden="true" />
+            <p className="text-sm leading-relaxed text-(--brand-text)">
               Online payment integration will be added only after formal
               approval and verification of the receiving account or payment
               provider.
@@ -78,32 +78,32 @@ export default function DonatePage() {
               <Card key={priority.title} className="border-0 shadow-sm">
                 <CardContent className="p-6">
                   <priority.icon
-                    className="mb-3 h-6 w-6 text-[var(--brand-primary)]"
+                    className="mb-3 h-6 w-6 text-(--brand-primary)"
                     aria-hidden="true"
                   />
-                  <h2 className="font-semibold text-[var(--brand-text)]">
+                  <h2 className="font-semibold text-(--brand-text)">
                     {priority.title}
                   </h2>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <p className="mb-14 leading-relaxed text-[var(--brand-text-light)]">
+          <p className="mb-14 leading-relaxed text-(--brand-text-light)">
             Donations will be applied to approved priorities and managed with
             transparency and accountability.
           </p>
 
           <div id="how-to-give" className="scroll-mt-24">
-            <h2 className="mb-6 text-3xl font-bold text-[var(--brand-text)]">
+            <h2 className="mb-6 text-3xl font-bold text-(--brand-text)">
               How to Give
             </h2>
             <ol className="grid gap-4 md:grid-cols-5">
               {givingSteps.map((step, index) => (
                 <li key={step} className="rounded-lg border bg-white p-5 shadow-sm">
-                  <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--brand-accent)] text-sm font-bold text-[var(--brand-primary)]">
+                  <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-(--brand-accent) text-sm font-bold text-(--brand-primary)">
                     {index + 1}
                   </span>
-                  <p className="text-sm leading-relaxed text-[var(--brand-text)]">
+                  <p className="text-sm leading-relaxed text-(--brand-text)">
                     {step}
                   </p>
                 </li>
@@ -113,11 +113,11 @@ export default function DonatePage() {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-accent)]/40 py-16">
+      <section className="bg-(--brand-accent)/40 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-6 text-3xl font-bold text-(--brand-text)">
                 Suggested giving levels:
               </h2>
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-5 lg:grid-cols-2 xl:grid-cols-3">
@@ -126,13 +126,13 @@ export default function DonatePage() {
                     key={amount}
                     className="rounded-lg border bg-white p-4 text-center shadow-sm"
                   >
-                    <p className="text-lg font-bold text-[var(--brand-primary)]">
+                    <p className="text-lg font-bold text-(--brand-primary)">
                       GH₵{amount.toLocaleString("en-GH")}
                     </p>
                   </div>
                 ))}
                 <div className="rounded-lg border bg-white p-4 text-center shadow-sm">
-                  <p className="text-lg font-bold text-[var(--brand-primary)]">
+                  <p className="text-lg font-bold text-(--brand-primary)">
                     Any other amount
                   </p>
                 </div>
@@ -142,13 +142,13 @@ export default function DonatePage() {
             <Card className="border-0 bg-white shadow-sm">
               <CardContent className="p-8">
                 <ShieldCheck
-                  className="mb-4 h-8 w-8 text-[var(--brand-primary)]"
+                  className="mb-4 h-8 w-8 text-(--brand-primary)"
                   aria-hidden="true"
                 />
-                <h2 className="mb-3 text-2xl font-bold text-[var(--brand-text)]">
+                <h2 className="mb-3 text-2xl font-bold text-(--brand-text)">
                   Donor Declaration
                 </h2>
-                <p className="text-sm leading-relaxed text-[var(--brand-text-light)]">
+                <p className="text-sm leading-relaxed text-(--brand-text-light)">
                   All donors must confirm that the funds or assets contributed
                   are from lawful sources and are not connected to unlawful
                   activity. The Centre may request information necessary to
@@ -164,17 +164,17 @@ export default function DonatePage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-4 text-3xl font-bold text-(--brand-text)">
                 Transparency
               </h2>
-              <p className="mb-6 leading-relaxed text-[var(--brand-text-light)]">
+              <p className="mb-6 leading-relaxed text-(--brand-text-light)">
                 The Centre intends to maintain proper records of:
               </p>
               <ul className="space-y-3">
                 {transparencyRecords.map((record) => (
-                  <li key={record} className="flex items-start gap-3 text-[var(--brand-text)]">
+                  <li key={record} className="flex items-start gap-3 text-(--brand-text)">
                     <CheckCircle2
-                      className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]"
+                      className="mt-0.5 h-5 w-5 shrink-0 text-(--brand-primary)"
                       aria-hidden="true"
                     />
                     {record}
@@ -184,15 +184,15 @@ export default function DonatePage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)]">
+              <h2 className="mb-4 text-3xl font-bold text-(--brand-text)">
                 Corporate and Major Contributions
               </h2>
-              <p className="mb-6 leading-relaxed text-[var(--brand-text-light)]">
+              <p className="mb-6 leading-relaxed text-(--brand-text-light)">
                 Corporate, institutional and major individual contributions may
                 be discussed with the Secretariat and documented through
                 appropriate agreements.
               </p>
-              <p className="leading-relaxed text-[var(--brand-text-light)]">
+              <p className="leading-relaxed text-(--brand-text-light)">
                 All contributions must comply with applicable laws and the
                 Centre&apos;s governance and financial policies.
               </p>
@@ -201,7 +201,7 @@ export default function DonatePage() {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-primary)] py-16 text-white">
+      <section className="bg-(--brand-primary) py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
             Discuss your support
@@ -211,14 +211,14 @@ export default function DonatePage() {
             process.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+            <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
               <Link prefetch={false} href="/contact">Contact the Secretariat</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary)"
             >
               <Link href="/donation-policy">Donation Policy</Link>
             </Button>

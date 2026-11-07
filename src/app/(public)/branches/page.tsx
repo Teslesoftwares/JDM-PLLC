@@ -66,7 +66,7 @@ export default function BranchesPage() {
         description="JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Branches" }]}
         actions={
-          <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+          <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
             <Link prefetch={false} href="/contact">
               Contact the Secretariat
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -77,9 +77,9 @@ export default function BranchesPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-5">
-            <Info className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-primary)]" aria-hidden="true" />
-            <div className="space-y-3 text-sm leading-relaxed text-[var(--brand-text)]">
+          <div className="mb-10 flex items-start gap-3 rounded-lg border-l-4 border-(--brand-primary) bg-(--brand-accent) p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-(--brand-primary)" aria-hidden="true" />
+            <div className="space-y-3 text-sm leading-relaxed text-(--brand-text)">
               <p>
                 Each location may contribute to the Centre&apos;s historical,
                 educational, cultural and community development objectives.
@@ -101,31 +101,31 @@ export default function BranchesPage() {
                 <Card key={branch.slug} className="border-0 bg-white shadow-md">
                   <CardContent className="flex h-full flex-col p-8">
                     <div className="mb-4 flex items-start gap-3">
-                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-accent)]">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-(--brand-accent)">
                         <role.icon
-                          className="h-6 w-6 text-[var(--brand-primary)]"
+                          className="h-6 w-6 text-(--brand-primary)"
                           aria-hidden="true"
                         />
                       </span>
                       <div>
-                        <p className="text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
+                        <p className="text-sm font-semibold uppercase tracking-wider text-(--brand-primary)">
                           {branch.city}
                         </p>
-                        <h2 className="text-xl font-bold text-[var(--brand-text)]">
+                        <h2 className="text-xl font-bold text-(--brand-text)">
                           {role.role}
                         </h2>
                       </div>
                     </div>
 
-                    <div className="mb-4 space-y-2 text-sm leading-relaxed text-[var(--brand-text-light)]">
+                    <div className="mb-4 space-y-2 text-sm leading-relaxed text-(--brand-text-light)">
                       {role.points.map((point) => (
                         <p key={point}>{point}</p>
                       ))}
                     </div>
 
-                    <p className="mb-4 flex items-start gap-2 text-sm text-[var(--brand-text)]">
+                    <p className="mb-4 flex items-start gap-2 text-sm text-(--brand-text)">
                       <MapPin
-                        className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-(--brand-primary)"
                         aria-hidden="true"
                       />
                       <span>
@@ -134,11 +134,11 @@ export default function BranchesPage() {
                     </p>
 
                     {isPending(branch.status) ? (
-                      <p className="mb-4 rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs font-semibold text-[var(--brand-primary)]">
+                      <p className="mb-4 rounded-full bg-(--brand-accent) px-3 py-1 text-xs font-semibold text-(--brand-primary)">
                         Being considered
                       </p>
                     ) : (
-                      <p className="mb-4 rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs font-semibold text-[var(--brand-primary)]">
+                      <p className="mb-4 rounded-full bg-(--brand-accent) px-3 py-1 text-xs font-semibold text-(--brand-primary)">
                         Secretariat location
                       </p>
                     )}
@@ -147,7 +147,7 @@ export default function BranchesPage() {
                       {branch.departments.slice(0, 4).map((department) => (
                         <li
                           key={department}
-                          className="rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs font-medium text-[var(--brand-primary)]"
+                          className="rounded-full bg-(--brand-accent) px-3 py-1 text-xs font-medium text-(--brand-primary)"
                         >
                           {department}
                         </li>
@@ -157,7 +157,7 @@ export default function BranchesPage() {
                     <Button
                       asChild
                       variant="outline"
-                      className="mt-auto self-start border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-[var(--brand-accent)]"
+                      className="mt-auto self-start border-(--brand-primary) text-(--brand-primary) hover:bg-(--brand-accent)"
                     >
                       <Link href={`/branches/${branch.slug}`}>
                         Explore this location
@@ -172,7 +172,7 @@ export default function BranchesPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-primary)] py-16 text-white">
+      <section className="bg-(--brand-primary) py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-white/80">
             A Coordinated Network
@@ -188,14 +188,14 @@ export default function BranchesPage() {
             confirmed as the project advances.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-white text-[var(--brand-primary)] hover:bg-white/90">
+            <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
               <Link prefetch={false} href="/services">The Library &amp; Legacy Centre</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary)"
             >
               <Link prefetch={false} href="/contact">Contact the Secretariat</Link>
             </Button>

@@ -78,17 +78,17 @@ export default function TermsPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4">
-          <p className="mb-10 text-sm text-[var(--brand-text-light)]">
+          <p className="mb-10 text-sm text-(--brand-text-light)">
             Last updated: {LAST_UPDATED}
           </p>
 
           <div className="space-y-8">
             {sections.map((section) => (
               <div key={section.heading}>
-                <h2 className="mb-3 text-xl font-bold text-[var(--brand-text)]">
+                <h2 className="mb-3 text-xl font-bold text-(--brand-text)">
                   {section.heading}
                 </h2>
-                <div className="space-y-3 leading-relaxed text-[var(--brand-text-light)]">
+                <div className="space-y-3 leading-relaxed text-(--brand-text-light)">
                   {section.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -97,15 +97,15 @@ export default function TermsPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-lg border-l-4 border-[var(--brand-primary)] bg-[var(--brand-accent)] p-6">
-            <h2 className="mb-2 font-semibold text-[var(--brand-text)]">
+          <div className="mt-12 rounded-lg border-l-4 border-(--brand-primary) bg-(--brand-accent) p-6">
+            <h2 className="mb-2 font-semibold text-(--brand-text)">
               Need to talk to us?
             </h2>
-            <p className="mb-4 text-sm leading-relaxed text-[var(--brand-text)]">
+            <p className="mb-4 text-sm leading-relaxed text-(--brand-text)">
               Contact the Secretariat with questions about these terms.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button asChild className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
+              <Button asChild className="bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)">
                 <Link href="/contact">Contact the Centre</Link>
               </Button>
               <Button asChild variant="outline">

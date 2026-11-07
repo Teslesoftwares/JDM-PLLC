@@ -105,16 +105,16 @@ export function ContactForm() {
   if (success) {
     return (
       <div className="py-10 text-center" role="status">
-        <CheckCircle2 className="mx-auto mb-4 h-16 w-16 text-[var(--brand-primary)]" aria-hidden="true" />
-        <h2 className="mb-2 text-xl font-bold text-[var(--brand-text)]">Message received</h2>
-        <p className="mx-auto max-w-sm text-[var(--brand-text-light)]">
+        <CheckCircle2 className="mx-auto mb-4 h-16 w-16 text-(--brand-primary)" aria-hidden="true" />
+        <h2 className="mb-2 text-xl font-bold text-(--brand-text)">Message received</h2>
+        <p className="mx-auto max-w-sm text-(--brand-text-light)">
           Thank you. The Centre will reply as soon as it can. If your matter is
           urgent, please call {siteConfig.contact.phone} instead.
         </p>
         {reference ? (
-          <p className="mt-4 text-sm text-[var(--brand-text-light)]">
+          <p className="mt-4 text-sm text-(--brand-text-light)">
             Your reference:{" "}
-            <span className="font-semibold text-[var(--brand-text)]">{reference}</span>
+            <span className="font-semibold text-(--brand-text)">{reference}</span>
           </p>
         ) : null}
         <Button
@@ -228,12 +228,12 @@ export function ContactForm() {
           onChange={(event) =>
             setForm((previous) => ({ ...previous, consent: event.target.checked }))
           }
-          className="mt-1 h-4 w-4 rounded border-input text-[var(--brand-primary)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          className="mt-1 h-4 w-4 rounded border-input text-(--brand-primary) focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           required
         />
         <Label htmlFor="contact-consent" className="text-sm font-normal leading-relaxed">
           Consent to the{" "}
-          <Link href="/data-protection" className="font-medium text-[var(--brand-primary)] hover:underline">
+          <Link href="/data-protection" className="font-medium text-(--brand-primary) hover:underline">
             Privacy Notice
           </Link>
           . *
@@ -256,7 +256,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={loading}
-        className="w-full bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]"
+        className="w-full bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)"
       >
         {loading ? (
           <>

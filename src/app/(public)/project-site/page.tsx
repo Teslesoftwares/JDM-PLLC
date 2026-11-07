@@ -59,10 +59,10 @@ export default function ProjectSitePage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 max-w-3xl">
-            <h2 className="mb-4 text-3xl font-bold text-[var(--brand-text)]">
+            <h2 className="mb-4 text-3xl font-bold text-(--brand-text)">
               Project concept gallery
             </h2>
-            <p className="leading-relaxed text-[var(--brand-text-light)]">
+            <p className="leading-relaxed text-(--brand-text-light)">
               These architectural images are concept visualisations of the
               proposed development, not photographs of a completed facility.
               Project locations and plans remain subject to consultation,
@@ -89,7 +89,7 @@ export default function ProjectSitePage() {
                     className="object-cover"
                   />
                 </div>
-                <figcaption className="px-5 py-4 text-sm font-medium text-[var(--brand-text)]">
+                <figcaption className="px-5 py-4 text-sm font-medium text-(--brand-text)">
                   {view.alt}
                 </figcaption>
               </figure>
@@ -98,17 +98,17 @@ export default function ProjectSitePage() {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-accent)]/40 py-16">
+      <section className="bg-(--brand-accent)/40 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 max-w-3xl">
-            <h2 className="mb-3 text-3xl font-bold text-[var(--brand-text)]">Project videos</h2>
-            <p className="text-[var(--brand-text-light)]">
+            <h2 className="mb-3 text-3xl font-bold text-(--brand-text)">Project videos</h2>
+            <p className="text-(--brand-text-light)">
               View the campus concept and videos from the proposed project site.
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2">
             <article>
-              <h3 className="mb-3 text-xl font-semibold text-[var(--brand-text)]">
+              <h3 className="mb-3 text-xl font-semibold text-(--brand-text)">
                 Proposed campus concept
               </h3>
               <video
@@ -124,7 +124,7 @@ export default function ProjectSitePage() {
             </article>
             {projectVideos.map((video) => (
               <article key={video.file}>
-                <h3 className="mb-3 text-xl font-semibold text-[var(--brand-text)]">
+                <h3 className="mb-3 text-xl font-semibold text-(--brand-text)">
                   {video.title}
                 </h3>
                 <video

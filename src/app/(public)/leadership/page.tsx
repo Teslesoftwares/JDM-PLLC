@@ -40,7 +40,7 @@ const pillars = [
 
 function RoleBadge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex rounded-full bg-[var(--brand-accent)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary-dark)]">
+    <span className="inline-flex rounded-full bg-(--brand-accent) px-3 py-1 text-xs font-semibold uppercase tracking-wide text-(--brand-primary-dark)">
       {children}
     </span>
   );
@@ -63,8 +63,8 @@ function PortraitFrame({
 }) {
   return (
     <div className={`relative ${className}`}>
-      <div className="group relative h-full rounded-[1.35rem] bg-white p-2 shadow-[0_18px_40px_-24px_rgba(40,20,5,0.65)] ring-1 ring-[var(--brand-primary)]/25">
-        <div className="relative h-full overflow-hidden rounded-[0.95rem] bg-[var(--brand-accent)]/30">
+      <div className="group relative h-full rounded-[1.35rem] bg-white p-2 shadow-[0_18px_40px_-24px_rgba(40,20,5,0.65)] ring-1 ring-(--brand-primary)/25">
+        <div className="relative h-full overflow-hidden rounded-[0.95rem] bg-(--brand-accent)/30">
           <Image
             src={person.image}
             alt={`Portrait of ${person.name}`}
@@ -87,7 +87,7 @@ function FeaturedProfile({ person }: { person: LeadershipPerson }) {
   return (
     <Card className="overflow-hidden border-0 shadow-md">
       <CardContent className="p-0 md:grid md:grid-cols-[16rem_1fr] lg:grid-cols-[18rem_1fr]">
-        <div className="flex h-full items-center justify-center bg-[var(--brand-accent)]/35 p-5 sm:p-6 md:border-r md:border-[var(--brand-primary)]/10">
+        <div className="flex h-full items-center justify-center bg-(--brand-accent)/35 p-5 sm:p-6 md:border-r md:border-(--brand-primary)/10">
           <PortraitFrame
             person={person}
             className="aspect-[4/5] w-full max-w-[15.5rem]"
@@ -96,13 +96,13 @@ function FeaturedProfile({ person }: { person: LeadershipPerson }) {
         </div>
         <div className="p-6 sm:p-8">
           <RoleBadge>{person.role}</RoleBadge>
-          <h3 className="mt-3 text-xl font-bold text-[var(--brand-text)] sm:text-2xl">
+          <h3 className="mt-3 text-xl font-bold text-(--brand-text) sm:text-2xl">
             {person.name}
           </h3>
-          <p className="mt-1 text-sm font-medium text-[var(--brand-primary)]">
+          <p className="mt-1 text-sm font-medium text-(--brand-primary)">
             {person.title}
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--brand-text-light)]">
+          <p className="mt-4 text-sm leading-relaxed text-(--brand-text-light)">
             {person.bio}
           </p>
         </div>
@@ -114,7 +114,7 @@ function FeaturedProfile({ person }: { person: LeadershipPerson }) {
 function ProfileCard({ person }: { person: LeadershipPerson }) {
   return (
     <Card className="flex h-full flex-col overflow-hidden border-0 shadow-md">
-      <div className="bg-[var(--brand-accent)]/35 p-4 sm:p-5">
+      <div className="bg-(--brand-accent)/35 p-4 sm:p-5">
         <PortraitFrame
           person={person}
           className="aspect-[4/5] w-full"
@@ -123,13 +123,13 @@ function ProfileCard({ person }: { person: LeadershipPerson }) {
       </div>
       <CardContent className="flex flex-1 flex-col p-6 pt-4">
         <RoleBadge>{person.role}</RoleBadge>
-        <h3 className="mt-3 text-lg font-bold text-[var(--brand-text)]">
+        <h3 className="mt-3 text-lg font-bold text-(--brand-text)">
           {person.name}
         </h3>
-        <p className="mt-1 text-sm font-medium text-[var(--brand-primary)]">
+        <p className="mt-1 text-sm font-medium text-(--brand-primary)">
           {person.title}
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-[var(--brand-text-light)]">
+        <p className="mt-3 text-sm leading-relaxed text-(--brand-text-light)">
           {person.bio}
         </p>
       </CardContent>
@@ -148,13 +148,13 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-8 max-w-3xl">
-      <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
+      <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-(--brand-primary)">
         {eyebrow}
       </p>
-      <h2 className="text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+      <h2 className="text-3xl font-bold text-(--brand-text) sm:text-4xl">
         {title}
       </h2>
-      <p className="mt-3 leading-relaxed text-[var(--brand-text-light)]">
+      <p className="mt-3 leading-relaxed text-(--brand-text-light)">
         {description}
       </p>
     </div>
@@ -173,7 +173,7 @@ export default function LeadershipPage() {
           <Button
             asChild
             size="lg"
-            className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
+            className="bg-white text-(--brand-primary) hover:bg-white/90"
           >
             <Link prefetch={false} href="/contact">
               Contact the Secretariat
@@ -188,13 +188,13 @@ export default function LeadershipPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--brand-primary)]">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-(--brand-primary)">
                 Appointed to lead. Empowered to serve.
               </p>
-              <h2 className="text-3xl font-bold text-[var(--brand-text)] sm:text-4xl">
+              <h2 className="text-3xl font-bold text-(--brand-text) sm:text-4xl">
                 Leadership that connects legacy to the future
               </h2>
-              <div className="mt-5 space-y-4 leading-relaxed text-[var(--brand-text-light)]">
+              <div className="mt-5 space-y-4 leading-relaxed text-(--brand-text-light)">
                 <p>
                   The Global Steering Committee brings together accomplished
                   leaders from across Africa and the world. Each member has been
@@ -210,10 +210,10 @@ export default function LeadershipPage() {
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button asChild variant="outline" className="border-[var(--brand-primary)] text-[var(--brand-primary)]">
+                <Button asChild variant="outline" className="border-(--brand-primary) text-(--brand-primary)">
                   <Link href="/governance">Governance and accountability</Link>
                 </Button>
-                <Button asChild variant="outline" className="border-[var(--brand-primary)] text-[var(--brand-primary)]">
+                <Button asChild variant="outline" className="border-(--brand-primary) text-(--brand-primary)">
                   <Link href="/services/leadership-civic-education">
                     Leadership and civic education
                   </Link>
@@ -226,14 +226,14 @@ export default function LeadershipPage() {
                 <Card key={title} className="border-0 shadow-sm">
                   <CardContent className="flex gap-4 p-5">
                     <Icon
-                      className="mt-0.5 h-6 w-6 shrink-0 text-[var(--brand-primary)]"
+                      className="mt-0.5 h-6 w-6 shrink-0 text-(--brand-primary)"
                       aria-hidden="true"
                     />
                     <div>
-                      <h3 className="font-semibold text-[var(--brand-text)]">
+                      <h3 className="font-semibold text-(--brand-text)">
                         {title}
                       </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-[var(--brand-text-light)]">
+                      <p className="mt-1 text-sm leading-relaxed text-(--brand-text-light)">
                         {body}
                       </p>
                     </div>
@@ -246,7 +246,7 @@ export default function LeadershipPage() {
       </section>
 
       {/* Founding leadership */}
-      <section className="bg-[var(--brand-accent)]/30 py-16">
+      <section className="bg-(--brand-accent)/30 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading
             eyebrow="Founding leadership"
@@ -278,7 +278,7 @@ export default function LeadershipPage() {
       </section>
 
       {/* Committee members */}
-      <section className="bg-[var(--brand-accent)]/30 py-16">
+      <section className="bg-(--brand-accent)/30 py-16">
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading
             eyebrow="Committee members"
@@ -306,9 +306,9 @@ export default function LeadershipPage() {
               <ProfileCard key={person.name} person={person} />
             ))}
           </div>
-          <p className="mt-8 flex items-start gap-2 text-sm leading-relaxed text-[var(--brand-text-light)]">
+          <p className="mt-8 flex items-start gap-2 text-sm leading-relaxed text-(--brand-text-light)">
             <Users
-              className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
+              className="mt-0.5 h-4 w-4 shrink-0 text-(--brand-primary)"
               aria-hidden="true"
             />
             Committee composition and regional responsibilities may evolve as
@@ -318,7 +318,7 @@ export default function LeadershipPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--brand-primary)] py-16 text-white">
+      <section className="bg-(--brand-primary) py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
             Partner with the Committee
@@ -331,7 +331,7 @@ export default function LeadershipPage() {
             <Button
               asChild
               size="lg"
-              className="bg-white text-[var(--brand-primary)] hover:bg-white/90"
+              className="bg-white text-(--brand-primary) hover:bg-white/90"
             >
               <Link prefetch={false} href="/partner">
                 Become a Partner
@@ -342,7 +342,7 @@ export default function LeadershipPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-[var(--brand-primary)]"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-(--brand-primary)"
             >
               <Link prefetch={false} href="/contact">
                 Contact Us

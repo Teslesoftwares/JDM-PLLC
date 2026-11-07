@@ -28,10 +28,10 @@ export default function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-5">
             <Card className="border-0 shadow-md lg:col-span-3">
               <CardContent className="p-8">
-                <h2 className="mb-2 text-2xl font-bold text-[var(--brand-text)]">
+                <h2 className="mb-2 text-2xl font-bold text-(--brand-text)">
                   Please include:
                 </h2>
-                <ul className="mb-6 space-y-1 text-sm text-[var(--brand-text-light)]">
+                <ul className="mb-6 space-y-1 text-sm text-(--brand-text-light)">
                   <li>Full name.</li>
                   <li>Email address.</li>
                   <li>Organisation, if applicable.</li>
@@ -47,13 +47,13 @@ export default function ContactPage() {
               {siteConfig.offices.map((office) => (
                 <Card key={office.name} className="border-0 shadow-md">
                   <CardContent className="p-6">
-                    <h2 className="mb-4 text-lg font-semibold text-[var(--brand-text)]">
+                    <h2 className="mb-4 text-lg font-semibold text-(--brand-text)">
                       {office.name}
                     </h2>
                     <address className="space-y-3 text-sm not-italic">
-                      <p className="flex items-start gap-3 text-[var(--brand-text)]">
+                      <p className="flex items-start gap-3 text-(--brand-text)">
                         <MapPin
-                          className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
+                          className="mt-0.5 h-4 w-4 shrink-0 text-(--brand-primary)"
                           aria-hidden="true"
                         />
                         <span>
@@ -69,14 +69,14 @@ export default function ContactPage() {
                 </Card>
               ))}
 
-              <Card className="border-0 bg-[var(--brand-accent)]">
+              <Card className="border-0 bg-(--brand-accent)">
                 <CardContent className="space-y-4 p-6 text-sm">
                   <p className="flex items-start gap-3">
                     <Mail
-                      className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-(--brand-primary)"
                       aria-hidden="true"
                     />
-                    <span className="break-all text-[var(--brand-text)]">
+                    <span className="break-all text-(--brand-text)">
                       <a
                         href={`mailto:${siteConfig.contact.email}`}
                         className="hover:underline"
@@ -94,17 +94,17 @@ export default function ContactPage() {
                   </p>
                   <p className="flex items-start gap-3">
                     <Phone
-                      className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-primary)]"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-(--brand-primary)"
                       aria-hidden="true"
                     />
                     <a
                       href={siteConfig.contact.phoneHref}
-                      className="font-medium text-[var(--brand-text)] hover:underline"
+                      className="font-medium text-(--brand-text) hover:underline"
                     >
                       {siteConfig.contact.phone}
                     </a>
                   </p>
-                  <p className="text-[var(--brand-text)]">
+                  <p className="text-(--brand-text)">
                     <span className="font-semibold">Websites:</span>{" "}
                     {siteConfig.websites.map((website, index) => (
                       <span key={website.href}>
@@ -125,23 +125,23 @@ export default function ContactPage() {
 
               <Card className="border-0 shadow-sm">
                 <CardContent className="p-6">
-                  <h3 className="mb-2 font-semibold text-[var(--brand-text)]">
+                  <h3 className="mb-2 font-semibold text-(--brand-text)">
                     Official channels
                   </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-[var(--brand-text-light)]">
+                  <p className="mb-4 text-sm leading-relaxed text-(--brand-text-light)">
                     JDM-PLLC publishes information through this website and its
                     authorised communication channels. Do not send money or
                     personal information to an account, number or address that
                     has not been verified through the Secretariat.
                   </p>
                   <div className="flex flex-col gap-3 sm:flex-row">
-                    <Button asChild className="bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-dark)]">
+                    <Button asChild className="bg-(--brand-primary) text-white hover:bg-(--brand-primary-dark)">
                       <Link href="/branches">
                         Project locations
                         <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
-                    <Button asChild variant="outline" className="border-[var(--brand-primary)] text-[var(--brand-primary)]">
+                    <Button asChild variant="outline" className="border-(--brand-primary) text-(--brand-primary)">
                       <Link href="/faq">Read the FAQ</Link>
                     </Button>
                   </div>
