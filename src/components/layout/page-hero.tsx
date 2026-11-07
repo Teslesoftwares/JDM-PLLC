@@ -50,7 +50,7 @@ export function PageHero({
         <rect width="1200" height="400" fill="url(#mc-hero-dots)" />
       </svg>
 
-      <div className="motion-hero-copy relative z-10 mx-auto max-w-7xl px-4">
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         {breadcrumbs ? (
           <nav aria-label="Breadcrumb" className="mb-5">
             <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/75">

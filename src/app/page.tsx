@@ -452,7 +452,7 @@ export default function HomePage() {
                       href={`/branches/${branch.slug}`}
                       className="mt-auto inline-flex items-center text-sm font-semibold text-[var(--brand-primary)] hover:underline"
                     >
-                      Learn more
+                      Learn more about {branch.city}
                       <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
                     </Link>
                   </CardContent>

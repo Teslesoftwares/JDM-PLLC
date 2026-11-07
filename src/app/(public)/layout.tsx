@@ -13,7 +13,7 @@ export default function PublicLayout({
       <div className="relative z-10 flex min-h-screen flex-col">
         <ScrollProgress />
         <Header />
-        <main className="motion-page-enter flex flex-1 flex-col">{children}</main>
+        <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
         <FloatingActions />
       </div>

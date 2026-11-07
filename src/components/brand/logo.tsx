@@ -29,10 +29,11 @@ export function Logo({
 }) {
   const content = (
     <Image
-      src={invert ? "/brand/jdm-pllc-logo-gold.png" : "/brand/jdm-pllc-logo-brown.png"}
+      src={invert ? "/brand/jdm-pllc-logo-gold.webp" : "/brand/jdm-pllc-logo-brown.webp"}
       alt={siteConfig.name}
-      width={1200}
-      height={519}
+      width={370}
+      height={160}
+      unoptimized
       preload={preload}
       fetchPriority={preload ? "high" : "auto"}
       sizes={

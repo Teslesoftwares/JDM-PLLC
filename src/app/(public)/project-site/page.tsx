@@ -72,7 +72,7 @@ export default function ProjectSitePage() {
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
-            {conceptViews.map((view) => (
+            {conceptViews.map((view, index) => (
               <figure
                 key={view.src}
                 className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/10"
@@ -82,6 +82,9 @@ export default function ProjectSitePage() {
                     src={view.src}
                     alt={view.alt}
                     fill
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    quality={index === 0 ? 60 : 70}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
                     className="object-cover"
                   />
@@ -112,7 +115,7 @@ export default function ProjectSitePage() {
                 className="aspect-video w-full rounded-2xl bg-black shadow-lg"
                 controls
                 preload="metadata"
-                poster="/images/hero/campus-walk-poster.jpg"
+                poster="/images/hero/campus-walk-poster-small.webp"
                 aria-label="Video walkthrough of the proposed Centre campus concept"
               >
                 <source src="/images/hero/campus-walk.mp4" type="video/mp4" />

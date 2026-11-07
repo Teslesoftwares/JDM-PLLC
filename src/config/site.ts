@@ -230,7 +230,7 @@ export const siteConfig = {
       body: "The John Dramani Mahama Presidential Library & Legacy Centre (JDM-PLLC) is an AfYEF-led initiative to document, preserve and protect the legacy of President John Dramani Mahama, while inspiring young people and future generations through history, knowledge, leadership and opportunity.",
       mobileBody:
         "Preserving Legacy. Empowering the Youth.",
-      image: "/images/hero/northern-star-sunset.png",
+      image: "/images/hero/northern-star-sunset.webp",
       duration: 9000,
       videoLoop: false,
       primary: { label: "Explore the Project", href: "/about" },
@@ -243,7 +243,7 @@ export const siteConfig = {
       body: "The Centre seeks to document his life, leadership experiences, ideas, development aspirations and contributions to Ghana, preserving relevant historical records so that present and future generations can study his journey and understand its wider national and African context.",
       mobileBody:
         "President John Dramani Mahama's public-service journey is the central inspiration for JDM-PLLC.",
-      image: "/images/hero/architectural-pan-poster.jpg",
+      image: "/images/hero/architectural-pan-poster.webp",
       video: "/images/hero/architectural-pan.mp4",
       duration: 15000,
       videoLoop: false,
@@ -257,7 +257,7 @@ export const siteConfig = {
       body: "JDM-PLLC is being developed as a centre for historical preservation, research, education, cultural heritage and youth empowerment.",
       mobileBody:
         "JDM-PLLC is being developed as a centre for historical preservation, research, education, cultural heritage and youth empowerment.",
-      image: "/images/hero/campus-walk-poster.jpg",
+      image: "/images/hero/campus-walk-poster.webp",
       video: "/images/hero/campus-walk.mp4",
       duration: 12000,
       videoLoop: false,

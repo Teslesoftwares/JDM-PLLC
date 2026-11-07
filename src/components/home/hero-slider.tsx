@@ -186,10 +186,14 @@ export function HeroSlider() {
                     src={slide.image}
                     alt=""
                     fill
+                    quality={index === 0 ? 55 : 75}
                     preload={index === 0}
                     fetchPriority={index === 0 ? "high" : "auto"}
                     sizes="100vw"
-                    className={cn("object-cover", isActive && "motion-hero-image")}
+                    className={cn(
+                      "object-cover",
+                      isActive && index !== 0 && "motion-hero-image",
+                    )}
                   />
                   {/* Scrim keeps the copy legible over any photograph. */}
                   <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-primary)]/25 via-[var(--brand-primary)]/35 to-[var(--brand-primary)]/60 sm:bg-gradient-to-r sm:from-[var(--brand-primary)]/80 sm:via-[var(--brand-primary)]/50 sm:to-[var(--brand-primary)]/10" />
@@ -202,7 +206,7 @@ export function HeroSlider() {
               <div
                 className={cn(
                   "relative mx-auto w-full max-w-3xl text-center sm:text-left",
-                  isActive && "motion-hero-copy",
+                  isActive && index !== 0 && "motion-hero-copy",
                 )}
               >
                 <p className="mx-auto mb-2 max-w-xs text-xs font-semibold uppercase tracking-wider text-white/90 sm:mx-0 sm:mb-4 sm:max-w-none sm:text-sm">
