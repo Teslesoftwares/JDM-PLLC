@@ -143,7 +143,7 @@ export const internationalOperations: LeadershipPerson[] = [
     image: "/images/airo-assets/images/people/committee/ops-003.png",
     imageWidth: 1536,
     imageHeight: 1024,
-    bio: "Dr. Babajide Ojuola (PhD, FNSE, FIOGRHS, FIMC, COREN) is an accomplished energy and technology executive with nearly two decades of experience delivering major engineering and infrastructure projects across Africa. He specialises in strategic transformation, project management, knowledge systems and human-centred artificial intelligence. A Forbes Technology Council member, he serves as a JDM-PLLC Global Steering Committee member and International Operational Lead for Nigeria and Anglophone West Africa.",
+    bio: "Dr. Babajide Ojuola (PhD, FNSE, FIOGRHS, FIMC, COREN) is an accomplished energy and technology executive with nearly two decades of experience delivering major engineering and infrastructure projects across Africa. He specialises in strategic transformation, project management, knowledge systems and human-centred artificial intelligence. A Forbes Technology Council member, he serves as International Operational Lead for Nigeria and Anglophone West Africa.",
   },
   {
     name: "Ms. Patience Mafu",
