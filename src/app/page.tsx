@@ -462,9 +462,9 @@ export default function HomePage() {
 
             <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl bg-[var(--brand-primary)] shadow-lg ring-1 ring-black/10">
               <Image
-                src="/images/ghana-neon-route-map-at-sunset.png"
+                src="/images/Golden Route Through Ghana’s Savannah Regions.png"
                 alt="Map connecting Tamale, Damongo, Bole and Busunu across Northern Ghana"
-                width={1671}
+                width={1672}
                 height={941}
                 sizes="(max-width: 1024px) 100vw, 1024px"
                 className="h-auto w-full"
