@@ -196,7 +196,7 @@ export default function NewsPage() {
                 <div className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {update.images.map((image) => {
                     const dimensions = getImageDimensions(image.file);
-                    const imageSrc = `/Endorsements & news updates/${image.file}`;
+                    const imageSrc = `/endorsements-news-updates/${image.file}`;
                     return (
                       <figure
                         key={image.file}

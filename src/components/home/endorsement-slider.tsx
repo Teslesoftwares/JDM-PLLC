@@ -5,16 +5,16 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const endorsementFlyers = [
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.29.jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.26%20(1).jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.26.jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(1).jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(2).jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(3).jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(4).jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.27.jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.29%20(1).jpeg",
-  "/Endorsements/WhatsApp%20Image%202026-10-28%20at%2016.25.29%20(2).jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.29.jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.26%20(1).jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.26.jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(1).jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(2).jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(3).jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.27%20(4).jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.27.jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.29%20(1).jpeg",
+  "/endorsements-news-updates/WhatsApp%20Image%202026-10-28%20at%2016.25.29%20(2).jpeg",
 ];
 
 export function EndorsementSlider() {
