@@ -137,15 +137,6 @@ export const internationalOperations: LeadershipPerson[] = [
     bio: "Ms. Mpho Machaka (MBA, PMP, Adv Dip–Risk) is the Founder and CEO of IETSA, its innovation and commercial arm IETSATech, and Baruwileng Consulting Services (Pty) Ltd. She serves on several boards and continental committees, including the AfYEF Board, and is Continental Director for Women in Trade. Her work advances digital transformation, enterprise development and inclusive economic participation across Africa.",
   },
   {
-    name: "Dr. Babajide Ojuola",
-    role: "International Operational Lead",
-    title: "International Operational Lead — Nigeria & Anglophone West Africa",
-    image: "/images/airo-assets/images/people/committee/ops-003.png",
-    imageWidth: 1536,
-    imageHeight: 1024,
-    bio: "Dr. Babajide Ojuola (PhD, FNSE, FIOGRHS, FIMC, COREN) is an accomplished energy and technology executive with nearly two decades of experience delivering major engineering and infrastructure projects across Africa. He specialises in strategic transformation, project management, knowledge systems and human-centred artificial intelligence. A Forbes Technology Council member, he serves as International Operational Lead for Nigeria and Anglophone West Africa.",
-  },
-  {
     name: "Ms. Patience Mafu",
     role: "International Operational Lead",
     title: "International Operational Lead — United Kingdom & Europe",
