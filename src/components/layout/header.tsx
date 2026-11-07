@@ -203,15 +203,6 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Button
             asChild
-            className={cn(
-              "hidden lg:inline-flex",
-              homeAtTop ? "border border-white/80 bg-white/10 text-white hover:bg-white hover:text-[var(--brand-primary)]" : "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
-            )}
-          >
-            <Link prefetch={false} href="/login">Login</Link>
-          </Button>
-          <Button
-            asChild
             className="hidden bg-[var(--brand-yellow)] text-[var(--brand-on-yellow)] hover:bg-[var(--brand-yellow-dark)] lg:inline-flex"
           >
             <Link prefetch={false} href="/partner">Partner</Link>
@@ -366,12 +357,6 @@ export function Header() {
               </Link>
             ),
           )}
-          <Button
-            asChild
-            className="mt-3 w-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
-          >
-            <Link prefetch={false} href="/login" onClick={closeMobileMenu}>Login</Link>
-          </Button>
           <Button
             asChild
             className="mt-3 w-full bg-[var(--brand-yellow)] text-[var(--brand-on-yellow)] hover:bg-[var(--brand-yellow-dark)]"
