@@ -58,6 +58,18 @@ const noStore = [
 ];
 
 const nextConfig: NextConfig = {
+  // Next.js sizes its page-data worker pool from the host's CPU count. Build
+  // containers often report every core of a much larger machine while capping
+  // the process/thread count (and memory) well below what that implies, so the
+  // default pool aborts with "OS can't spawn worker thread: Resource
+  // temporarily unavailable". Serialise the build instead: one worker, child
+  // processes rather than worker threads, one statically generated page at a
+  // time. Builds are slower but stay within the container's limits.
+  experimental: {
+    cpus: 1,
+    workerThreads: false,
+    staticGenerationMaxConcurrency: 1,
+  },
   async redirects() {
     return [
       // Legacy fertility-era routes, kept alive for old links and hero slides.
