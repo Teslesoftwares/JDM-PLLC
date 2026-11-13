@@ -1,15 +1,14 @@
 import { prisma } from "@/lib/prisma";
+import {
+  LAUNCH_REGISTRATION_CATEGORY,
+  registrationDetail,
+} from "@/lib/launch-registrations";
 
 export const dynamic = "force-dynamic";
 
-function registrationDetail(message: string, label: "Address" | "Nationality") {
-  const line = message.split("\n").find((item) => item.startsWith(`${label}:`));
-  return line?.slice(label.length + 1).trim() || "—";
-}
-
 export default async function LaunchRegistrationsPage() {
   const registrations = await prisma.contactMessage.findMany({
-    where: { category: "LAUNCH_REGISTRATION" },
+    where: { category: LAUNCH_REGISTRATION_CATEGORY },
     orderBy: { createdAt: "desc" },
   });
 
@@ -20,7 +19,15 @@ export default async function LaunchRegistrationsPage() {
           <h2 className="text-xl font-semibold sm:text-2xl">Launch Registrations</h2>
           <p className="mt-1 text-sm text-gray-600">Proposed official launch · 30 November 2026</p>
         </div>
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">{registrations.length} registered</span>
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">{registrations.length} registered</span>
+          <a
+            href="/api/launch-registrations/export"
+            className="rounded-md bg-(--brand-primary) px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-(--brand-primary-dark)"
+          >
+            Export to Excel
+          </a>
+        </div>
       </div>
 
       {registrations.length === 0 ? (

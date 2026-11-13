@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
 import nodemailer from "nodemailer";
+import { LAUNCH_REGISTRATION_CATEGORY } from "@/lib/launch-registrations";
 import { prisma } from "@/lib/prisma";
 
 export const runtime = "nodejs";
@@ -133,7 +134,7 @@ export async function POST(request: Request) {
           `Address: ${address}`,
           `Nationality: ${nationality}`,
         ].join("\n"),
-        category: "LAUNCH_REGISTRATION",
+        category: LAUNCH_REGISTRATION_CATEGORY,
         consent: true,
         status: "NEW",
       },

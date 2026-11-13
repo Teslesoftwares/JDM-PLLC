@@ -55,6 +55,7 @@
     "recharts": "^3.10.1",
     "tailwind-merge": "^3.6.0",
     "uuid": "^14.0.2",
+    "write-excel-file": "^4.1.1",
     "zod": "^4.4.3",
     "zustand": "^5.0.15"
   },
