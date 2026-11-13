@@ -4,9 +4,19 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  const email = "president@jdm-pllc.org";
-  const password = "JdmOffice2026";
-  const name = "JDM Admin";
+  // Real credentials are never committed. Provide them for the single run:
+  //   ADMIN_EMAIL=... ADMIN_PASSWORD=... npx tsx scripts/create-admin.ts
+  const email = (process.env.ADMIN_EMAIL || "info@jdm-pllc.org")
+    .trim()
+    .toLowerCase();
+  const password = process.env.ADMIN_PASSWORD;
+  const name = process.env.ADMIN_NAME || "JDM-PLLC Administrator";
+
+  if (!password || password.length < 8) {
+    throw new Error(
+      "Set ADMIN_PASSWORD to at least 8 characters before running this script."
+    );
+  }
 
   let role = await prisma.role.findUnique({ where: { name: "ADMIN" } });
   if (!role) {
