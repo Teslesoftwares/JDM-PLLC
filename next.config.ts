@@ -77,6 +77,10 @@ const nextConfig: NextConfig = {
       { source: "/doctors", destination: "/leadership", permanent: true },
       // Preserve existing links to the related initiative's previous URL.
       { source: "/eam-terdi", destination: "/eammc-terdi", permanent: true },
+      // The launch form lives at the singular public path; the plural path is
+      // the staff screen under /dashboard. Catch links that use the plural
+      // form without the dashboard prefix instead of showing a 404.
+      { source: "/launch-registrations", destination: "/launch-registration", permanent: true },
     ];
   },
   images: {
