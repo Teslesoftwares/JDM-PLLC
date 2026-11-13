@@ -175,10 +175,16 @@ export default function HomePage() {
               </h2>
               <p className="text-lg leading-relaxed text-(--brand-text-light)">
                 The John Dramani Mahama Presidential Library &amp; Legacy Centre
-                (JDM-PLLC) is an AfYEF-led initiative to document, preserve and
+                (JDM-PLLC) is an initiative led by <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="font-medium text-(--brand-primary) underline decoration-(--brand-primary)/40 underline-offset-2 hover:decoration-(--brand-primary)">AfYEF</a> to document, preserve and
                 protect the legacy of President John Dramani Mahama, while
                 inspiring young people and future generations through history,
                 knowledge, leadership and opportunity.
+              </p>
+              <p className="mt-3 text-xs font-medium text-(--brand-text-light)">
+                Learn more about AfYEF: {" "}
+                <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-(--brand-primary)">www.afyef.org</a>
+                {" · "}
+                <a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-(--brand-primary)">www.afyef.com</a>
               </p>
               <p className="mt-5 leading-relaxed text-(--brand-text-light)">
                 The Centre seeks to preserve his vision, ideas, aspirations and
@@ -462,7 +468,7 @@ export default function HomePage() {
 
             <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl bg-(--brand-primary) shadow-lg ring-1 ring-black/10">
               <Image
-                src="/images/Golden Route Through Ghana’s Savannah Regions.png"
+                src="/images/partners/Ghana Map Sunset Route Infographic.png"
                 alt="Map connecting Tamale, Damongo, Bole and Busunu across Northern Ghana"
                 width={1672}
                 height={941}
@@ -533,11 +539,20 @@ export default function HomePage() {
                         </div>
                       ) : null}
                       <p className="text-sm font-semibold text-(--brand-text)">
-                        {partner.name}
+                        {partner.name.includes("AfYEF") ? (
+                          <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:text-(--brand-primary) hover:underline">{partner.name}</a>
+                        ) : partner.name}
                       </p>
                       {partner.detail ? (
                         <p className="mt-1 text-xs text-(--brand-text-light)">
                           {partner.detail}
+                        </p>
+                      ) : null}
+                      {partner.name.includes("AfYEF") ? (
+                        <p className="mt-2 text-xs text-(--brand-primary)">
+                          <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">afyef.org</a>
+                          {" · "}
+                          <a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">afyef.com</a>
                         </p>
                       ) : null}
                     </div>

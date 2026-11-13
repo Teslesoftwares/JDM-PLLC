@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  const email = "jdmadmin@jdmpllc.org";
+  const email = "president@jdm-pllc.org";
   const password = "JdmOffice2026";
   const name = "JDM Admin";
 

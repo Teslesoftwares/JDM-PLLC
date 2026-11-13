@@ -76,6 +76,10 @@ export default function DonationPolicyPage() {
                 partner institution. Naming or recognition arrangements require
                 separate written agreement.
               </p>
+              <p className="mt-2 text-xs font-medium text-(--brand-primary)">
+                AfYEF: <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>
+                {" · "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.com</a>
+              </p>
             </div>
 
             <div>

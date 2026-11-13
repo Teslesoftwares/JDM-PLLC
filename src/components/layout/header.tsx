@@ -106,11 +106,11 @@ export function Header() {
             </Link>
           </div>
           <a
-            href={`mailto:${siteConfig.contact.email}`}
+            href="mailto:president@jdm-pllc.org"
             className="flex items-center gap-1.5 hover:underline"
           >
             <Mail className="h-3.5 w-3.5" aria-hidden="true" />
-            {siteConfig.contact.email}
+            <span>Email: president@jdm-pllc.org</span>
           </a>
         </div>
       </div>

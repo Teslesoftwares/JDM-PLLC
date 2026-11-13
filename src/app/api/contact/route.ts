@@ -15,7 +15,7 @@ async function sendContactNotification(input: {
   const user = process.env.SMTP_USER;
   const password = process.env.SMTP_PASS || process.env.SMTP_PASSWORD;
   const port = Number(process.env.SMTP_PORT || 587);
-  const to = process.env.CONTACT_EMAIL || "info@jdm-pllc.org";
+  const to = process.env.JDM_INFO_EMAIL || "info@jdm-pllc.org";
 
   if (!host || !user || !password || !Number.isInteger(port) || port < 1) {
     throw new Error("Contact email SMTP settings are incomplete");

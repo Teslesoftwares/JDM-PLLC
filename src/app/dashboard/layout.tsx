@@ -40,6 +40,7 @@ export default async function DashboardLayout({
         <nav className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-2 sm:px-4">
           <Link href="/dashboard" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-(--brand-primary)">Overview</Link>
           <Link href="/dashboard/inquiries" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-(--brand-primary)">Contact Enquiries</Link>
+          <Link href="/dashboard/launch-registrations" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-(--brand-primary)">Launch Registrations</Link>
           <Link href="/dashboard/news" className="whitespace-nowrap rounded-t px-3 py-2.5 text-sm font-medium hover:text-(--brand-primary)">News and Project Updates</Link>
         </nav>
       </header>

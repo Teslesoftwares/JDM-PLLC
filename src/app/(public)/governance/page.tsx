@@ -86,12 +86,17 @@ export default function GovernancePage() {
                     />
                     <div>
                       <h3 className="font-semibold text-(--brand-text)">
-                        AfCFTA Young Entrepreneurs Federation (AfYEF)
+                        <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:text-(--brand-primary) hover:underline">AfCFTA Young Entrepreneurs Federation (AfYEF)</a>
                       </h3>
                       <p className="mt-1 text-sm leading-relaxed text-(--brand-text-light)">
                         AfYEF is the lead organisation for the JDM-PLLC project.
                         The Centre is a flagship legacy and youth-development
                         initiative of the Federation.
+                      </p>
+                      <p className="mt-2 text-xs font-medium text-(--brand-primary)">
+                        <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>
+                        {" · "}
+                        <a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.com</a>
                       </p>
                     </div>
                   </CardContent>
@@ -108,7 +113,7 @@ export default function GovernancePage() {
                         University for Development Studies (UDS)
                       </h3>
                       <p className="mt-1 text-sm leading-relaxed text-(--brand-text-light)">
-                        UDS and AfYEF signed an MoU on 2 July 2026 to collaborate
+                        UDS and <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="text-(--brand-primary) underline">AfYEF</a> signed an MoU on 2 July 2026 to collaborate
                         in academic research, archival documentation, civic
                         education, leadership studies, digital knowledge
                         preservation and student skills development. Tamale hosts
@@ -165,8 +170,8 @@ export default function GovernancePage() {
                 funding or presidential endorsement.
               </p>
               <p className="mt-4 leading-relaxed text-(--brand-text-light)">
-                The project is being developed by AfYEF with partners and
-                supporters.
+                The project is being developed by <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="font-medium text-(--brand-primary) underline">AfYEF</a> with partners and supporters.
+                {" "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="font-medium text-(--brand-primary) underline">www.afyef.com</a>
               </p>
             </div>
             <div>

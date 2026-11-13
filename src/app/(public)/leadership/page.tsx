@@ -105,6 +105,12 @@ function FeaturedProfile({ person }: { person: LeadershipPerson }) {
           <p className="mt-4 text-sm leading-relaxed text-(--brand-text-light)">
             {person.bio}
           </p>
+          {(person.bio.includes("AfYEF") || person.title.includes("AfYEF") || person.role.includes("AfYEF")) ? (
+            <p className="mt-2 text-xs font-medium text-(--brand-primary)">
+              <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>
+              {" · "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.com</a>
+            </p>
+          ) : null}
         </div>
       </CardContent>
     </Card>
@@ -132,6 +138,12 @@ function ProfileCard({ person }: { person: LeadershipPerson }) {
         <p className="mt-3 text-sm leading-relaxed text-(--brand-text-light)">
           {person.bio}
         </p>
+        {(person.bio.includes("AfYEF") || person.title.includes("AfYEF") || person.role.includes("AfYEF")) ? (
+          <p className="mt-2 text-xs font-medium text-(--brand-primary)">
+            <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>
+            {" · "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.com</a>
+          </p>
+        ) : null}
       </CardContent>
     </Card>
   );

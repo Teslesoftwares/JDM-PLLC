@@ -19,7 +19,7 @@ export function PageHero({
 }: {
   eyebrow?: string;
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   /** `[{ label, href? }]`; the last item is rendered as the current page. */
   breadcrumbs?: Array<{ label: string; href?: string }>;
   actions?: React.ReactNode;

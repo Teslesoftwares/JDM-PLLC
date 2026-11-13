@@ -6,6 +6,11 @@ export default function DashboardPage() {
         Document the legacy, preserve and protect the historical record, and inspire the youth to learn from the past and shape the future.
       </p>
       <div className="grid gap-4 md:grid-cols-2">
+        <a href="/dashboard/launch-registrations" className="group rounded-lg border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-(--brand-primary)/40 hover:shadow-md sm:p-6">
+          <h3 className="mb-2 text-lg font-medium">Launch Registrations</h3>
+          <p className="mb-4 text-gray-600">View people registered for the proposed official launch</p>
+          <span className="font-medium text-(--brand-primary) group-hover:underline">View Registrations →</span>
+        </a>
         <a
           href="/dashboard/inquiries"
           className="group rounded-lg border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-(--brand-primary)/40 hover:shadow-md sm:p-6"

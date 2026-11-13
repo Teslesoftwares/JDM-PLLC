@@ -68,7 +68,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About JDM-PLLC"
         title="A Legacy of Leadership. A Future of Transformation."
-        description="The John Dramani Mahama Presidential Library & Legacy Centre is an initiative led by the AfCFTA Young Entrepreneurs Federation (AfYEF)."
+        description={<>The John Dramani Mahama Presidential Library &amp; Legacy Centre is an initiative led by the <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline">AfCFTA Young Entrepreneurs Federation (AfYEF)</a>. <a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="ml-1 text-sm text-white/90 underline">www.afyef.com</a></>}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         actions={
           <Button asChild size="lg" className="bg-white text-(--brand-primary) hover:bg-white/90">
@@ -90,8 +90,11 @@ export default function AboutPage() {
             <div className="space-y-5 leading-relaxed text-(--brand-text-light)">
               <p>
                 The John Dramani Mahama Presidential Library &amp; Legacy Centre
-                is an initiative led by the AfCFTA Young Entrepreneurs Federation
-                (AfYEF).
+                is an initiative led by the <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="font-medium text-(--brand-primary) underline hover:no-underline">AfCFTA Young Entrepreneurs Federation (AfYEF)</a>.
+              </p>
+              <p className="-mt-2 text-sm text-(--brand-text-light)">
+                AfYEF: <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="text-(--brand-primary) underline">www.afyef.org</a>
+                {" · "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="text-(--brand-primary) underline">www.afyef.com</a>
               </p>
               <p>
                 It seeks to establish a lasting institution dedicated to

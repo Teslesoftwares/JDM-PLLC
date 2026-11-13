@@ -102,6 +102,12 @@ export default function FaqPage() {
                   <p className="leading-relaxed text-(--brand-text-light)">
                     {faq.answer}
                   </p>
+                  {faq.answer.includes("AfYEF") ? (
+                    <p className="mt-3 text-xs font-medium text-(--brand-primary)">
+                      AfYEF: <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>
+                      {" · "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.com</a>
+                    </p>
+                  ) : null}
                 </CardContent>
               </Card>
             ))}

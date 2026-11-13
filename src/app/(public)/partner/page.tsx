@@ -111,11 +111,20 @@ export default function PartnerPage() {
                       </div>
                     ) : null}
                     <h3 className="font-semibold text-(--brand-text)">
-                      {partner.name}
+                      {partner.name.includes("AfYEF") ? (
+                        <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:text-(--brand-primary) hover:underline">{partner.name}</a>
+                      ) : partner.name}
                     </h3>
                     {partner.detail ? (
                       <p className="mt-1 text-sm text-(--brand-text-light)">
                         {partner.detail}
+                      </p>
+                    ) : null}
+                    {partner.name.includes("AfYEF") ? (
+                      <p className="mt-2 text-xs font-medium text-(--brand-primary)">
+                        <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>
+                        {" · "}
+                        <a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.com</a>
                       </p>
                     ) : null}
                   </article>

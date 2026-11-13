@@ -57,11 +57,13 @@ export default function ContactPage() {
                           aria-hidden="true"
                         />
                         <span>
-                          {office.lines.map((line) => (
-                            <span key={line} className="block">
-                              {line}
-                            </span>
-                          ))}
+                        {office.lines.map((line) => (
+                          <span key={line} className="block">
+                            {line === "AfCFTA Young Entrepreneurs Federation (AfYEF)" ? (
+                              <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="font-medium text-(--brand-primary) hover:underline">{line}</a>
+                            ) : line}
+                          </span>
+                        ))}
                         </span>
                       </p>
                     </address>

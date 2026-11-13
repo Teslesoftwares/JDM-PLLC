@@ -86,7 +86,7 @@ export default function EventsPage() {
                   official channels.
                 </p>
                 <Button asChild className="bg-white text-(--brand-primary) hover:bg-white/90">
-                  <Link href="/contact">Contact the Secretariat</Link>
+                  <Link href="/launch-registration">Register for the Launch</Link>
                 </Button>
               </CardContent>
             </Card>

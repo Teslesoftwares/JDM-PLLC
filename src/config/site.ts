@@ -130,7 +130,7 @@ const SERVICES = [
     name: "Youth Skills and Enterprise Development",
     slug: "youth-skills-enterprise",
     description:
-      "In alignment with AfYEF's youth empowerment mission, the Centre seeks to connect learning with practical opportunities for young people.",
+      "In alignment with the project's youth empowerment mission, the Centre seeks to connect learning with practical opportunities for young people.",
     highlights: [
       "Digital and technology skills.",
       "Entrepreneurship and enterprise readiness.",
@@ -271,23 +271,23 @@ export const siteConfig = {
       body: "JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole. Each location may contribute to the Centre's historical, educational, cultural and community development objectives.",
       mobileBody:
         "JDM-PLLC is pursuing a multi-location development approach involving Tamale, Damongo, Busunu and Bole.",
-      image: "/images/Golden Route Through Ghana’s Savannah Regions.png",
+      image: "/images/partners/Ghana Map Sunset Route Infographic.png",
       duration: 12000,
       videoLoop: false,
       primary: { label: "Branches & Locations", href: "/branches" },
       secondary: { label: "Support the Initiative", href: "/donate" },
     },
   ] as HeroSlide[],
-  /** Canonical origin. Overridden by APP_URL for a deployment. */
-  url: process.env.APP_URL || "http://localhost:3000",
+  /** Canonical origin. Overridden by the public deployment URL. */
+  url: process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || "https://www.jdm-pllc.org",
   /** Public website address. */
-  website: process.env.CLINIC_WEBSITE || "https://www.jdmpllc.org",
+  website: "https://www.jdm-pllc.org",
   /** Contact details for the JDM-PLLC Secretariat. */
   contact: {
     phone: "+233 244 030 280",
     phoneHref: "tel:+233244030280",
-    email: process.env.CLINIC_EMAIL || "president@afyef.org",
-    additionalEmail: "info@afyef.org",
+    email: "president@jdm-pllc.org",
+    additionalEmail: "info@jdm-pllc.org",
     address: "University for Development Studies (UDS), Tamale Campus",
     addressShort: "Tamale, Northern Region, Ghana",
     city: "Tamale",
@@ -321,12 +321,9 @@ export const siteConfig = {
     },
   ],
   websites: [
-    { label: "www.jdmpllc.org", href: "https://www.jdmpllc.org" },
-    {
-      label: "www.jdmpresidentiallibrary.org",
-      href: "https://www.jdmpresidentiallibrary.org",
-    },
+    { label: "www.jdm-pllc.org", href: "https://www.jdm-pllc.org" },
     { label: "www.afyef.org", href: "https://www.afyef.org" },
+    { label: "www.afyef.com", href: "https://www.afyef.com" },
   ],
   locale: {
     language: "en-GH",

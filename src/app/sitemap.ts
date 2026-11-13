@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/governance", changeFrequency: "monthly", priority: 0.7 },
     { path: "/branches", changeFrequency: "monthly", priority: 0.6 },
     { path: "/events", changeFrequency: "weekly", priority: 0.7 },
+    { path: "/launch-registration", changeFrequency: "weekly", priority: 0.8 },
     { path: "/news", changeFrequency: "weekly", priority: 0.7 },
     { path: "/partner", changeFrequency: "monthly", priority: 0.8 },
     { path: "/eammc-terdi", changeFrequency: "monthly", priority: 0.6 },

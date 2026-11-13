@@ -27,6 +27,15 @@ const categories = [
 
 const newsUpdates = [
   {
+    date: "11 November 2026",
+    title:
+      "AfYEF to launch John Mahama Presidential Library and Legacy Centre to drive leadership, tourism",
+    body: "MyJoyOnline reports on AfYEF's upcoming national launch of the John Dramani Mahama Presidential Library and Legacy Centre in Tamale on 30 November 2026, and the initiative's plans to connect heritage, leadership education and tourism in Northern Ghana.",
+    images: [],
+    articleUrl:
+      "https://www.myjoyonline.com/afyef-to-launch-john-mahama-presidential-library-and-legacy-centre-to-drive-leadership-tourism/",
+  },
+  {
     date: "13 October 2026",
     title: "The Question, the Answer and the Possibility",
     body: "A three-part campaign asks what happens when stories fade, answers with the value of preserving records and knowledge, and imagines future generations learning from the past. Together, the messages describe the Centre's purpose: preserve history and pass its lessons forward.",
@@ -193,6 +202,23 @@ export default function NewsPage() {
                 <p className="mb-6 max-w-4xl leading-relaxed text-(--brand-text-light)">
                   {update.body}
                 </p>
+                {"articleUrl" in update && (
+                  <a
+                    href={update.articleUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-6 inline-flex items-center font-semibold text-(--brand-primary) hover:underline"
+                  >
+                    Read the report on MyJoyOnline
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </a>
+                )}
+                {update.title.includes("AfYEF") ? (
+                  <p className="mb-6 text-xs font-medium text-(--brand-primary)">
+                    AfYEF: <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>
+                    {" · "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.com</a>
+                  </p>
+                ) : null}
                 <div className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {update.images.map((image) => {
                     const dimensions = getImageDimensions(image.file);

@@ -97,7 +97,7 @@ export function Footer() {
               <p className="flex items-start gap-2 text-sm leading-relaxed text-white/75">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/70" aria-hidden="true" />
                 <span>
-                  AfCFTA Young Entrepreneurs Federation (AfYEF)
+                  <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:text-white">AfCFTA Young Entrepreneurs Federation (AfYEF)</a>
                   <br />
                   26 Atomic Hills Estates Street, Dome-Kwabenya
                   <br />
@@ -181,7 +181,7 @@ export function Footer() {
         <div className="mt-10 rounded-lg border border-white/15 bg-black/10 p-5 text-xs leading-relaxed text-white/75">
           <p>
             JDM-PLLC is a proposed legacy and youth-development initiative led
-            by AfYEF. It does not claim government ownership, government
+            by <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="underline">AfYEF</a>. It does not claim government ownership, government
             funding or presidential endorsement. References to institutions,
             partners, locations and facilities are subject to formal agreements,
             approvals and applicable laws. No partnership listing constitutes a
@@ -210,7 +210,11 @@ export function Footer() {
               www.afyef.org
             </a>
             {" · "}
-            Powered by IETSA and TEGPA
+            <a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">www.afyef.com</a>
+            {" · "}
+            Powered by{" "}
+            <a href="https://www.tegpa.org" target="_blank" rel="noopener noreferrer" className="hover:text-white">TEGPA</a>
+            {" "}&amp; IETSA
           </p>
         </div>
       </div>

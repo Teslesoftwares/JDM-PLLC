@@ -225,6 +225,12 @@ export function HeroSlider() {
                   <span className="sm:hidden">{slide.mobileBody ?? slide.body}</span>
                   <span className="hidden sm:inline">{slide.body}</span>
                 </p>
+                {slide.body.includes("AfYEF") ? (
+                  <p className="mt-2 text-xs text-white/80">
+                    Project promoter: <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">www.afyef.org</a>
+                    {" · "}<a href="https://www.afyef.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">www.afyef.com</a>
+                  </p>
+                ) : null}
                 <div className="mt-5 flex flex-col items-center gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-start sm:gap-4">
                   {slide.primary.href.startsWith("tel:") ? (
                     <Button
