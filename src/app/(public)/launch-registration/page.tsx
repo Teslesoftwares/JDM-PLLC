@@ -5,10 +5,45 @@ import { ArrowLeft, CalendarDays, MapPin, Clock3, ArrowRight, BookOpen, Users, L
 import { LaunchRegistrationForm } from "@/components/public/launch-registration-form";
 import { siteConfig } from "@/config/site";
 
+// Absolute title because the site-wide template appends "| JDM-PLLC", which
+// would duplicate the acronym in this longer, page-specific title.
+const pageTitle =
+  "Registration | JDM Presidential Library & Legacy Centre (JDM-PLLC) Launch Program";
+const pageDescription =
+  "Register to attend the proposed 30 November 2026 launch of the John Dramani Mahama Presidential Library & Legacy Centre in Tamale, Ghana.";
+const socialImage = {
+  url: "/images/hero/northern-star-sunset.webp",
+  width: 1672,
+  height: 940,
+  alt: "John Dramani Mahama Presidential Library & Legacy Centre launch registration",
+};
+
 export const metadata: Metadata = {
-  title: "Register for the Official Launch",
-  description: "Register your interest in attending the proposed launch of the John Dramani Mahama Presidential Library & Legacy Centre.",
+  title: { absolute: pageTitle },
+  description: pageDescription,
+  keywords: [
+    "JDM-PLLC launch registration",
+    "John Dramani Mahama Presidential Library launch",
+    "Presidential Library and Legacy Centre Tamale",
+    "official launch registration Ghana",
+    "AfYEF launch Tamale",
+    "30 November 2026 launch",
+  ],
   alternates: { canonical: "/launch-registration" },
+  openGraph: {
+    type: "website",
+    url: "/launch-registration",
+    siteName: siteConfig.name,
+    title: pageTitle,
+    description: pageDescription,
+    images: [socialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [socialImage.url],
+  },
 };
 
 export default function LaunchRegistrationPage() {
