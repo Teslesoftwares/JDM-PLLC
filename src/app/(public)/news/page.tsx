@@ -6,6 +6,7 @@ import { NewsImageActions } from "@/components/public/news-image-actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Info, Newspaper } from "lucide-react";
+import { websiteNewsUpdates } from "@/config/website-content";
 
 export const metadata: Metadata = {
   title: "News and Updates",
@@ -23,126 +24,6 @@ const categories = [
   "Research and publications.",
   "Youth opportunities.",
   "Media releases.",
-];
-
-const newsUpdates = [
-  {
-    date: "11 November 2026",
-    title:
-      "AfYEF to launch John Mahama Presidential Library and Legacy Centre to drive leadership, tourism",
-    body: "MyJoyOnline reports on AfYEF's upcoming national launch of the John Dramani Mahama Presidential Library and Legacy Centre in Tamale on 30 November 2026, and the initiative's plans to connect heritage, leadership education and tourism in Northern Ghana.",
-    images: [],
-    articleUrl:
-      "https://www.myjoyonline.com/afyef-to-launch-john-mahama-presidential-library-and-legacy-centre-to-drive-leadership-tourism/",
-  },
-  {
-    date: "13 October 2026",
-    title: "The Question, the Answer and the Possibility",
-    body: "A three-part campaign asks what happens when stories fade, answers with the value of preserving records and knowledge, and imagines future generations learning from the past. Together, the messages describe the Centre's purpose: preserve history and pass its lessons forward.",
-    images: [
-      {
-        file: "WhatsApp Image 2026-10-13 at 05.23.31.jpeg",
-        alt: "Campaign graphic: The Question — what happens when stories fade and history is lost?",
-      },
-      {
-        file: "WhatsApp Image 2026-10-13 at 05.23.38.jpeg",
-        alt: "Campaign graphic: The Answer — preserve memories and records so they become knowledge.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-13 at 05.23.45.jpeg",
-        alt: "Campaign graphic: The Possibility — history inspires knowledge and tomorrow's leaders.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-13 at 17.07.43.jpeg",
-        alt: "The Question campaign graphic, alternate design.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-13 at 17.08.07.jpeg",
-        alt: "The Answer campaign graphic, alternate design.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-13 at 17.08.26.jpeg",
-        alt: "The Possibility campaign graphic, alternate design.",
-      },
-    ],
-  },
-  {
-    date: "13 October 2026",
-    title: "A vision for knowledge and opportunity in Northern Ghana",
-    body: "These project graphics present Northern Ghana as a place for knowledge and opportunity and describe the aspiration for a Presidential Library and Legacy Centre with a wider African future. The architectural views are conceptual images, not photographs of a completed facility.",
-    images: [
-      {
-        file: "WhatsApp Image 2026-10-13 at 06.35.00.jpeg",
-        alt: "Project graphic describing Northern Ghana as a destination for knowledge and opportunity.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-13 at 06.35.01 (1).jpeg",
-        alt: "Project concept graphic: Not just a library, a centre for Africa's future.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-13 at 06.35.01.jpeg",
-        alt: "Project graphic describing a presidential legacy, a national treasure and an African future.",
-      },
-    ],
-  },
-  {
-    date: "28 October 2026",
-    title: "Endorsement messages and project supporters",
-    body: "A collection of endorsement artwork and project-support visuals. The names, titles and statements included in each graphic are reproduced as shown in the supplied materials.",
-    images: [
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.26 (1).jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.26.jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.27 (1).jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.27 (2).jpeg",
-        alt: "Project-support visual titled Powerful Africa.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.27 (3).jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.27 (4).jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.27.jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.29 (1).jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.29 (2).jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-      {
-        file: "WhatsApp Image 2026-10-28 at 16.25.29.jpeg",
-        alt: "Official endorsement graphic featuring the endorser and statement shown in the artwork.",
-      },
-    ],
-  },
-  {
-    date: "2 November 2026",
-    title: "The Centre's vision and mission on display",
-    body: "A project display stand presents the Centre's vision, mission and legacy theme alongside an architectural concept image.",
-    images: [
-      {
-        file: "WhatsApp Image 2026-11-02 at 13.35.26.jpeg",
-        alt: "A JDM-PLLC display stand showing the Centre's vision, mission and an architectural concept image.",
-      },
-    ],
-  },
 ];
 
 function getImageDimensions(file: string) {
@@ -188,7 +69,7 @@ export default function NewsPage() {
               </p>
             </div>
 
-            {newsUpdates.map((update) => (
+            {websiteNewsUpdates.map((update) => (
               <article
                 key={update.title}
                 className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/10 sm:p-8"
@@ -202,7 +83,7 @@ export default function NewsPage() {
                 <p className="mb-6 max-w-4xl leading-relaxed text-(--brand-text-light)">
                   {update.body}
                 </p>
-                {"articleUrl" in update && (
+                {update.articleUrl ? (
                   <a
                     href={update.articleUrl}
                     target="_blank"
@@ -212,7 +93,7 @@ export default function NewsPage() {
                     Read the report on MyJoyOnline
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </a>
-                )}
+                ) : null}
                 {update.title.includes("AfYEF") ? (
                   <p className="mb-6 text-xs font-medium text-(--brand-primary)">
                     AfYEF: <a href="https://www.afyef.org" target="_blank" rel="noopener noreferrer" className="hover:underline">www.afyef.org</a>

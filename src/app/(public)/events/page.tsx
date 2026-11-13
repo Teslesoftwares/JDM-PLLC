@@ -13,7 +13,10 @@ import {
   Mic,
   Users,
 } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import {
+  websiteEventActivities,
+  websiteEvents,
+} from "@/config/website-content";
 
 export const metadata: Metadata = {
   title: "Events and Activities",
@@ -22,12 +25,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/events" },
 };
 
-const plannedActivities = [
-  { icon: Mic, title: "Public lectures and dialogue." },
-  { icon: BookOpen, title: "Exhibitions and heritage programming." },
-  { icon: GraduationCap, title: "Academic and youth programmes." },
-  { icon: Users, title: "Community engagement." },
-];
+const activityIcons = [Mic, BookOpen, GraduationCap, Users];
+const plannedActivities = websiteEventActivities.map((activity, index) => ({
+  ...activity,
+  icon: activityIcons[index],
+}));
+const featuredEvent = websiteEvents[0];
 
 export default function EventsPage() {
   return (
@@ -61,29 +64,26 @@ export default function EventsPage() {
             <Card className="border-0 bg-(--brand-primary) text-white shadow-md lg:col-span-2">
               <CardContent className="p-8 md:p-10">
                 <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-                  Proposed Official Launch
+                  {featuredEvent.title}
                 </h2>
                 <div className="mb-6 space-y-3 text-white/90">
                   <p className="flex items-start gap-3">
                     <Calendar className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
                     <span>
-                      <strong>Date:</strong> {siteConfig.launchDate}
+                      <strong>Date:</strong> {featuredEvent.date}
                       <br />
-                      <strong>Time:</strong> 10:00 AM
+                      <strong>Time:</strong> {featuredEvent.time}
                     </span>
                   </p>
                   <p className="flex items-start gap-3">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
                     <span>
-                      <strong>Venue:</strong> University for Development Studies
-                      (UDS), Tamale Campus (venue to be confirmed)
+                      <strong>Venue:</strong> {featuredEvent.venue}
                     </span>
                   </p>
                 </div>
                 <p className="mb-6 text-sm leading-relaxed text-white/85">
-                  The launch is proposed and subject to confirmation. Any change
-                  to the date, venue or programme will be announced through
-                  official channels.
+                  {featuredEvent.description}
                 </p>
                 <Button asChild className="bg-white text-(--brand-primary) hover:bg-white/90">
                   <Link href="/launch-registration">Register for the Launch</Link>

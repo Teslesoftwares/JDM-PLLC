@@ -1,6 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+
+import {
+  websiteEventActivities,
+  websiteEvents,
+  websiteNewsUpdates,
+} from "@/config/website-content";
 
 interface Post {
   id: string;
@@ -179,6 +186,88 @@ export default function NewsManagementPage() {
           </form>
         </div>
       )}
+
+      <div className="mb-6 overflow-hidden rounded-lg border bg-white shadow-sm">
+        <div className="flex flex-col gap-2 border-b px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div>
+            <h3 className="text-lg font-medium">Published on the website</h3>
+            <p className="mt-1 text-sm text-gray-600">
+              Everything currently live on the public News and Events pages. This
+              content is read-only here.
+            </p>
+          </div>
+          <div className="flex gap-4 text-sm font-medium">
+            <a href="/news" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+              View /news
+            </a>
+            <a href="/events" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+              View /events
+            </a>
+          </div>
+        </div>
+        <div className="divide-y">
+          {websiteNewsUpdates.map((update) => (
+            <div key={`${update.date}-${update.title}`} className="px-4 py-4 sm:px-6">
+              <div className="mb-1 flex flex-wrap items-center gap-2 text-xs">
+                <span className="rounded-full bg-blue-100 px-2 py-0.5 font-medium text-blue-700">News</span>
+                <span className="text-gray-500">{update.date}</span>
+                {update.images.length > 0 ? (
+                  <span className="text-gray-500">
+                    · {update.images.length} image{update.images.length === 1 ? "" : "s"}
+                  </span>
+                ) : null}
+              </div>
+              <h4 className="font-medium">{update.title}</h4>
+              <p className="mt-1 text-sm text-gray-600">{update.body}</p>
+              {update.images.length > 0 ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {update.images.map((image) => (
+                    <Image
+                      key={image.file}
+                      src={`/endorsements-news-updates/${image.file}`}
+                      alt={image.alt}
+                      width={72}
+                      height={72}
+                      className="h-16 w-16 rounded border object-cover"
+                    />
+                  ))}
+                </div>
+              ) : null}
+              {update.articleUrl ? (
+                <a
+                  href={update.articleUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-sm font-medium text-blue-700 hover:underline"
+                >
+                  Read the report on MyJoyOnline
+                </a>
+              ) : null}
+            </div>
+          ))}
+          {websiteEvents.map((event) => (
+            <div key={event.title} className="px-4 py-4 sm:px-6">
+              <div className="mb-1 flex flex-wrap items-center gap-2 text-xs">
+                <span className="rounded-full bg-amber-100 px-2 py-0.5 font-medium text-amber-700">Event</span>
+                <span className="text-gray-500">
+                  {event.date} · {event.time}
+                </span>
+              </div>
+              <h4 className="font-medium">{event.title}</h4>
+              <p className="mt-1 text-sm text-gray-600">{event.venue}</p>
+              <p className="mt-2 text-sm text-gray-600">{event.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="border-t bg-gray-50 px-4 py-3 text-sm text-gray-600 sm:px-6">
+          <p className="font-medium">Planned activities on /events:</p>
+          <ul className="mt-1 list-disc space-y-1 pl-5">
+            {websiteEventActivities.map((activity) => (
+              <li key={activity.title}>{activity.title}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
       <div className="rounded-lg border bg-white shadow-sm">
         <div className="border-b px-4 py-4 sm:px-6">
